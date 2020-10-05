@@ -369,10 +369,10 @@ Figure 3.2: <strong>Measles epidemics in New York from 1906 to 1948.</strong> Th
 <p>Despite its simplicity, this model is still widely used today, specially in the context of metapopulations<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> <span class="citation">[<a href="references.html#ref-DeLuca2018Dec" role="doc-biblioref">132</a>]</span>. Even more, as in all compartmental models, it is straightforward to extend it to include more complex dynamics. For instance, we can add the exposed state so that individuals that get infected remain in a latent state for a certain amount of time before showing symptoms and being able to infect others. This model, known as the <em>SEIR</em> model, can be used to describe influenza dynamics <span class="citation">[<a href="references.html#ref-keeling2007" role="doc-biblioref">173</a>]</span></p>
 <p><span class="math display" id="eq:chap3-homo-seir">\[\begin{equation}
 \left\{\begin{array}{l}
-\dv{S_a(t)}{t}  = - \sum_{a&#39;}\beta C(a,a&#39;) I_{a&#39;}(t) S_a(t) \\
-\dv{E_a(t)}{t}  = \sum_{a&#39;}\beta C(a,a&#39;) I_{a&#39;}(t) S_a(t) - \sigma E_a(t)\\
-\dv{I_a(t)}{t}  = \sigma E_a(t) - \mu I_a(t) \\
-\dv{R_a(t)}{t}  = \mu I_a(t)
+\frac{\text{d}S_a(t)}{\text{d}t}  = - \sum_{a&#39;}\beta C(a,a&#39;) I_{a&#39;}(t) S_a(t) \\
+\frac{\text{d}E_a(t)}{\text{d}t}  = \sum_{a&#39;}\beta C(a,a&#39;) I_{a&#39;}(t) S_a(t) - \sigma E_a(t)\\
+\frac{\text{d}I_a(t)}{\text{d}t}  = \sigma E_a(t) - \mu I_a(t) \\
+\frac{\text{d}R_a(t)}{\text{d}t}  = \mu I_a(t)
 \end{array}\right. \,.
 \tag{3.19}
 \end{equation}\]</span></p>
