@@ -2,7 +2,7 @@
 layout: page
 permalink: /resources/
 title: Resources
-description: Some codes and notes that may be useful for others.
+description: Some codes and notes that may be useful to others.
 nav: true
 nav_order: 4
 ---
