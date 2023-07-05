@@ -14,7 +14,7 @@ window.bubbly = function(options) {
   }
 
   const bubbles = options.bubbles || Math.floor(0.02 * (width + height));
-  const bubbleFunc = options.bubbleFunc || (() => `rgba(0, 0, 0, ${0.01 + 0.1 * Math.random()})`);
+  const bubbleFunc = options.bubbleFunc || (() => `rgba(0, 0, 0, ${0.02 + 0.1 * Math.random()})`);
   const radiusFunc = options.radiusFunc || (() => 10 + Math.random() * width / 100);
   const angleFunc = options.angleFunc || (() => Math.random() * Math.PI * 2);
   const velocityFunc = options.velocityFunc || (() => 0.05 + 0.2 * Math.random());
@@ -34,7 +34,7 @@ window.bubbly = function(options) {
   }
 
   function getInverseColor(color) {
-   return color === "#ffffff" ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.5)";
+   return color === "#fff" ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.5)";
   }
 
   let lastRenderTime = 0;
