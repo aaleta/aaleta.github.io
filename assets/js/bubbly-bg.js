@@ -32,13 +32,13 @@ window.bubbly = function(options) {
     };
     links.push(bubble);
   }
-  
+
   function getInverseColor(color) {
-   return color === "#ffffff" ? "rgba(0, 0, 0, 0.2)" : "rgba(255, 0, 0, 1)";
+   return color === "#ffffff" ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.5)";
   }
 
   let lastRenderTime = 0;
-  const throttleTime = 1000 / 30; // Target 30 frames per second  
+  const throttleTime = 1000 / 30; // Target 30 frames per second
 
   function animate(timestamp) {
     if (!canvas.parentNode) return;
