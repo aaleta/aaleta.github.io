@@ -1,26 +1,28 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle:
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image: profile_pic.jpg
+  image_circular: true # crops the image to make it circular
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Ramón y Cajal fellow</p>
+    <p>University of Zaragoza</p>
+    <p>Zaragoza, Spain</p>
 
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
+news: false  # includes a list of news items
+latest_posts: false  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a data/network scientist currently working at the [Institute for Biocomputation and Physics of Complex Systems (BIFI)](https://bifi.es/) at the University of Zaragoza, Spain. I would summarize my research interests simply by using the title of my Ph.D. thesis: "Networks, Epidemics, and Collective Behavior: From Physics to Data Science."
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I enjoy all aspects related to data, from acquisition to visualization. Consequently, it's challenging for me to focus on just one specific field. However, due to my background in physics, I am particularly interested in unraveling the mechanisms producing the data. Rather than solely focusing on finding correlations and making uninformed predictions, my aim is to understand the dynamic processes that generate it.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Additionally, I have a passion for software engineering, which is why I am currently studying for a bachelor's degree in computer engineering during my free time. I am currently working on a few projects that I plan to release soon. Stay tuned!
+
+Below, you will find my contact information if you'd like to chat. You can also check out my [publications](/publications) to see my works. I would also recommend visiting the [resources](/resources) section, which is currently brief, but I hope to expand it soon.

@@ -545,6 +545,28 @@ footer.sticky-bottom {
   }
 }
 
+// Resources
+.resources {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      .card-title {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+
+  h2.category {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+}
+
 
 // Publications
 
@@ -586,7 +608,7 @@ footer.sticky-bottom {
 
       .preview {
         width: 100%;
-        min-width: 80px;
+        min-width: 120px;
         max-width: 200px;
       }
 

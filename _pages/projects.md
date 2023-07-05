@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Scientific Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: The main scientific projects in which I am (or was!) involved in some way or another
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [Current projects, Past projects]
 horizontal: false
 ---
 

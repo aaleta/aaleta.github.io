@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Statistical mechanics of networks | Networks, Epidemics and Collective Behavior: from Physics to Data Science</title>
+  <meta name="description" content="Alberto Aleta’s dissertation" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Statistical mechanics of networks | Networks, Epidemics and Collective Behavior: from Physics to Data Science" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Alberto Aleta’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Statistical mechanics of networks | Networks, Epidemics and Collective Behavior: from Physics to Data Science" />
+  
+  <meta name="twitter:description" content="Alberto Aleta’s dissertation" />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Alberto Aleta" />
+
+
+<meta name="date" content="2020-09-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sec-chap1-intro.html"/>
+<link rel="next" href="chap-chap3.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Networks, Epidemics and Collective Behavior</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="1" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="XIX" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#sec:chap1_statmech"><i class="fa fa-check"></i><b>XIX</b> The birth of statistical mechanics</a>
+<ul>
+<li class="chapter" data-level="XIX.1" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#subsec:chap1_darwin"><i class="fa fa-check"></i><b>XIX.1</b> Meanwhile, in the social sciences</a></li>
+</ul></li>
+<li class="chapter" data-level="XX" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#sec:chap1_bigsci"><i class="fa fa-check"></i><b>XX</b> The century of Big Science</a>
+<ul>
+<li class="chapter" data-level="XX.1" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#subsec:chap1_more"><i class="fa fa-check"></i><b>XX.1</b> More is Different</a></li>
+<li class="chapter" data-level="XX.2" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#subsec:chap1_lattices"><i class="fa fa-check"></i><b>XX.2</b> From lattices to networks</a></li>
+</ul></li>
+<li class="chapter" data-level="XXI" data-path="sec-chap1-intro.html"><a href="sec-chap1-intro.html#sec:chap1_datasci"><i class="fa fa-check"></i><b>XXI</b> The Information Age</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-chap2.html"><a href="chap-chap2.html"><i class="fa fa-check"></i><b>2</b> Statistical mechanics of networks</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-graph"><i class="fa fa-check"></i><b>2.1</b> Brief introduction to graph theory</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-graphs-topo"><i class="fa fa-check"></i><b>2.1.1</b> Topological properties of networks</a></li>
+<li class="chapter" data-level="2.1.2" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-graphs-degdist"><i class="fa fa-check"></i><b>2.1.2</b> Important degree distributions</a></li>
+<li class="chapter" data-level="2.1.3" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-multilayer"><i class="fa fa-check"></i><b>2.1.3</b> Multilayer graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-null"><i class="fa fa-check"></i><b>2.2</b> The problem of null models</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-null-micro"><i class="fa fa-check"></i><b>2.2.1</b> Microcanonical models</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-null-cano"><i class="fa fa-check"></i><b>2.2.2</b> Canonical models</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-erg"><i class="fa fa-check"></i><b>2.3</b> Exponential random graphs</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-randomizing"><i class="fa fa-check"></i><b>2.4</b> Randomizing real networks</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-undirected"><i class="fa fa-check"></i><b>2.4.1</b> Undirected binary networks</a></li>
+<li class="chapter" data-level="2.4.2" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-weighted"><i class="fa fa-check"></i><b>2.4.2</b> Undirected weighted networks</a></li>
+<li class="chapter" data-level="2.4.3" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-fermbos"><i class="fa fa-check"></i><b>2.4.3</b> Fermionic and bosonic graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-anomalies"><i class="fa fa-check"></i><b>2.5</b> Anomalies in transportation networks</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-anomaliesNull"><i class="fa fa-check"></i><b>2.5.1</b> Null models for undirected weighted networks</a></li>
+<li class="chapter" data-level="2.5.2" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-anomaliesAIR"><i class="fa fa-check"></i><b>2.5.2</b> The worldwide air transportation network</a></li>
+<li class="chapter" data-level="2.5.3" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-anomaliesOther"><i class="fa fa-check"></i><b>2.5.3</b> Other transportation networks</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="chap-chap2.html"><a href="chap-chap2.html#sec:chap2-generating"><i class="fa fa-check"></i><b>2.6</b> Generating data-driven contact networks</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-generatingTheo"><i class="fa fa-check"></i><b>2.6.1</b> Theoretical framework</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-generatingData"><i class="fa fa-check"></i><b>2.6.2</b> Data description</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chap-chap2.html"><a href="chap-chap2.html#subsec:chap2-generatingAge"><i class="fa fa-check"></i><b>2.6.3</b> Age contact networks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-chap3.html"><a href="chap-chap3.html"><i class="fa fa-check"></i><b>3</b> The law of mass action: animals collide</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chap-chap3.html"><a href="chap-chap3.html#sec:chap3-homo"><i class="fa fa-check"></i><b>3.1</b> A basic assumption: homogeneous mixing</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-homo-age"><i class="fa fa-check"></i><b>3.1.1</b> Introducing the age compartment</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-homo-demo"><i class="fa fa-check"></i><b>3.1.2</b> Changing demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chap-chap3.html"><a href="chap-chap3.html#sec:chap3-R0"><i class="fa fa-check"></i><b>3.2</b> The basic reproduction number</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-r0-measure"><i class="fa fa-check"></i><b>3.2.1</b> Measuring <span class="math inline">\(\mathbf{R_0}\)</span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-r0-Ref"><i class="fa fa-check"></i><b>3.2.2</b> The effective reproduction number</a></li>
+<li class="chapter" data-level="3.2.3" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-r0-pnas"><i class="fa fa-check"></i><b>3.2.3</b> Measurability of the epidemic reproduction number</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="chap-chap3.html"><a href="chap-chap3.html#sec:chap3-directed"><i class="fa fa-check"></i><b>3.3</b> The epidemic threshold fades out</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-directed-decade"><i class="fa fa-check"></i><b>3.3.1</b> The decade of viruses</a></li>
+<li class="chapter" data-level="3.3.2" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-directed-generating"><i class="fa fa-check"></i><b>3.3.2</b> The generating function approach</a></li>
+<li class="chapter" data-level="3.3.3" data-path="chap-chap3.html"><a href="chap-chap3.html#subsec:chap3-directed-multilayer"><i class="fa fa-check"></i><b>3.3.3</b> Directionality reduces the epidemic threshold in directed multiplex networks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="chap-chap3.html"><a href="chap-chap3.html#sec:chap3-age"><i class="fa fa-check"></i><b>3.4</b> Age and network structures</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-chap4.html"><a href="chap-chap4.html"><i class="fa fa-check"></i><b>4</b> Diving into the anthill</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chap-chap4.html"><a href="chap-chap4.html#sec:chap4-fc"><i class="fa fa-check"></i><b>4.1</b> Online discussion boards</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-fc-description"><i class="fa fa-check"></i><b>4.1.1</b> Description of Forocoches</a></li>
+<li class="chapter" data-level="4.1.2" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-fc-poisson"><i class="fa fa-check"></i><b>4.1.2</b> Introduction to inhomogeneous Poisson processes</a></li>
+<li class="chapter" data-level="4.1.3" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-fc-hawkes"><i class="fa fa-check"></i><b>4.1.3</b> Fitting Hawkes processes</a></li>
+<li class="chapter" data-level="4.1.4" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-fc-dynamics"><i class="fa fa-check"></i><b>4.1.4</b> The dynamics of the board</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="chap-chap4.html"><a href="chap-chap4.html#sec:chap4-pkmn"><i class="fa fa-check"></i><b>4.2</b> The dynamics of a crowd controlled game</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-pkmn-description"><i class="fa fa-check"></i><b>4.2.1</b> Description of the event</a></li>
+<li class="chapter" data-level="4.2.2" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-pkmn-ledge"><i class="fa fa-check"></i><b>4.2.2</b> The ledge</a></li>
+<li class="chapter" data-level="4.2.3" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-pkmn-politics"><i class="fa fa-check"></i><b>4.2.3</b> The politics of the crowd</a></li>
+<li class="chapter" data-level="4.2.4" data-path="chap-chap4.html"><a href="chap-chap4.html#subsec:chap4-pkmn-conclusions"><i class="fa fa-check"></i><b>4.2.4</b> The challenges of digital crowds</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-chap5.html"><a href="chap-chap5.html"><i class="fa fa-check"></i><b>5</b> Conclusions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chap-chap5.html"><a href="chap-chap5.html#sec:chap5-future"><i class="fa fa-check"></i><b>5.1</b> Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Networks, Epidemics and Collective Behavior: from Physics to Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:chap2" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Statistical mechanics of networks</h1>
+<p>In this chapter, we will introduce some of the most basic concepts in network science. We will begin by giving a brief overview of the mathematical framework used to study networks in section <a href="chap-chap2.html#sec:chap2-graph">2.1</a>. This section is not meant to be a thorough introduction into the field, for which several good books are available <span class="citation">[<a href="references.html#ref-Newman_2018" role="doc-biblioref">73</a>]–[<a href="references.html#ref-barabasi2016" role="doc-biblioref">75</a>]</span>, but rather as a way of establishing the terminology that will be used for the rest of this thesis. For this reason, we will only focus on those properties of networks that are indispensable for its correct comprehension. Thus, key concepts in network science such as clustering or community structure will not be addressed here, as they are not used in the works composing this thesis.</p>
+<p>Special attention will be paid to multilayer networks in section <a href="chap-chap2.html#subsec:chap2-multilayer">2.1.3</a>. These networks are a particular generalization of classical graphs that, as we shall see, will play a key role in several sections of this thesis. The overview of multilayer networks will be based on one of the works developed during this thesis:</p>
+<blockquote>
+<p>Aleta, A. and Moreno, Y. , <a href="https://doi.org/10.1146/annurev-conmatphys-031218-013259">Multilayer Networks in a Nutshell</a>, Annu. Rev. Condens. Matter Phys. 10:45-62, 2019</p>
+</blockquote>
+<p>Next, in section <a href="chap-chap2.html#sec:chap2-null">2.2</a>, we will introduce the problem for which this chapter is devoted, generating appropriate null models of real networks. Our methodology will be based on the exponential random graph (ERG) model, which will be introduced in section <a href="chap-chap2.html#sec:chap2-erg">2.3</a>. In section <a href="chap-chap2.html#sec:chap2-randomizing">2.4</a>, we will show how this model can be used as a null model of real networks. As we shall see, the mathematical framework of ERGs has clear similarities with statistical mechanics, hence the name of this chapter.</p>
+<p>Lastly, we will apply this framework to study two particular problems. In the first one, section <a href="chap-chap2.html#sec:chap2-anomalies">2.5</a>, we will analyze several transportation networks in an attempt to determine if there are anomalies in them. Anomalies in this context refers to properties that would differ significantly from what is found in a null model of the network, and we will show that the assumptions implicit in those models might be one of the main causes of the anomalies. This section will be based on the work</p>
+<blockquote>
+<p>Alves, L. G. A., Aleta, A., Rodrigues, F. A., Moreno, Y. and Amaral, L. A. N., <a href="https://doi.org/10.1088/1367-2630/ab687c">Centrality anomalies in complex networks as a result of model over-simplification</a>, New J. Phys. 22(1):013043, 2020</p>
+</blockquote>
+<p>of which I am first co-author.</p>
+<p>The second problem, presented in section <a href="chap-chap2.html#sec:chap2-generating">2.6</a>, will focus instead on generating synthetic networks from real data. In particular, we will use socio-demographic data in order to build multilayer networks in which the mixing patterns of the population are properly accounted for. In section <a href="chap-chap3.html#sec:chap3-age">3.4</a>, we will measure the impact that incorporating this kind of data can have on disease dynamics. Both sections will be based on the work</p>
+<blockquote>
+<p>Aleta, A., Ferraz de Arruda, G. and Moreno, Y., <a href="https://doi.org/10.1371/journal.pcbi.1008035">Data-driven contact structures: From homogeneous mixing to multilayer networks</a>, PLoS Comput. Biol. 16(7):e1008035, 2020</p>
+</blockquote>
+<div id="sec:chap2-graph" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Brief introduction to graph theory</h2>
+<p>Graph theory is the mathematical framework that allows us to encode the properties of real networks into a mathematically tractable object. In fact, the term <em>network</em> is often used when talking about a real system while  is usually used to discuss its mathematical representation. Yet, this distinction is seldom made and the terms graph and network are nowadays synonyms of each other <span class="citation">[<a href="references.html#ref-barabasi2016" role="doc-biblioref">75</a>]</span>. Hence, during this thesis both terms might be used interchangeably.</p>
+<p>Following <span class="citation">[<a href="references.html#ref-Newman_2018" role="doc-biblioref">73</a>]</span>, we define a network as a set of entities, which we will refer to as <em>nodes</em>, that are related to each other somehow. Said relationship will be encoded in <em>links</em> connecting the nodes. This very general definition allows us to describe systems of very diverse nature. For instance, in spin glasses two nodes (spins) will have a link if they can interact with each other. In other systems, such as transportation networks, two nodes (e.g. cities) cannot interact per se in the strict sense, but if travelers can go from one destination to the other somehow, we will establish a link between them to encode the relationship.</p>
+<p>In general, it is possible to have more than one link between two nodes. For example, in order to increase the resilience of a power grid, there could be two independent transmission lines between two cities. In these cases, we refer to those links as <em>multilinks</em>. Similarly, it is possible to find nodes connected to themselves through <em>self-loops</em>. However, in this thesis, we will mostly work with <em>simple graphs</em>. That is, graphs with neither self-loops nor multiedges.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-graphs"></span>
+<img src="images/Fig_chap2_graphs.png" alt="**Schematic representation of directed, undirected and weighted networks.** In directed graphs a relationship from $i$ to $j$ does not imply that the reciprocal is true, hence the adjacency matrix is not symmetric. In undirected graphs all relationships are reciprocal, making the matrix symmetric. In weighted graphs links have associated weights which can represent various quantities such as the strength or duration of the interaction." width="625" />
+<p class="caption">
+Figure 2.1: <strong>Schematic representation of directed, undirected and weighted networks.</strong> In directed graphs a relationship from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> does not imply that the reciprocal is true, hence the adjacency matrix is not symmetric. In undirected graphs all relationships are reciprocal, making the matrix symmetric. In weighted graphs links have associated weights which can represent various quantities such as the strength or duration of the interaction.
+</p>
+</div>
+<p>The fundamental mathematical representation of a network is the <em>adjacency matrix</em>, <span class="math inline">\(A\)</span>. Given a graph composed by <span class="math inline">\(N\)</span> nodes, its adjacency matrix is a square matrix of size <span class="math inline">\(N\times N\)</span> in which <span class="math inline">\(a_{ij}=0\)</span> if there is no relationship between nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> and <span class="math inline">\(a_{ij}\neq 0\)</span> otherwise. Depending on the values allowed for <span class="math inline">\(a_{ij}\)</span> we can define several types of graphs. The most common one is the undirected binary graph, undirected graph or, simply, graph, in which the matrix is symmetric and <span class="math inline">\(a_{ij}\)</span> can only take binary values. If we relax the symmetry condition we obtain a <em>directed graph</em>, in which a relationship from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span> does not imply the existence of a relationship from <span class="math inline">\(j\)</span> to <span class="math inline">\(i\)</span>. Even more, if we allow <span class="math inline">\(a_{ij}\)</span> to take any positive value, we obtain a <em>weighted graph</em>. In these networks links have an associated weight that represents the relative strength of the interaction. A schematic representation of these three types of networks is shown in figure <a href="chap-chap2.html#fig:chap2-graphs">2.1</a>. During this thesis we will explore the three of them, although the undirected graph is admittedly the most common one.</p>
+<p>Although the adjacency matrix completely describes a network, it is rather difficult for humans to comprehend the structure of the network by just looking at its adjacency matrix. For this reason, it is common practice to define mathematical measures that capture interesting features of network structure quantitatively. In the following section we will describe the ones that will be used all over the thesis.</p>
+<div id="subsec:chap2-graphs-topo" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Topological properties of networks</h3>
+<p>The most basic microscopic property is the <em>degree</em> of the nodes, which represents the number of links it has. For a network of <span class="math inline">\(N\)</span> nodes the degree can be written in terms of the adjacency matrix as</p>
+<p><span class="math display" id="eq:chap2-graphs-k">\[\begin{equation}
+k_i = \sum_{j=1}^N a_{ij}\,.
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>This quantity plays a key role in many networks. In fact, networks can be classified according to their <em>degree distribution</em>, <span class="math inline">\(P(k\)</span>), which provides the probability that a randomly selected node in the network has degree <span class="math inline">\(k\)</span>. It has been observed that the precise functional form of <span class="math inline">\(P(k)\)</span> determines many network phenomena in a wide array of systems. Besides, with this distribution, it is possible to obtain other important quantities such as the <em>average degree</em> of a network</p>
+<p><span class="math display" id="eq:chap2-graph-avgk">\[\begin{equation}
+\langle k \rangle = \sum_{k=0}^\infty k P(k)
+\tag{2.2}
+\end{equation}\]</span></p>
+<p>In directed networks, <a href="chap-chap2.html#eq:chap2-graphs-k">(2.1)</a> is slightly different as the network is not symmetric. Thus, we have to define the <em>in-degree</em> as the number of incoming links to a node and the <em>out-degree</em> as the number of outgoing links,</p>
+<p><span class="math display" id="eq:chap2-graph-directedk">\[\begin{equation}
+k_i^\text{in} = \sum_{j=1}^N a_{ij} \,, \quad \quad k_i^\text{out} = \sum_{j=1}^N a_{ji}
+\tag{2.3}
+\end{equation}\]</span></p>
+<p>In the case of weighted networks, it is common to denote with the binary quantity <span class="math inline">\(a_{ij}\)</span> the existence of a link, while the weight is encoded in the variable <span class="math inline">\(w_{ij}\)</span>. This way, it is possible to use the same definition for the degree <a href="chap-chap2.html#eq:chap2-graphs-k">(2.1)</a> and, similarly, define the <em>strength</em> of a node as</p>
+<p><span class="math display" id="eq:chap2-graph-strength">\[\begin{equation}
+s_i = \sum_{j=1}^N w_{ij} \, .
+\tag{2.4}
+\end{equation}\]</span></p>
+<p>In a similar fashion, one can define as many observables as desired, some of which will be more important than others depending on the system under consideration. In particular, a lot of effort has been devoted to the concept of <em>centrality</em> in networks, which tries to answer the question of which are the most important nodes in a network. There are multiple ways of defining the centrality of a node and the best one usually depends on the specific system that is being analyzed. For instance, the degree of a node by itself can be considered as a measure of its importance. However, as we shall see, our interest in this thesis lays on the role nodes play in transportation networks. Hence, for us, it is more interesting to know which nodes are indispensable for the correct operation of the network rather than which are the most popular. For instance, one can think of two large parts of a city divided by a river with one bridge. It is clear than in said situation the bridge holds a key position in the system, as if there was a problem there, both parts of the city would become disconnected. A quantity that can capture this information is the <em>betweenness</em>.</p>
+<p>To understand betweenness we first need to talk about <em>paths</em>. A path is a route that runs along the links of a network without stepping twice over the same link. We define the <em>shortest path</em> between nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> as the path between them with the fewest number of links. Note that if we had a weighted network representing some spatial system, with the real spatial distance acting as weight, this is equivalent to simply look for the route between two nodes that minimizes the total distance traveled.</p>
+<p>Denoting by <span class="math inline">\(\sigma^i_{rs}\)</span> the number of shortest paths between nodes <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> that pass through <span class="math inline">\(i\)</span>, the betweenness of node <span class="math inline">\(i\)</span> can be defined as</p>
+<p><span class="math display" id="eq:chap2-graph-bw">\[\begin{equation}
+b_{i} = \frac{2}{(N-1)(N-2)} \sum_{r\neq i}\sum_{s \neq i} \frac{\sigma_{rs}^i}{\sigma_{rs}}\,,
+\tag{2.5}
+\end{equation}\]</span></p>
+<p>that is, the fraction of all shortest paths in the system that include node <span class="math inline">\(i\)</span> without starting or ending in it. The leading factor is just a normalization constant so that the betweenness of networks of different sizes can be compared.</p>
+</div>
+<div id="subsec:chap2-graphs-degdist" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Important degree distributions</h3>
+<p>As previously mentioned, the degree distribution of a network can determine many of its properties. Although any probability distribution can be used as a degree distribution, there are two prototypical distributions to which this section will be devoted: the Poisson distribution and the power-law distribution.</p>
+<p>The Poisson distribution attains its importance from being the distribution that arises naturally in <em>the random graph</em> model. In general, a random graph is a model network in which the values of certain properties are fixed, but it is in other respects random. One can think of many properties that could be settled, but undoubtedly the simplest choice is to establish the number of nodes <span class="math inline">\(N\)</span> and the number of links <span class="math inline">\(L\)</span>. Such model is known as <em>Erdős-Rényi model} (honoring the contributions of Paul Erdős and Alfréd Rényi in the study of the model <span class="citation">[<a href="references.html#ref-erdos1959" role="doc-biblioref">76</a>]</span>), </em>ER graph<em>, </em>Poisson random graph* or, simply, <em>"the’’ random graph</em>. Henceforth, we will refer to this model as ER.</p>
+<p>In the ER model the only two elements that are fixed are the number of nodes, <span class="math inline">\(N\)</span>, and the number of links, <span class="math inline">\(L\)</span>. Hence, this model does not define a single network but rather a whole collection of networks, or <em>ensemble</em>, that are compatible with those constraints. Indeed, as there are <span class="math inline">\(\binom{N}{2}\)</span> ways of selecting pairs of nodes, there are <span class="math inline">\(\binom{\binom{N}{2}}{L}\)</span> ways of placing the <span class="math inline">\(L\)</span> links, or different graphs. The probability of selecting any of those graphs will be given by</p>
+<p><span class="math display" id="eq:chap2-graph-pg">\[\begin{equation}
+P(G) = \frac{1}{\dbinom{\binom{N}{2}}{L}}\,.
+\tag{2.6}
+\end{equation}\]</span></p>
+<p>Although this is the original formulation of the model, nowadays it is more common to use a definition that is completely equivalent for large <span class="math inline">\(N\)</span>. Specifically, one defines <span class="math inline">\(p\)</span> as the probability of including any possible link, independently from the rest of links. Therefore, for instance, the average degree in both formulations would be
+<span class="math display" id="eq:chap2-graph-kavgER">\[\begin{equation}
+\langle k \rangle = \frac{2L}{N} = p(N-1) \,.
+\tag{2.7}
+\end{equation}\]</span></p>
+<p>To obtain the degree distribution of this model we need to consider that a given node in the network will be connected with probability <span class="math inline">\(p\)</span> to each of the <span class="math inline">\(N-1\)</span> other nodes. Thus the probability of being connected to <span class="math inline">\(k\)</span> nodes and not to the rest of them is <span class="math inline">\(p^k(1-p)^{N-1-k}\)</span>. As there are <span class="math inline">\(\binom{N-1}{k}\)</span> ways to choose <span class="math inline">\(k\)</span> nodes, the probability of being connected to <span class="math inline">\(k\)</span> nodes is</p>
+<p><span class="math display" id="eq:chap2-graph-pkER">\[\begin{equation}
+P(k) = \binom{N-1}{k} p^k (1-p)^{N-1-k}\,,
+\tag{2.8}
+\end{equation}\]</span></p>
+<p>which is a binomial distribution. Yet, in many cases we are interested in the properties of large networks, so that <span class="math inline">\(N\)</span> can be assumed to be large. In the large-<span class="math inline">\(N\)</span> limit equation <a href="chap-chap2.html#eq:chap2-graph-pkER">(2.8)</a> tends to a Poisson distribution,</p>
+<p><span class="math display" id="eq:chap2-graph-pkPois">\[\begin{equation}
+P(k) = \frac{(pN)^k e^{-pN}}{k!} \approx \frac{\langle k \rangle^k e^{-\langle k \rangle}}{k!}\,.
+\tag{2.9}
+\end{equation}\]</span></p>
+<p>Due to its simplicity, this model is often used as the basic benchmark to determine if a real network has non trivial topological structures. Yet, most real networks do not resemble an ER graph at all. Actually, the most common distribution of real networks is a <em>power law distribution</em>. A power law distribution can be expressed as</p>
+<p><span class="math display" id="eq:chap2-graph-pl">\[\begin{equation}
+P(k) = C k^{-\gamma}\,
+\tag{2.10}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(C\)</span> is the normalization constant that ensures that the probability is correctly defined. Networks with a degree sequence that follows a power law distribution are known as <em>scale-free</em> (SF) networks.</p>
+<p>The term scale-free comes from the fact that the moments of the power-law distribution,</p>
+<p><span class="math display" id="eq:chap2-graph-nth">\[\begin{equation}
+\langle k^n \rangle = \int_{k_\text{min}}^{k_\text{max}} k^n P(k) \text{d}k = C \frac{k_\text{max}^{n-\gamma+1}-k_\text{min}^{n-\gamma+1}}{n-\gamma + 1}\,,
+\tag{2.11}
+\end{equation}\]</span></p>
+<p>diverge under certain conditions. In particular, if <span class="math inline">\(2&lt;\gamma&lt;3\)</span> and <span class="math inline">\(k_\text{max} \sim \sqrt{N} \rightarrow \infty\)</span> the first moment is finite, but the second moment diverges. Interestingly, most networks following a power law distribution have an exponent between 2 and 3. Hence, the fluctuations around <span class="math inline">\(\langle k \rangle\)</span> are so large that a given node could have a very tiny degree or an arbitrarily large one. In other words, there is no ``scale’’ in the network. In contrast, if the degree distribution is Poisson, a node is expected to have degree in the range <span class="math inline">\(k = \langle k \rangle \pm \langle k \rangle^{1/2}\)</span>. Thus, in those cases, <span class="math inline">\(\langle k \rangle\)</span> serves as the scale of the network.</p>
+<p>This property of both degree distributions gives rise also to another terminology. Sometimes ER networks are said to be <em>homogeneous</em> while SF networks are called <em>heterogeneous</em>. As we shall see, this heterogeneity is the origin of some of the most interesting phenomena in network science.</p>
+</div>
+<div id="subsec:chap2-multilayer" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Multilayer graphs</h3>
+<p>The methodology presented so far has always considered that all the links in a network represent the same kind of relationship. But, for instance, if we think of a social interaction network, it is clear that relationships can be of very diverse nature. Thus, given a diverse system, we can classify its interactions into groups according to their characteristics. This classification yields a set of networks, one for each interaction, related to each other. The way in which these networks are connected to one another, the entities their nodes represent and the way their relationships are represented, produce a new set of networks that goes beyond the concept of simple graphs. We call these structures <em>multilayer networks</em> <span class="citation">[<a href="references.html#ref-Aleta2019Mar" role="doc-biblioref">77</a>]</span>. When talking about multilayer networks, one often refers to the graphs presented so far as single-layer networks or monoplex networks.</p>
+<p>In multilayer networks, we have an extra ingredient apart from nodes and links, <em>layers</em>, which contain the networks defined by each interaction type as discussed above. In its most general form, a multilayer network is composed by nodes that can be connected to other nodes in the same layer or to nodes in different layers. Then, depending on the specific system under consideration, it is possible to have several types of multilayer networks. For instance, if nodes represent the same entity in all layers we say that we have a <em>multiplex</em> network (although the definition of multiplex network is slightly more general, as the main requirement is that all nodes have their counterparts in other layers, regardless of them representing the same entity or not). A paradigmatic example of such objects are social networks, where nodes represent individuals participating in social interactions. If an individual has relationships in two different contexts, we will find the node representing that person in two layers.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-graphs-madrid"></span>
+<img src="images/Fig_chap2_graphs_madrid.png" alt="**Multilayer representation of Madrid's public transportation system.** Nodes in the bottom layer (black) represent bus stops, with a link between two nodes if at least one bus line connects them. In the middle layer (pink) nodes are metro stops and links their corresponding metro lines. Lastly, the top layer (blue) is composed by tram stops and their connections. Nodes in different layers are connected if they are within 100 meters." width="445" />
+<p class="caption">
+Figure 2.2: <strong>Multilayer representation of Madrid’s public transportation system.</strong> Nodes in the bottom layer (black) represent bus stops, with a link between two nodes if at least one bus line connects them. In the middle layer (pink) nodes are metro stops and links their corresponding metro lines. Lastly, the top layer (blue) is composed by tram stops and their connections. Nodes in different layers are connected if they are within 100 meters.
+</p>
+</div>
+<p>Another system that can be effectively represented using multilayer networks is the public transportation system of a city. To illustrate this, in figure <a href="chap-chap2.html#fig:chap2-graphs-madrid">2.2</a> we show the multilayer representation of Madrid’s public transportation network. In this case, each transportation mode is encoded in a distinct layer, with nodes representing bus, metro and tram stops. To take into account the possibility of commuting, e.g., taking first the metro and later a bus, a link connecting nodes in different layers is set if they are within a reasonable walking distance. Thus, in this case, nodes do not represent exactly the same entity (although one could argue that they represent the same physical location) and links across layers have a clear physical meaning.</p>
+<p>There are two main approaches to encode multilayer networks in a mathematical object: <em>tensors</em> and <em>supra-adjacency matrices</em> <span class="citation">[<a href="references.html#ref-Kivela2014Jul" role="doc-biblioref">78</a>]</span>. For simplicity, we will only present the latter approach, as it is straightforward to extend the notions of classical graph theory into multilayer graphs this way.</p>
+<p>Suppose that we have two single-layer networks as depicted in figure <a href="chap-chap2.html#fig:chap2-graphs-scheme">2.3</a>A, encoded in their respective adjacency matrices, <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>. These matrices contain information about the links that are set inside each layer, the <em>intra-layer links</em>. Now, suppose that these two networks are not isolated but are allowed to interact, or represent different parts of the same system. In such scenario we can build a <em>coupling matrix</em>, <span class="math inline">\(C\)</span>, containing the links that connect nodes in different layers, the <em>inter-layer links</em>. These matrices allow us to define the supra-adjacency matrix as</p>
+<p><span class="math display" id="eq:chap2-graphs-supra">\[\begin{equation}
+A = \oplus_\alpha A_\alpha + C\,,
+\tag{2.12}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\alpha\)</span> runs over the set of layers. This matrix is shown in figure <a href="chap-chap2.html#fig:chap2-graphs-scheme">2.3</a>B, where both layers interact via nodes <span class="math inline">\(1-4\)</span> and <span class="math inline">\(2-5\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-graphs-scheme"></span>
+<img src="images/Fig_chap2_graphs_scheme.png" alt="**Schematic representation of multilayer networks.** A) Two independent graphs with their respective adjacency matrices. B) A multilayer network made of both networks with its supra-adjacency matrix." width="678" />
+<p class="caption">
+Figure 2.3: <strong>Schematic representation of multilayer networks.</strong> A) Two independent graphs with their respective adjacency matrices. B) A multilayer network made of both networks with its supra-adjacency matrix.
+</p>
+</div>
+<p>The same way we defined in monoplex networks the degree of a node as the sum of its links, in multilayer networks the degree of node <span class="math inline">\(i\)</span> in layer <span class="math inline">\(\alpha\)</span> reads</p>
+<p><span class="math display" id="eq:chap2-graph-multik">\[\begin{equation}
+k_i^\alpha = \sum_j a_{ij}^\alpha\,.
+\tag{2.13}
+\end{equation}\]</span></p>
+<p>Note that this implies that the degree of a node is no longer a scalar but a vector <span class="math inline">\(k_i = (k_i^1,\ldots,k_i^L)\)</span>. Nevertheless, we can recover the equivalent quantity of degree in monoplex networks denominated <em>degree overlap</em> as</p>
+<p><span class="math display" id="eq:chap2-graph-multio">\[\begin{equation}
+o_i = \sum_\alpha k_i^\alpha\,.
+\tag{2.14}
+\end{equation}\]</span></p>
+<p>A similar procedure can be followed to extend the notion of strength in the case of weighted multilayer networks.</p>
+<p>To conclude this section, let us point out the existence of measures that only exist in multilayer networks, without single-layer counterparts. For instance, the <em>interdependence</em> of node <span class="math inline">\(i\)</span> is defined as</p>
+<p><span class="math display" id="eq:chap2-graph-multiinter">\[\begin{equation}
+\lambda_i = \sum_{i\neq j} \frac{\psi_{ij}}{\sigma_{ij}}\,,
+\tag{2.15}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\sigma_{ij}\)</span> is the total number of shortest paths between nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> and <span class="math inline">\(\psi_{ij}\)</span> is the number of shortest paths between those nodes that make use of links in two or more layers. Hence, the interdependence measures how dependent a node is on the multiplex structure in terms of reachability. To understand this property we can have a look again at figure <a href="chap-chap2.html#fig:chap2-graphs-madrid">2.2</a>. In that network, it is clear that to reach most nodes from any tram stop it is required to go through more than one layer, making tram stops quite interdependent. Conversely, it is possible to reach almost all nodes from a bus stop without having to go through other layers. This example highlights that sometimes individual nodes are not that important, as the layer they are in already determines some of their properties. In this particular example, it is then useful to extend the definition of interdependence from nodes to layers to account for the importance of a given layer in the whole system <span class="citation">[<a href="references.html#ref-Aleta2017Mar" role="doc-biblioref">79</a>]</span>.</p>
+</div>
+</div>
+<div id="sec:chap2-null" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> The problem of null models</h2>
+<p>For some systems, networks naturally provide the skeleton on which dynamical processes can be studied, allowing us to predict the outcome of such processes under different conditions. However, in Jaynes’ words <span class="citation">[<a href="references.html#ref-Jaynes1957May" role="doc-biblioref">30</a>]</span>, <em>prediction is only one of the functions of statistical mechanics. Equally important is the problem of interpretation; given certain observed behavior of a system, what conclusions can we draw as to the microscopic causes of that behavior?</em></p>
+<p>To this aim, one of the main focus of network science is to determine the empirical properties of a network that provide the maximum amount of information about the network itself or about the dynamical processes taking place in the system that the network represents <span class="citation">[<a href="references.html#ref-Barrat2008" role="doc-biblioref">80</a>]</span>. In order to do so, a standard approach is to create a <em>null model</em> of the network that will act as a benchmark model. Then, it is possible to identify which properties deviate from what is “expected” in rigorous statistical terms. This, in turn, has several implications. First, it highlights which properties might bear important information about the system dynamics. Similarly, it can be used to detect the hidden mechanisms behind the formation of the network structure, by pointing out the properties that the model was not able to capture. Furthermore, it can be used to elucidate which characteristics of the network are truly important and which ones are just a consequence of lower-order attributes.</p>
+<p>Indeed, suppose that we measure two properties of a real network, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Then, we build a null model of the network using only information about <span class="math inline">\(X\)</span>. If most networks in the ensemble of randomized graphs exhibit property <span class="math inline">\(Y\)</span>, we can state that <span class="math inline">\(X\)</span> explains <span class="math inline">\(Y\)</span> and thus any attempt of analyzing <span class="math inline">\(Y\)</span> without considering <span class="math inline">\(X\)</span> is futile. For instance, many real networks exhibit what is known as the small-world property, meaning that the average length of shortest paths in the network scales as <span class="math inline">\(l \propto \ln(N)\)</span> rather than with the number of nodes <span class="citation">[<a href="references.html#ref-Watts1998" role="doc-biblioref">56</a>]</span>. Yet, while in sparse networks like social networks it is a genuine feature of the system, in highly dense networks, such as the interarial cortical network in the primate brain where 66% of links that could exist do exist, it is just a consequence of the huge amount of links present in the network <span class="citation">[<a href="references.html#ref-Orsini2015Oct" role="doc-biblioref">81</a>]</span>.</p>
+<p>The previous example shows that sometimes <span class="math inline">\(Y\)</span> can be just a consequence of a particular value of <span class="math inline">\(X\)</span>. However, it is also possible to find properties <span class="math inline">\(Y\)</span> that are always a direct byproduct of <span class="math inline">\(X\)</span>, rendering them redundant. For instance, it has been observed that many ecological networks of mutualistic interactions between animals and plants are nested, that is, that interactions of a given node are a subset of the interactions of all nodes with larger degree. Yet, despite being a widely used metric in the field of ecology, it was recently demonstrated that the degree sequence of the network completely determines the nestedness of the system. Note that to calculate the nestedness of a network it is necessary to know the whole adjacency matrix, while the degree sequence is just the number of non zero entries per row. Hence, the nested pattern is not more informative of the behavior of real systems than their degree sequence alone. In other words, attempting to explain why an ecological system exhibits a given value of nestedness is pointless, as the focus should be on elucidating the mechanisms that give rise to a particular degree sequence <span class="citation">[<a href="references.html#ref-Payrato-Borras2019" role="doc-biblioref">82</a>]</span>.</p>
+<p>The applications of null models go far beyond the determination of which properties of the network are important. For instance, when not all the information of a system is available, they can be used to infer missing information or to devise adequate sampling procedures to reduce it <span class="citation">[<a href="references.html#ref-Frund2016Apr" role="doc-biblioref">83</a>], [<a href="references.html#ref-Aguiar2018" role="doc-biblioref">84</a>]</span>. Another interesting and open problem is that network data may contain errors inherent to any experimental measurement. Null models can then be used to estimate the errors in the data and even to correct them <span class="citation">[<a href="references.html#ref-Newman_2018" role="doc-biblioref">73</a>]</span>.</p>
+<p>However, as with any hypothesis test, the choice of the null model can directly affect the conclusions. Hence, care must be taken when deciding which one is the best suited for the system under consideration. There are two possible approaches to create null models of networks. The first one consists in building networks based on heuristic rules that are compatible with the specific characteristics of the real system. A classical example is that of gravitational models, widely used in economical and spatial systems way before the birth of network science <span class="citation">[<a href="references.html#ref-Poyhonen1963" role="doc-biblioref">85</a>], [<a href="references.html#ref-Carrothers1956Jun" role="doc-biblioref">86</a>]</span>, in which an interaction between two entities depends inversely on their distance and proportionally to their “mass”, be it products or population. This method can also be used to shed some light on the mechanisms driving the evolution of networks, rather than just as a tool for generating randomized networks. For instance, the Barabási-Albert model was proposed as a plausible explanation of the emergence of scale-free networks. This model is based on, at each iteration, adding a new node into the network and linking it to <span class="math inline">\(m\)</span> existing nodes, chosen with probability proportional to their degree. This <em>preferential attachment</em> naturally leads to networks exhibiting the scale-free property <span class="citation">[<a href="references.html#ref-Barabasi1999" role="doc-biblioref">87</a>]</span>.</p>
+<p>These types of models, however, can be either too domain specific or require several refinements to give quantitatively accurate predictions <span class="citation">[<a href="references.html#ref-Cimini2019" role="doc-biblioref">60</a>]</span>. Hence, frequently, a better approach is to identify a set of characteristic properties of the real network and then build a collection or ensemble of networks with those same properties but otherwise maximally random. Despite its conceptual simplicity, this approach has several subtleties that have to be properly handled, something that, as we shall see, is not systematically done. Additionally, we can distinguish two different families of models within this approach: the microcanonical, in which properties are exactly fixed, and the canonical, in which properties are preserved <em>on average</em>.</p>
+<div id="subsec:chap2-null-micro" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Microcanonical models</h3>
+<p>Microcanonical approaches are based on generating randomized variants of real networks in such a way that some properties are identical to the empirical ones. However, although their simplicity makes them quite appealing, most of them suffer from problems such as bias, lack of ergodicity or mathematical intractability <span class="citation">[<a href="references.html#ref-Squartini2015Feb" role="doc-biblioref">88</a>]</span>. Yet, they are widely used, even if not always correctly.</p>
+<p>The simplest microcanonical ensemble of graphs that can be built is based on fixing the total number of links, <span class="math inline">\(L\)</span>, and otherwise keeping the graphs completely random. This, as we show in section <a href="chap-chap2.html#subsec:chap2-graphs-degdist">2.1.2</a>, defines the ER model. The problem of this model is that it is overly simplistic and real networks often exhibit much richer structures. Thus, a more common approach is to fix the degree of the nodes, also known as <em>degree-preserving randomization</em> or <em>configuration model</em>. To see why this is a good option, note that <span class="math inline">\(L\)</span> can be obtained by adding up the whole degree sequence. Hence, as discussed previously, if we were able to reproduce the degree distribution of a network by just fixing <span class="math inline">\(L\)</span>, it would not convey any valuable information about the network. However, we showed in section <a href="chap-chap2.html#subsec:chap2-graphs-degdist">2.1.2</a> that the degree distribution in the ER model is Poisson, whereas in most real networks it follows a power law distribution. In other words, the degree sequence often provides much more information about the system than just the number of links.</p>
+<p>To build graphs with a fixed degree sequence, two different approaches can be followed: a bottom-up and a top-down approach. The work by Maslov et al. in 2002 on protein and gene networks <span class="citation">[<a href="references.html#ref-Maslov2002May" role="doc-biblioref">89</a>]</span> is often cited as one of the earliest examples of degree-preserving randomization. Another common reference (for instance, in the wikipedia entry on degree-preserving randomization <span class="citation">[<a href="references.html#ref-wikipediaDegreePreser" role="doc-biblioref">90</a>]</span>), is the work by Rao et al. in 1996 <span class="citation">[<a href="references.html#ref-Rao1996Jun" role="doc-biblioref">91</a>]</span> on generating random <span class="math inline">\((0,1)\)</span>-matrices with given marginals. Yet, both methods fall into the category of top-down approaches but, historically, bottom-up approaches were introduced much earlier. In fact, this is one of those methods that have been independently rediscovered several times in different fields, usually with different terminology as well <span class="citation">[<a href="references.html#ref-Fosdick2018May" role="doc-biblioref">92</a>]</span>. For instance, in sociology this approach can be traced back to 1938 <span class="citation">[<a href="references.html#ref-Moreno1938Jan" role="doc-biblioref">93</a>]</span> and in ecology to 1979 <span class="citation">[<a href="references.html#ref-Connor1979Dec" role="doc-biblioref">94</a>]</span>.</p>
+<p>For historical reasons, let us begin with the bottom-up approach. The basic idea is to attach to each node as many “link stubs” as its degree in the original network. Then, pairs of stubs are randomly matched, generating graphs that preserve the original degree sequence. In the context of graph theory stub matching was introduced by Bollobás in 1980 <span class="citation">[<a href="references.html#ref-Bollobas1980" role="doc-biblioref">95</a>]</span>. He called each of the graphs extracted from the ensemble a “configuration”, from which the term configuration model emerges, even though nowadays it is used to refer to any model that preserves the degree sequence of the network. Note also that for this approach it is not necessary to have knowledge of the whole adjacency matrix, as only the total addition of its rows and columns are needed. Thus, this procedure is suitable also to create graphs based on a degree sequence sampled from any degree distribution, and not only to randomize existing networks.</p>
+<p>Unfortunately, stub matching presents several drawbacks. First, even if the original network is simple (and most real networks are), this method naturally allows both multilinks and self-loops. It is sometimes argued that this is not a problem as their number tends to zero as the size of the graphs grows <span class="citation">[<a href="references.html#ref-Newman_2018" role="doc-biblioref">73</a>]</span>. However, this is not true in general for scale-free networks, which are the most common ones. Even more, real networks are always finite, and in some fields such as ecology rather small, making this method unsuitable for their randomization. A widely proposed solution is to reject multilinks or self-loops <span class="citation">[<a href="references.html#ref-Cimini2019" role="doc-biblioref">60</a>], [<a href="references.html#ref-Caldarelli2016Sep" role="doc-biblioref">96</a>]</span>, but this, again, has numerous issues. Indeed, when most stubs are already matched, it is possible that the remaining ones cannot be matched, as there might be already links between the nodes with remaining open stubs. Furthermore, this procedure no longer samples uniformly the space of graphs, introducing some biases. In the famous work by Catanzaro et al. on the generation of scale-free networks <span class="citation">[<a href="references.html#ref-Catanzaro2005" role="doc-biblioref">97</a>]</span>, it was shown that this bias can be solved by imposing the maximum degree in the network to be <span class="math inline">\(k_\text{max} \leq N^{1/2}\)</span>. Although this might be a suitable approach for creating random networks from scratch, it is clearly not valid for randomizing real networks, in which the maximum degree often exceeds such limit (see figure <a href="chap-chap2.html#fig:chap2-nullNetworks">2.4</a>A). Several other modifications have been proposed to fix stub matching for simple networks, but there is not a clear solution that always works <span class="citation">[<a href="references.html#ref-Fosdick2018May" role="doc-biblioref">92</a>]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-nullNetworks"></span>
+<img src="images/Fig_chap2_null_networks.png" alt="**Topological properties of 1326 real networks.** These networks represent the whole Koblenz Network Collection spanning over 24 different types of systems, from online to infrastructure or trophic networks [@konect]. In A the maximum degree of each network as a function of its number of nodes is shown. The line represents the structural cutoff $k_{max} = N^{1/2}$ of the uncorrelated configuration model [@Catanzaro2005]. In B the maximum degree is plotted against the total degree of the network (note that $k_{tot} = 2L$). The line represents the structural cutoff $k_{max} = (2L)^{1/2}$ above which equation (ref:eq:chap2-null-cutoff) is not valid." width="678" />
+<p class="caption">
+Figure 2.4: <strong>Topological properties of 1326 real networks.</strong> These networks represent the whole Koblenz Network Collection spanning over 24 different types of systems, from online to infrastructure or trophic networks <span class="citation">[<a href="references.html#ref-konect" role="doc-biblioref">98</a>]</span>. In A the maximum degree of each network as a function of its number of nodes is shown. The line represents the structural cutoff <span class="math inline">\(k_{max} = N^{1/2}\)</span> of the uncorrelated configuration model <span class="citation">[<a href="references.html#ref-Catanzaro2005" role="doc-biblioref">97</a>]</span>. In B the maximum degree is plotted against the total degree of the network (note that <span class="math inline">\(k_{tot} = 2L\)</span>). The line represents the structural cutoff <span class="math inline">\(k_{max} = (2L)^{1/2}\)</span> above which equation (ref:eq:chap2-null-cutoff) is not valid.
+</p>
+</div>
+<p>Conversely, the top-down approach starts with the full adjacency matrix and randomizes it. In this case, the idea is to take existing links and randomly change which nodes they are attached to. For this reason, this procedure is also known as <em>rewiring</em>. The straightforward approach would be to simply randomize the entries of the adjacency matrix, but this procedure would yield the same results as the ER model with fixed number of links <span class="citation">[<a href="references.html#ref-barabasi2016" role="doc-biblioref">75</a>]</span>. A better idea is, thus, to take two pairs of connected nodes and swap their links, so that the degree sequence of the network is exactly preserved. Howbeit, this procedure is neither free of caveats. For instance, the number of necessary rewires to effectively randomize the network is unknown a priori, spaning several orders of magnitude depending on the network under consideration <span class="citation">[<a href="references.html#ref-Li2018Mar" role="doc-biblioref">99</a>]</span>. Even more important, swaps are usually proposed to be such that given two pairs of connected nodes, <span class="math inline">\(\{a,b\},\{c,d\}\)</span>, the rewiring results in <span class="math inline">\(\{a,d\},\{b,c\}\)</span> <span class="citation">[<a href="references.html#ref-Caldarelli2016Sep" role="doc-biblioref">96</a>]</span>. However, note that the rewiring <span class="math inline">\(\{a,c\},\{b,d\}\)</span> is perfectly valid too <span class="citation">[<a href="references.html#ref-Carstens2016Oct" role="doc-biblioref">100</a>]</span>, but it is often concealed because if the two randomly selected links are <span class="math inline">\(\{a,b\},\{a,c\}\)</span>, this last swap would introduce a self-loop in the system. Similarly, multilinks can also appear in the graph, unless we strictly forbid them. Yet, if this is naively done biases will be introduced in the sampling procedure, although there are advanced techniques that can be applied to solve these problems in some cases <span class="citation">[<a href="references.html#ref-Fosdick2018May" role="doc-biblioref">92</a>], [<a href="references.html#ref-Carstens2016Oct" role="doc-biblioref">100</a>]</span>.</p>
+<p>Yet, it is stricking that even though the biases of the naive link swapping have been known for years <span class="citation">[<a href="references.html#ref-Artzy-Randrup2005Nov" role="doc-biblioref">101</a>]</span>, this method is still widely used today. One could even argue that it is actually the most common one, as it is recommended in recent books <span class="citation">[<a href="references.html#ref-barabasi2016" role="doc-biblioref">75</a>], [<a href="references.html#ref-Caldarelli2016Sep" role="doc-biblioref">96</a>]</span> and some of the most widely used software packages for studying networks do not take into account the necessary corrections in their routines <span class="citation">[<a href="references.html#ref-rewiringIgraph" role="doc-biblioref">102</a>]</span>. In particular, it was shown <span class="citation">[<a href="references.html#ref-Coolen2009Sep" role="doc-biblioref">104</a>]</span> that naive rewiring sampling is only uniform as long as</p>
+<p><span class="math display" id="eq:chap2-nullLimit">\[\begin{equation}
+\langle k^2\rangle k_\text{max} / \langle k \rangle^2 \ll N\,.
+\tag{2.16}
+\end{equation}\]</span></p>
+<p>But we know that in scale-free networks <span class="math inline">\(\langle k^2 \rangle\)</span> diverges, making this approach ill-suited for strongly heterogeneous networks, the most common ones.</p>
+<p>It is clear then, that even if the main ideas of microcanonical models are easy to understand, properly implementing them is not as straightforward as it may seem and multiple subtleties have to be taken into account. Furthermore, so far we have only discussed about binary networks as extending these concepts to weighted graphs is not an easy task either. For instance, one could propose that when swapping links its weight should be attached to it, as if we were directly randomizing the adjacency matrix. Another possible choice would be to only shuffle weights over links, keeping the latter fixed to their nodes. Or even creating stubs with fixed weights and only matching those with equal values, and many more <span class="citation">[<a href="references.html#ref-Liu2018" role="doc-biblioref">105</a>]</span>. Obviously, each choice might have its own advantages and drawbacks, but there is no doubt that using such null models should rise more questions than answers about the system.</p>
+</div>
+<div id="subsec:chap2-null-cano" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Canonical models</h3>
+<p>In canonical models, rather than generating randomized networks, the main objective is to determine mathematical expressions for the expected topological properties as a function of the imposed constraints. Nevertheless, sampling random graphs from canonical ensembles is not only possible but often necessary, as we will see in section <a href="chap-chap2.html#subsec:chap2-anomaliesNull">2.5.1</a>.</p>
+<p>Focusing on binary graphs <span class="citation">[<a href="references.html#ref-Squartini2015Feb" role="doc-biblioref">88</a>]</span>, since any topological property <span class="math inline">\(X\)</span> is a function of the adjacency matrix <span class="math inline">\(A\)</span>, the goal is to determine the probability of occurrence for each graph, <span class="math inline">\(P(A)\)</span>. This allows the computation of the expected value of <span class="math inline">\(X\)</span> as <span class="math inline">\(\sum_A P(A) X(A)\)</span> without resorting to sampling adjacency matrices. More importantly, in canonical ensembles where the properties that we want to preserve are local, <span class="math inline">\(P(A)\)</span> factorizes to a product over the probability <span class="math inline">\(p_{ij}\)</span> that nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are connected.</p>
+<p>For instance, if we choose <span class="math inline">\(p_{ij} = p \quad \forall i,j\)</span> we obtain the canonical version of the ER model, which in the limit <span class="math inline">\(N\rightarrow \infty\)</span> is equivalent to the microcanonical setup in which the number of links is fixed. Note that in the former setting <span class="math inline">\(p_{ij} = p\)</span> is the same as fixing the number of links to be <span class="math inline">\(p\binom{N}{2}\)</span>.</p>
+<p>If, instead, one wishes to preserve the degree sequence of the network, the most popular choice of <span class="math inline">\(p_{ij}\)</span> is</p>
+<p><span class="math display" id="eq:chap2-null-pij">\[\begin{equation}
+p_{ij} = \frac{k_i k_j}{k_\text{tot}} = \frac{k_i k_j}{2L}
+\tag{2.17}
+\end{equation}\]</span></p>
+<p>which can be clearly related to the problem of stub matching described in section <a href="chap-chap2.html#subsec:chap2-null-micro">2.2.1</a>. Despite its popularity and widespread use, it is important to note - although often disregarded - that this expression is only valid for uncorrelated networks, i.e., as long as the largest degree in the network does not exceed the so-called structural cut-off <span class="citation">[<a href="references.html#ref-Boguna2004Mar" role="doc-biblioref">106</a>]</span>,</p>
+<p><span class="math display" id="eq:chap2-null-cutoff">\[\begin{equation}
+k_\text{max} \leq \sqrt{k_\text{tot}} = \sqrt{2L}\,.
+\tag{2.18}
+\end{equation}\]</span></p>
+<p>But, as we can see in figure <a href="chap-chap2.html#fig:chap2-nullNetworks">2.4</a>B, most networks do not fulfill this condition. Hence, if we were to use equation <a href="chap-chap2.html#eq:chap2-null-pij">(2.17)</a> to determine if a given property of the network can be explained just by its degree sequence, we would be making a mistake as the own degree sequence already has a property that our model is not capturing. Thus, an expression that correctly captures degree correlations should be used instead. This is not to say that the reasons why correlations or, similarly, large degrees appear in the network are not important. On the contrary, they are, but if they are not added into the null model we will not be able to discern if a given feature of the network is truly meaningful or just a byproduct of the unavoidable correlations. In addition to all of this, equation <a href="chap-chap2.html#eq:chap2-null-pij">(2.17)</a> is not a correct probability as one can easily think of toy models in which <span class="math inline">\(p_{ij}&gt;1\)</span>.</p>
+<p>The problems induced by highly heterogeneous networks, the most common type of real networks, are clearly challenging most null models, both microcanonical and canonical. In what follows, we will introduce an approach that can solve all these problems and provide a unified approach to sample graph ensembles with local constraints in an unbiased way, the exponential random graph model.</p>
+</div>
+</div>
+<div id="sec:chap2-erg" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Exponential random graphs</h2>
+<p>Suppose that we want to build a simple, binary and undirected graph based only on two macroscopic properties: its number of nodes, <span class="math inline">\(N\)</span>, and its number of links, <span class="math inline">\(L\)</span>. As in the classical problems of statistical mechanics, the number of microstates - graphs - that are compatible with those macroscopic quantities is quite large. Indeed, as we are considering simple graphs, the number of microstates can be obtained from counting the number of ways in which we can select <span class="math inline">\(L\)</span> elements from the set of node pairs, <span class="math inline">\(C_2^N\)</span>. As such,</p>
+<p><span class="math display" id="eq:chap2-combination-graphs">\[\begin{equation}
+\begin{split}
+\Omega &amp; = C^{C^N_2}_L =\dbinom{\binom{N}{2}}{L}= \binom{\frac{N(N-1)}{2}}{L} =  \frac{\frac{N(N-1)}{2}!}{L!\left(\frac{N(N-1)}{2}-L\right)!} \\
+&amp; \approx \exp\left[L\log\left(\frac{N(N-1)}{2L}-1\right) - \frac{N(N-1)}{2}\log\left(1-\frac{2L}{N(N-1)}\right)\right] \,,
+\end{split}
+\tag{2.19}
+\end{equation}\]</span>
+where we have used Stirling’s approximation to the factorials.</p>
+<p>To illustrate, we can take the example of a seemingly small network, the neural network of the nematode <em>Caenorhabditis elegans</em> (or simply <em>C. elegans</em>) which was the first - and so far, only - animal to have the whole nervous system (almost) completely characterized <span class="citation">[<a href="references.html#ref-Emmons2015Apr" role="doc-biblioref">107</a>]</span>. This little worm, of about <span class="math inline">\(1\)</span> mm in length, possesses 302 neurons and about 5600 synapses (considering for simplicity both chemical and electrical synapses undirected) as measured by Brenner et al. in 1986 after 15 years of work <span class="citation">[<a href="references.html#ref-White1986Nov" role="doc-biblioref">108</a>]</span> (the most recent measurements have increased this number slightly above 6000 <span class="citation">[<a href="references.html#ref-Cook2019Jul" role="doc-biblioref">109</a>]</span>). Even though small in comparison with the neural system of organisms such as the fruit fly, with over <span class="math inline">\(10^5\)</span> neurons, or the human, with over <span class="math inline">\(10^{10}\)</span> neurons, the total amount of compatible microstates of this system is</p>
+<p><span class="math display" id="eq:chap2-worm-number">\[\begin{equation}
+\Omega = \dbinom{\binom{302}{2}}{5600} \approx e^{16966} \sim 10^{7368} \,.
+\tag{2.20}
+\end{equation}\]</span></p>
+<p>No wonder, then, that this network is still being intensely studied today. To asses even further the importance of this little network, suffice to say that the work by Brenner et al. not only was the starting point of the field of connectomics, but it also created a whole field of research around this organism from which three Nobel Prizes honoring eight scientists have been awarded to date <span class="citation">[<a href="references.html#ref-Emmons2015Apr" role="doc-biblioref">107</a>]</span>.</p>
+<p>This example clearly shows that a huge amount of different graphs can give rise to the same macroscopic properties. However, as described in section <a href="chap-chap2.html#sec:chap2-null">2.2</a>, this can actually be a powerful tool to asses what are the main topological characteristics of a network, or which ones are just a consequence of others. The problem is, then, on how to build an ensemble of networks using only partial information of the real one.</p>
+<p>Fortunately, this question was already answered by Jaynes in the context of statistical mechanics using the results provided by information theory <span class="citation">[<a href="references.html#ref-Jaynes1957May" role="doc-biblioref">30</a>]</span>. Indeed, given a certain quantity <span class="math inline">\(G\)</span> which can take the discrete values <span class="math inline">\(G_i (i=1,\ldots,n)\)</span> and the expectation value of the function <span class="math inline">\(f(G)\)</span>,</p>
+<p><span class="math display" id="eq:chap2-jaynes">\[\begin{equation}
+\langle f(G) \rangle = \sum_{i=1}^n p_i f(G_i) \,,
+\tag{2.21}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(p_i\)</span> is the probability of finding <span class="math inline">\(G_i\)</span> in the ensemble. The only way to set these probabilities without any bias, while agreeing with the given information, is to maximize Shannon’s entropy,</p>
+<p><span class="math display" id="eq:chap2-shannon">\[\begin{equation}
+S = -\sum_{i=1}^n p_i \ln p_i \,,
+\tag{2.22}
+\end{equation}\]</span></p>
+<p>subject to the appropriate constraints derived from the information. Applied to statistical mechanics, this meant that the old Laplacian principle of insufficient reason according to which, in absence of evidence, the same probability should be assigned to each possible event was not needed anymore (although it is still regarded as one of the basic postulates of statistical mechanics <span class="citation">[<a href="references.html#ref-Reif1965" role="doc-biblioref">110</a>], [<a href="references.html#ref-Kardar2007" role="doc-biblioref">111</a>]</span>). Instead, the same proposition could be read in positive as maximizing the uncertainty in the probability subject to whatever is known, thus removing the apparent arbitrariness of the principle of insufficient reason. It is trivial to see that if there are not any constraints the maximum entropy is attained for the uniform probability distribution.</p>
+<p>Back into the context of networks, following Park and Newman <span class="citation">[<a href="references.html#ref-Park2004Dec" role="doc-biblioref">54</a>]</span>, suppose that the information we have is a collection of graph observables <span class="math inline">\({X_i}\)</span>, <span class="math inline">\(i=1,\ldots,r\)</span> from which we have an estimate of their expectation value, <span class="math inline">\(\langle X_i \rangle\)</span>, measured over a real network. Let <span class="math inline">\(G\)</span> be a graph in the set of all simple graphs of <span class="math inline">\(N\)</span> nodes, <span class="math inline">\(\mathcal{G}\)</span>, and let <span class="math inline">\(P(G)\)</span> be the probability of finding that graph in the ensemble. According to our previous discussion, the most unbiased method to assign values to said probabilities given the available information is to maximize the entropy</p>
+<p><span class="math display" id="eq:chap2-entropy">\[\begin{equation}
+S = - \sum_{G\in\mathcal{G}} P(G) \ln P(G)
+\tag{2.23}
+\end{equation}\]</span></p>
+<p>subject to the constraints</p>
+<p><span class="math display" id="eq:chap2-const">\[\begin{equation}
+\sum_{G\in\mathcal{G}} P(G) X_i(G) = \langle X_i \rangle
+\tag{2.24}
+\end{equation}\]</span></p>
+<p>plus the normalization condition</p>
+<p><span class="math display" id="eq:chap2-normalization">\[\begin{equation}
+\sum_{G\in\mathcal{G}} P(G) = 1\,,
+\tag{2.25}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(X_i(G)\)</span> denotes the value of the observable <span class="math inline">\(X_i\)</span> in graph <span class="math inline">\(G\)</span>.</p>
+<p>To impose these constraints in the maximization process we can introduce the Lagrange multipliers <span class="math inline">\(\alpha\)</span>, <span class="math inline">\({\theta_i}\)</span>, so that</p>
+<p><span class="math display" id="eq:chap2-lagrange">\[\begin{equation}
+\frac{\partial}{\partial P(G)} \left[S+\alpha\left(1-\sum_{G\in\mathcal{G}}P(G)\right)+\sum_{i=1}^r \theta_i \left(\langle X_i \rangle - \sum_{G\in\mathcal{G}} P(G) X_i(G)\right)\right] = 0
+\tag{2.26}
+\end{equation}\]</span></p>
+<p>for all graphs <span class="math inline">\(G\)</span>. This gives</p>
+<p><span class="math display" id="eq:chap2-derivative">\[\begin{equation}
+\ln P(G) + 1 + \alpha + \sum_{i=1}^r \theta_i X_i(G) = 0 \,,
+\tag{2.27}
+\end{equation}\]</span></p>
+<p>or equivalently</p>
+<p><span class="math display" id="eq:chap2-pg">\[\begin{equation}
+P(G) = e^{-(1+\alpha+\sum_{i=1}^r \theta_i X_i(G))} \,.
+\tag{2.28}
+\end{equation}\]</span></p>
+<p>Now, inserting this last equation into <a href="chap-chap2.html#eq:chap2-normalization">(2.25)</a> we can define the variable <span class="math inline">\(Z\)</span> as</p>
+<p><span class="math display" id="eq:chap2-normalizationpg">\[\begin{equation}
+\begin{split}
+\sum_{G\in\mathcal{G}} P(G) &amp; = \sum_{G\in\mathcal{G}} e^{-(1+\alpha+\sum_{i=1}^r \theta_i X_i(G))} = 1 \\
+ \Rightarrow &amp; Z \equiv \sum_{G\in\mathcal{G}} e^{-\sum_{i=1}^r \theta_i X_i(G)} = e^{1+\alpha}\,.
+\end{split} 
+\tag{2.29}
+\end{equation}\]</span></p>
+<p>Hence, the exponential random graph model is completely defined by</p>
+<p><span class="math display" id="eq:chap2-erg">\[\begin{equation}
+P(G) = \frac{e^{-H(G)}}{Z}\,,
+\tag{2.30}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(H(G) = \sum_{i=1}^r \theta_i X_i(G)\)</span> is the graph Hamiltonian and <span class="math inline">\(Z=\sum_{G\in\mathcal{G}} e^{-H(G)}\)</span> is the partition function. Note that this expression is equivalent to the probability distribution for the canonical ensemble of statistical physics, which can actually be derived using the same procedure considering an isolated system in thermal equilibrium with the energy as observable <span class="citation">[<a href="references.html#ref-Grandy1987" role="doc-biblioref">112</a>]</span>. Thus, it represents the graph analog of the Boltzmann distribution. Actually, the classical parametrization of the Boltzmann distribution, i.e., using <span class="math inline">\(\beta\)</span> instead of <span class="math inline">\(\theta\)</span>, gave the name to the <span class="math inline">\(\beta\)</span>-model, which is the exponential random graph model in the particular case of undirected graphs <span class="citation">[<a href="references.html#ref-Rinaldo2013Jun" role="doc-biblioref">113</a>]</span>.</p>
+<p>Using <a href="chap-chap2.html#eq:chap2-erg">(2.30)</a> it is then possible to measure the expected value of any graph property <span class="math inline">\(Y\)</span> over the ensemble,</p>
+<p><span class="math display" id="eq:chap2-average">\[\begin{equation}
+\langle Y \rangle = \sum_{G\in\mathcal{G}} P(G) Y(G)\, ,
+\tag{2.31}
+\end{equation}\]</span></p>
+<p>obtaining the best estimate of the unknown quantity <span class="math inline">\(Y\)</span> given the set of known quantities <span class="math inline">\({X_i}\)</span>.</p>
+<p>Before going any further, it might be enlightening to see a simple example. Suppose that we only know the average number of links, <span class="math inline">\(\langle m \rangle\)</span>, of our network. In that case the Hamiltonian is just</p>
+<p><span class="math display" id="eq:chap2-hamER">\[\begin{equation}
+H(G) = \theta m(G) \,.
+\tag{2.32}
+\end{equation}\]</span></p>
+<p>Let <span class="math inline">\(A\)</span> be the adjacency matrix of graph <span class="math inline">\(G\)</span> with <span class="math inline">\(N\times N\)</span> nodes and elements <span class="math inline">\(a_{ij} = {0,1}\)</span>. Then, the number of links is <span class="math inline">\(m=\sum_{i&lt;j} a_{ij}\)</span> and the partition function is</p>
+<p><span class="math display" id="eq:chap2-hamZ">\[\begin{equation}
+\begin{split}
+	Z &amp; = \sum_{G\in\mathcal{G}} e^{-H(\theta)} = \sum_{\{a_{ij}\}} e^{-\theta \sum_{i&lt;j} a_{ij}} = \sum_{\{a_{ij}\}} \prod_{i&lt;j} e^{-\theta a_{ij}} \\
+	&amp; = \prod_{i&lt;j} \sum_{a_{ij}=0}^1 e^{-\theta a_{ij}} = \prod_{i&lt;j}(1+e^{-\theta}) = [1+e^{-\theta}]^{\binom{N}{2}}
+\end{split}
+\tag{2.33}
+\end{equation}\]</span></p>
+<p>so that</p>
+<p><span class="math display" id="eq:chap2-hamP">\[\begin{equation}
+P(G) = \frac{e^{-H(\theta)}}{Z} = \frac{e^{-\theta m}}{[1+e^{-\theta}]^{\binom{N}{2}}} = p^m (1-p)^{{\binom{N}{2}}-m}\,,
+\tag{2.34}
+\end{equation}\]</span></p>
+<p>where we have defined <span class="math inline">\(p\equiv (e^\theta + 1)^{-1}\)</span>.</p>
+<p>Recalling section <a href="chap-chap2.html#sec:chap2-graph">2.1</a> we can clearly see that equation <a href="chap-chap2.html#eq:chap2-hamP">(2.34)</a> is just the well known Erdős and Rényi graph, or random graph. Thus, it seems that we have achieved our objectives, building a graph that satisfies our constraints but otherwise completely random, hence its name.</p>
+<p>As an example of how to calculate expected values of graphs over this ensemble, we show how to obtain the expected degree, which we know should be equal to <span class="math inline">\(p(N-1)\)</span> (equation <a href="chap-chap2.html#eq:chap2-graph-kavgER">(2.7)</a>),</p>
+<p><span class="math display" id="eq:chap2-hamk">\[\begin{equation}
+\begin{split}
+\langle k \rangle &amp; = \frac{2 \langle m \rangle }{N} = \frac{2}{N} \frac{1}{Z} \sum_{G\in\mathcal{G}} m e^{-\theta m} = -\frac{2}{N}\frac{1}{Z}\frac{\partial Z}{\partial \theta} = \frac{2}{N}\binom{N}{2}\frac{1}{e^\theta + 1} \\
+	&amp; = \frac{2}{N} \binom{N}{2} p = \frac{2}{N} \frac{N(N-1)}{2} p = (N-1)p\,.
+\end{split}
+\tag{2.35}
+\end{equation}\]</span></p>
+</div>
+<div id="sec:chap2-randomizing" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Randomizing real networks</h2>
+<p>We have seen that equation <a href="chap-chap2.html#eq:chap2-average">(2.31)</a> allows us to calculate expected values of graph observables over an ensemble of maximally random graphs restricted to the information we have of the system. However, in some occasions the observables we are interested in might not have an analytic closed-form solution. Or we might be interested in the effect of a given dynamical process on the network and we would like to know if in networks with equivalent macroscopic properties the outcomes would be similar. In those cases, the only thing we can do is to directly sample a large amount of networks from the constructed ensemble and measure the desired topological properties or implement the dynamical process on them.</p>
+<p>In order to do so, following Squartini and Garlaschelli <span class="citation">[<a href="references.html#ref-Squartini2011Aug" role="doc-biblioref">114</a>]</span>, we will focus on local topological properties of the networks, i.e., properties determined by moving only one step from a node. As we will see, this will factorize the ensemble probability, allowing us to independently sample each link of the network. In particular, we will focus on two of the most simple types of networks: binary undirected networks, characterized by the degree of their nodes, <span class="math inline">\(k_i = \sum_{j\neq i}a_{ij}\)</span>; and weighted undirected networks, characterized by the strength of their nodes, <span class="math inline">\(s_i = \sum_{j\neq i} w_{ij}\)</span>. In these cases, the graph probability, in which we will make explicit the dependency with <span class="math inline">\(\vec{\theta}=\theta_i\)</span>, <span class="math inline">\(i=1,\ldots,r\)</span>, <span class="math inline">\(P(G|\vec{\theta}) \equiv P(G)\)</span> factorizes as</p>
+<p><span class="math display" id="eq:chap2-factor">\[\begin{equation}
+P(G|\vec{\theta}) = \prod_{i&lt;j} P_{ij} (g|\vec{\theta})\,,
+\tag{2.36}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(g\)</span> represents an element of the adjacency matrix of graph <span class="math inline">\(G\)</span>, either a binary number <span class="math inline">\(a_{ij}=\{0,1\}\)</span> in the case of binary undirected networks or a real number <span class="math inline">\(w_{ij} \in \mathbb{N}\)</span> in the case of weighted undirected networks.</p>
+<p>Besides, to obtain the adequate values of the Lagrangian multipliers, <span class="math inline">\(\vec{\theta}\)</span>, we can maximize the log-likelihood</p>
+<p><span class="math display" id="eq:chap2-loglike">\[\begin{equation}
+\mathcal{L}(\vec{\theta}) \equiv \ln P(G^\ast|\vec{\theta}) = -H(G^\ast,\vec{\theta}) - \ln Z(\vec{\theta})\,,
+\tag{2.37}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(G^\ast\)</span> denotes the particular real network that we want to randomize. It has been shown that in the exponential random graph model the maximization of log-likelihood provides an unbiased method for estimating the values of <span class="math inline">\(\vec{\theta}\)</span> for which the constraints equal the empirical value measured on the real network, <span class="math inline">\(\vec{\theta}^\ast\)</span> <span class="citation">[<a href="references.html#ref-Rinaldo2013Jun" role="doc-biblioref">113</a>]</span>.</p>
+<p>Hence, the whole procedure for obtaining the maximum entropy ensemble of a network subject to local constraints is:</p>
+<ol style="list-style-type: decimal">
+<li>Specify the local constraints <span class="math inline">\(\vec{X}\)</span> and obtain the probability <span class="math inline">\(P(G|\vec{\theta})\)</span> using .</li>
+<li>Numerically determine the parameters <span class="math inline">\(\vec{\theta}^\ast\)</span> by maximizing .</li>
+<li>Use <span class="math inline">\(\vec{\theta}^\ast\)</span> to compute the ensemble average <span class="math inline">\(\langle Y\rangle\)</span> of any desired topological property <span class="math inline">\(Y\)</span> or, alternatively, sample a large number of graphs from the ensemble.</li>
+</ol>
+<div id="subsec:chap2-undirected" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Undirected binary networks</h3>
+<p>An undirected binary network is completely specified by a binary symmetric adjacency matrix <span class="math inline">\(A\)</span>. Suppose that we have a real network which we want to randomize, <span class="math inline">\(A^\ast\)</span>, and the quantity we want to preserve, besides the number of nodes <span class="math inline">\(N\)</span>, is its degree sequence, <span class="math inline">\(k_i = \sum_j a_{ij}\)</span>. Hence, equation <a href="chap-chap2.html#eq:chap2-erg">(2.30)</a> reads
+<span class="math display" id="eq:chap2-ergk">\[\begin{equation}
+\begin{split}
+P(A|\vec{\theta}) &amp; = \frac{e^{-\sum_i \theta_i k_i(A)}}{\sum_A e^{-\sum_i \theta_i k_i(A)}} = \frac{e^{-\sum_{ij} \theta_i a_{ij}}}{\sum_A e^{-\sum_{ij} \theta_i a_{ij}}} = \frac{e^{-\sum_{i&lt;j} (\theta_i + \theta_j) a_{ij}}}{\sum_{\{a_{ij}\}} e^{-\sum_{i&lt;j} (\theta_i+\theta_j)  a_{ij}}}  \\
+&amp; = \prod_{i&lt;j} \frac{e^{-(\theta_i+\theta_j)a_{ij}}}{\sum_{\{a_{ij}\}} e^{(-\theta_i-\theta_j)a_{ij}}} = \prod_{i&lt;j} \frac{e^{-(\theta_i+\theta_j)a_{ij}}}{1+e^{-\theta_i-\theta_j}}\equiv \prod_{i&lt;j} P_{ij}(a_{ij}|\vec{\theta})\,.
+\end{split}
+\tag{2.38}
+\end{equation}\]</span></p>
+<p>Defining</p>
+<p><span class="math display" id="eq:chap2-etheta">\[\begin{equation}
+x_i \equiv e^{-\theta_i}
+\tag{2.39}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:chap2-pijx">\[\begin{equation}
+p_{ij} \equiv \frac{e^{-\theta_i} e^{-\theta_j}}{1+e^{-\theta_i}e^{-\theta_j}} = \frac{x_i x_j}{1+x_ix_j}\,,
+\tag{2.40}
+\end{equation}\]</span></p>
+<p>equation <a href="chap-chap2.html#eq:chap2-ergk">(2.38)</a> can be expressed as</p>
+<p><span class="math display" id="eq:chap2-ergpij">\[\begin{equation}
+\begin{split}
+P(A|\vec{\theta}) &amp; = \prod_{i&lt;j} P_{ij}(a_{ij}|\vec{\theta}) = \prod_{i&lt;j} \frac{\left(\frac{p_{ij}}{1-p_{ij}}\right)^{a_{ij}}}{1+\frac{p_{ij}}{1-p_{ij}}} \\
+&amp; = \prod_{i&lt;j} p_{ij}^{a_{ij}} (1-p_{ij})^{1-a_{ij}}\,,
+\end{split}
+\tag{2.41}
+\end{equation}\]</span></p>
+<p>which is simply the probability mass function of the Bernoulli distribution.</p>
+<p>Given this last result, it is now clear how to sample in an unbiased way graphs from the ensemble. Indeed, as the graph probability is factorized, we can just sample a graph by sequentially running over each pair of nodes and implementing a Bernoulli trial with success probability <span class="math inline">\(p_{ij}\)</span>, as defined in <a href="chap-chap2.html#eq:chap2-pijx">(2.40)</a> <span class="citation">[<a href="references.html#ref-Squartini2015Feb" role="doc-biblioref">88</a>]</span>. This highlights one of the advantages of this framework over microcanonical methods, the hard core of the computation resides in obtaining the correct values of <span class="math inline">\(p_{ij}\)</span> and is independent of the number of samples we want to extract. Even more, the sampling procedure is guaranteed to be <span class="math inline">\(\mathcal{O}(N^2)\)</span>.</p>
+<p>The only thing left is to devise a way of obtaining the link probabilities, <span class="math inline">\(p_{ij}\)</span>. As previously discussed, this can be easily done by maximizing the log-likelihood <a href="chap-chap2.html#eq:chap2-loglike">(2.37)</a> which in this particular case can be expressed as
+<span class="math display" id="eq:chap2-loglikeundirected">\[\begin{equation}
+\begin{split}
+\mathcal{L}(\vec{x}) &amp; = \ln P(A^\ast|\vec{x}) = \ln \prod_{i&lt;j} p_{ij}^{a_{ij}} (1-p_{ij})^{1-a_{ij}} = \sum_{i&lt;j} \ln \left[p_{ij}^{a_{ij}} (1-p_{ij}^{1-a_{ij}})\right] \\
+&amp; = \sum_{i&lt;j} a_{ij}\ln p_{ij} + \sum_{i&lt;j} (1-a_{ij}) \ln (1-p_{ij}) \\
+&amp; = \sum_{i&lt;j} a_{ij} \ln \frac{x_i x_j}{1+x_i x_j} + \sum_{i&lt;j} (1-a_{ij}) \ln \frac{1}{1+x_ix_j} \\
+&amp; = \sum_{i&lt;j} (a_{ij} + a_{ji}) \ln x_i - \sum_{i&lt;j} \ln (1+x_i x_j) \\
+&amp; = \sum_i k_i(A^\ast) \ln x_i - \sum_{i&lt;j} \ln(1+x_i x_j)\,.
+\end{split}
+\tag{2.42}
+\end{equation}\]</span></p>
+<p>As expected, the only quantity from the real network that is needed to obtain the values of <span class="math inline">\(x_i\)</span> is the degree distribution. Besides, given the definition of these values, , these parameters vary in the region defined by <span class="math inline">\(x_i \geq 0 \, \forall i\)</span>. Unfortunately, maximizing <span class="math inline">\(\mathcal{L}(\vec{x})\)</span> does not yield a closed-form expression for the values of <span class="math inline">\(x_i\)</span> as a function of <span class="math inline">\(k_i\)</span> and one would have to numerically solve the problem.</p>
+<p>Nevertheless, the procedure for randomizing a real binary, undirected network is now completely clear. First, one should numerically solve equation <a href="chap-chap2.html#eq:chap2-loglikeundirected">(2.42)</a> to obtain the parameters <span class="math inline">\(x_i\)</span>. Then, the probability of a link existing between any pair of nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> can be computed using <a href="chap-chap2.html#eq:chap2-pijx">(2.40)</a>. With these values the whole ensemble can be characterized using equation , from which we can then calculate the expected values of any observable using <a href="chap-chap2.html#eq:chap2-average">(2.31)</a> or, conversely, sample as many graphs as required by going sequentially over each pair of nodes and performing a Bernoulli trial with success probability <span class="math inline">\(p_{ij}\)</span>.</p>
+<p>As a last remark, note that if <span class="math inline">\(x_ix_j \ll 1\)</span> the link probability can be expressed as <span class="math inline">\(p_{ij} \approx x_i x_j\)</span>. If we set <span class="math inline">\(x_i = k_i/\sqrt{2L}\)</span>, where <span class="math inline">\(L\)</span> is the number of links such that <span class="math inline">\(2L=\sum_i k_i\)</span>, we recover the results of the configuration model (equation <a href="chap-chap2.html#eq:chap2-null-pij">(2.17)</a>). Thus, said model can be regarded as an approximation of the general exponential random graph with fixed degree sequence when <span class="math inline">\(k_i k_j \ll 2L\)</span> (the low heterogeneity regime).</p>
+</div>
+<div id="subsec:chap2-weighted" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Undirected weighted networks</h3>
+<p>An undirected weighted network is completely specified by a non-negative symmetric matrix <span class="math inline">\(W\)</span> whose entry <span class="math inline">\(w_{ij}\)</span> represents the weight of the link between nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, which we will consider to be an integer. Similarly to the previous section, suppose that we want to randomize the real network <span class="math inline">\(W^\ast\)</span> while preserving its strength sequence, <span class="math inline">\(s_i = \sum_j w_{ij}\)</span>. In this case, the probability of finding a graph in the ensemble, equation <a href="chap-chap2.html#eq:chap2-erg">(2.30)</a>, reads</p>
+<p><span class="math display" id="eq:chap2-pweighted">\[\begin{equation}
+\begin{split}
+P(W|\vec{\theta}) &amp; = \frac{e^{-\sum_i \theta_i s_i(W)}}{\sum_W e^{-\sum_i \theta_i s_i(W)}} = \frac{e^{-\sum_{i&lt;j}(\theta_i+\theta_j)w_{ij}}}{\sum_{\{w_{ij}\}} e^{-\sum_{i&lt;j} (\theta_i + \theta_j) w_{ij}}} \\
+&amp;= \prod_{i&lt;j} \frac{e^{-(\theta_i + \theta_j)w_{ij}}}{\sum_{\{w_{ij}\}} e^{-(\theta_i + \theta_j)w_{ij}}}  = \prod_{i&lt;j} \frac{e^{-(\theta_i + \theta_j) w_{ij}}}{1+e^{-(\theta_i+\theta_j)}+\ldots+e^{-(\theta_i+\theta_j)\infty}} \\
+&amp;= \prod_{i&lt;j} \frac{e^{-(\theta_i + \theta_j)w_{ij}}}{\frac{1}{1-e^{-(\theta_i+\theta_j)}}}  = \prod_{i&lt;j} p_{ij}^{w_{ij}} (1-p_{ij})\,,
+\end{split}
+\tag{2.43}
+\end{equation}\]</span></p>
+<p>where, analogously to the previous case, we have defined</p>
+<p><span class="math display" id="eq:chap2-xweighted">\[\begin{equation}
+x_i \equiv e^{-\theta_i}
+\tag{2.44}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:chap2-pijweighted">\[\begin{equation}
+p_{ij} \equiv x_i x_j\,,
+\tag{2.45}
+\end{equation}\]</span></p>
+<p>although in this case the partition function is only defined if <span class="math inline">\(\theta_i&gt; 0\)</span> and thus <span class="math inline">\(x_i \in [0,1)\)</span>, ensuring that the probability <span class="math inline">\(p_{ij}\)</span> is correctly defined.</p>
+<p>With this formulation the probability of two nodes having weight <span class="math inline">\(w_{ij}\)</span> is then</p>
+<p><span class="math display" id="eq:chap2-Pijweighted">\[\begin{equation}
+P_{ij}(w_{ij}|\vec{\theta}) = p_{ij}^{w_{ij}}(1-p_{ij})
+\tag{2.46}
+\end{equation}\]</span></p>
+<p>which equals the geometric distribution of a variable with success probability <span class="math inline">\(p_{ij}\)</span> with <span class="math inline">\(w_{ij} \in \{0,1,2,\ldots\}\)</span> failures. Thus, graphs can be sampled drawing a link of weight <span class="math inline">\(w\)</span> with geometrical distributed probability <span class="math inline">\(p_{ij}^w(1-p_{ij})\)</span>. Note that with this formulation of the geometric distribution the possibility of <span class="math inline">\(w=0\)</span> - the absence of a link - is included in the distribution. Alternatively, it is possible to follow a similar procedure as in the binary undirected case. To do so, one can connect two nodes with probability <span class="math inline">\(p_{ij}\)</span> according to the Bernoulli distribution and repeat this process until the first failure is encountered <span class="citation">[<a href="references.html#ref-Squartini2011Aug" role="doc-biblioref">114</a>]</span>.</p>
+<p>To determine the correct value of <span class="math inline">\(p_{ij}\)</span> for the network <span class="math inline">\(W^\ast\)</span>, we can simply maximize the log-likelihood  which in this case reads</p>
+<p><span class="math display" id="eq:chap2-loglikeweighted">\[\begin{equation}
+\begin{split}
+\mathcal{L}(\vec{x}) &amp; = \ln P(W^\ast|\vec{x}) = \ln \prod_{i&lt;j} p_{ij}^{w_{ij}} (1-p_{ij}) = \sum_{i&lt;j} \ln \left[p_{ij}^{w_{ij}}(1-p_{ij})\right] \\
+&amp; = \sum_{i&lt;j} w_{ij} \ln (x_i x_j) + \sum_{i&lt;j} \ln(1-x_i x_j) \\
+&amp; = \sum_{i&lt;j} (w_{ij} + w_{ji}) \ln x_i + \sum_{i&lt;j} \ln(1-x_ix_j) \\
+&amp; = \sum_i s_i(W^\ast) \ln x_i + \sum_{i&lt;j} \ln (1-x_i x_j) \,.
+\end{split}
+\tag{2.47}
+\end{equation}\]</span></p>
+<p>This equation lacks a closed-form expression for its maxima. Consequently, the values of <span class="math inline">\(\vec{x}\)</span> have to be computed numerically with the constraint <span class="math inline">\(x_i\in [0,1)\)</span>.</p>
+</div>
+<div id="subsec:chap2-fermbos" class="section level3" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Fermionic and bosonic graphs</h3>
+<p>To finish this brief analysis of the exponential random graph model, we can compute two quantities that will highlight the similarities between this model and classical statistical mechanics. The purpose of this analysis is not to claim that graphs behave exactly as physical particles. On the contrary, the mechanisms behind the growth of networks are completely different from the physical principles underlying quantum statistics. Yet, this mathematical resemblance highlights once again how powerful the statistical mechanics formalism is, and also points out again into Jaynes vision of statistical mechanics as a general problem of inference from incomplete information <span class="citation">[<a href="references.html#ref-jaynes1989" role="doc-biblioref">115</a>]</span>.</p>
+<p>In the exponential random graph model we can regard node pairs <span class="math inline">\((i,j)\)</span> as energy levels that can be occupied by links. Defining <span class="math inline">\(\Theta_{ij} \equiv \theta_i + \theta_j\)</span>, in the case of undirected binary graphs, the average number of links between <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> is simply given by</p>
+<p><span class="math display" id="eq:chap2-fermion">\[\begin{equation}
+\begin{split}
+\langle n_{(i,j)} \rangle &amp; = \langle a_{ij} \rangle = p_{ij} = \frac{x_ix_j}{1+x_ix_j} = \frac{e^{-\Theta_{ij}}}{1+e^{-\Theta_{ij}}} \\
+&amp; = \frac{1}{e^{\Theta_{ij}}+1} \,,
+\end{split}
+\tag{2.48}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\Theta_{ij} \in \mathbb{R}\)</span> as <span class="math inline">\(\theta_i\)</span> was defined as a real number. Thus, in the limits where <span class="math inline">\(\Theta_{ij}\rightarrow \infty\)</span> we have that the average occupation is 0. Conversely, when <span class="math inline">\(\Theta_{ij} \rightarrow -\infty\)</span> the average occupation is 1. In other words, this formulation is equivalent to the Fermi-Dirac statistic of non-interacting fermions <span class="citation">[<a href="references.html#ref-Park2004Dec" role="doc-biblioref">54</a>]</span>, which is not surprising as by construction we only allowed at most one link to be in each energy level.</p>
+<p>Similarly, in the case of undirected weighted graphs the average number of links in state <span class="math inline">\((i,j)\)</span> is given by</p>
+<p><span class="math display" id="eq:chap2-boson">\[\begin{equation}
+\begin{split}
+\langle n_{(i,j)} \rangle &amp; = \langle w_{ij} \rangle = \sum_{w=0}^\infty w p_{ij}^w (1-p_{ij}) = \frac{p_{ij}}{1-p_{ij}} = \frac{x_i x_j}{1-x_i x_j} = \frac{e^{-\Theta_{ij}}}{1-e^{-\Theta_{ij}}} \\
+&amp; = \frac{1}{e^{\Theta_{ij}} -1}\,,
+\end{split}
+\tag{2.49}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\Theta_{ij}&gt;0\)</span> as for weighted graphs <span class="math inline">\(\theta_i &gt; 0\)</span>. Thus, in this case, when <span class="math inline">\(\Theta_{ij} \rightarrow 0\)</span> the average occupation tends to <span class="math inline">\(\infty\)</span>, whereas if <span class="math inline">\(\Theta_{ij} \rightarrow \infty\)</span> the average occupation tends to <span class="math inline">\(0\)</span>. Hence, equation <a href="chap-chap2.html#eq:chap2-boson">(2.49)</a> behaves as the Bose-Einstein distribution for bosons. Again, this was expected as in this case we allow any number of links to connect each pair of nodes. In fact, this analogy can go even further as there are dynamical models for network growth that show properties compatible with Bose-Einstein condensation <span class="citation">[<a href="references.html#ref-Bianconi2001Jun" role="doc-biblioref">116</a>]</span>.</p>
+</div>
+</div>
+<div id="sec:chap2-anomalies" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Anomalies in transportation networks</h2>
+<blockquote>
+<p>It can scarcely be denied that the supreme goal of all theory is to make the irreducible basic elements as simple and as few as possible without having to surrender the adequate representation of a single datum of experience.<br />
+<em>On the Method of Theoretical Physics</em>, Albert Einstein</p>
+</blockquote>
+<p>This well-known quotation by Einstein - usually paraphrased as, everything should be made as simple as possible, but not simpler - highlights one of the basic problems of network science. Given a set of data, what are the minimum elements we have to take into account into our analysis? In other words, what is the proper (network) model for it?</p>
+<p>The simplest network model one can think of is the undirected binary graph. Given a set of elements, a link is established between each pair that interacts somehow, regardless of the type or length of interaction or the characteristics of the elements themselves. This simple model has many advantages: it is often analytically tractable, or at least is easier to work with it than with more complex models; it is easier to analyze as there are less ingredients into play, specially if we are studying complex dynamics; and they can be built with very few data. Yet, there are several cases in which this model is clearly not enough. For instance, as we shall see in section <a href="chap-chap3.html#subsec:chap3-directed-multilayer">3.3.3</a>, when one studies disease dynamics on networks, it is often assumed that the contact between two individuals is undirected, but there are several examples of diseases whose spreading is clearly not undirectional, such as HIV which has a male-to-female transmission ratio <span class="math inline">\(2.3\)</span> times greater than female-to-male transmission <span class="citation">[<a href="references.html#ref-Nicolosi1994Nov" role="doc-biblioref">117</a>]</span>. This symmetry breaking clearly invalidates a model that explicitly assumes symmetrical interactions, such as the undirected network.</p>
+<p>In this section we will address the question of whether a model is simpler than it needs to be in the context of transportation networks. Our starting observation is the report of betweenness centrality anomalies in the worldwide air transportation network <span class="citation">[<a href="references.html#ref-Guimera2005May" role="doc-biblioref">118</a>]</span>. Guimerà et al. built the network considering cities as nodes (joining together airports belonging to the same city) and establishing a link between them if there was at least one direct flight connection. Then, they studied the betweenness centrality of the nodes and found that cities with large number of connections were not necessarily the ones with largest betweenness. Conversely, they observed that cities with few connections could have high values of betweenness. This contrasts sharply with the fact that the betweenness centrality of a node is directly proportional to its degree in synthetic scale-free networks <span class="citation">[<a href="references.html#ref-Goh2001Dec" role="doc-biblioref">119</a>]</span> as well as in several real networks <span class="citation">[<a href="references.html#ref-Holme2002May" role="doc-biblioref">120</a>]</span>. The emergence of these anomalies has been attributed to the multi-community structure of the network and to spatial constraints <span class="citation">[<a href="references.html#ref-Guimera2005May" role="doc-biblioref">118</a>], [<a href="references.html#ref-Barrat2005May" role="doc-biblioref">121</a>], [<a href="references.html#ref-Barthelemy2011Feb" role="doc-biblioref">122</a>]</span>.</p>
+<p>However, given our previous discussion, one may wonder whether the anomalies are truly there or if they are just a consequence of using a network model that is too simple. Indeed, using a binary representation implies that two cities connected with one flight per year are as close as two cities with several hundreds of weekly flights. At first glance, this seems a too far-fetched assumption, specially if we are interested in studying city centrality. Thus, we propose that an undirected weighted network might be more suited for this specific problem. This, as we will see, will make the anomalies disappear.</p>
+<div id="subsec:chap2-anomaliesNull" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Null models for undirected weighted networks</h3>
+<p>As discussed in section <a href="chap-chap2.html#sec:chap2-null">2.2</a>, the most common approach to determine if the properties of a network are out of the ordinary is to reshuffle the connections of the network to build a null model, extract the average properties of the latter and compare them. In addition to the caveats of this procedure that have been already described, there is another obvious issue: it is not clear how to extend this procedure to weighted networks. Indeed, one possibility would be to extract the weight distribution of the links, reshuffle the network and then randomly assign weights to the links according to said distribution. Another option could be to preserve the total strength of a node and then share it evenly across the reshuffled links, or according to some distribution. Or even attaching weights to their links and then reshuffle them preserving their weights. In any case, it is clear that whichever procedure we choose, there will be several implicit assumptions that will reduce the universality of the results. Fortunately, there is a better solution: exponential random graphs.</p>
+<p>Initially, as we are working with a weighted network, one might be inclined to use the formalism we presented in section <a href="chap-chap2.html#subsec:chap2-weighted">2.4.2</a> that preserves the weights of the nodes. However, it has been shown that the strength sequence of a network is often less informative than its degree sequence <span class="citation">[<a href="references.html#ref-Mastrandrea2014Apr" role="doc-biblioref">123</a>]</span>. In particular, synthetic networks built preserving the strength sequence tend to be much denser that their real counterparts. For this reason, we propose that our null model should be an exponential random graph preserving both the degree and strength sequences.</p>
+<p>Following <span class="citation">[<a href="references.html#ref-Mastrandrea2014Apr" role="doc-biblioref">123</a>]</span>, suppose that our real network is described by the symmetric matrix <span class="math inline">\(W^\ast\)</span> of size <span class="math inline">\(N\times N\)</span>. First, we want to obtain the probability of finding any compatible graph in the ensemble, <span class="math inline">\(P(W)\)</span>, imposing as constraints the degree, <span class="math inline">\(k_i(W) = \sum_j a_{ij} = \sum_j 1-\delta(w_{ij})\)</span>, and strength, <span class="math inline">\(s_i(W) = \sum_j w_{ij}\)</span>, sequences, the Hamiltonian of the graph reads</p>
+<p><span class="math display" id="eq:chap2-hamUECM">\[\begin{equation}
+H(W|\vec{\theta},\vec{\sigma}) = \sum_i \theta_i k_i + \sum_i \sigma_i s_i\,
+\tag{2.50}
+\end{equation}\]</span></p>
+<p>and thus the probability of finding any graph <span class="math inline">\(W\)</span> in the ensemble is</p>
+<p><span class="math display" id="eq:chap2-hamPW">\[\begin{equation}
+\begin{split}
+P(W|\vec{\theta},\vec{\sigma}) &amp; = \frac{e^{-\sum_i \theta_i k_i - \sum_i \sigma_i s_i }}{\sum_W e^{-\sum_i \theta_i k_i - \sum_i \sigma_i s_i }} = \frac{e^{-\sum_{i&lt;j} (\theta_i + \theta_j) a_{ij} - \sum_{i&lt;j} (\sigma_i + \sigma_j) w_{ij}}}{\sum_{\{w_{ij}\}} e^{-\sum_{i&lt;j} (\theta_i + \theta_j)a_{ij}) - \sum_{i&lt;j} (\sigma_i + \sigma_j) w_{ij}}} \\
+&amp; = \prod_{i&lt;j} \frac{e^{-\theta_i a_{ij}} e^{-\theta_j a_{ij}} e^{-\sigma_i w_{ij}} e^{-\sigma_j w_{ij}}}{1+e^{-\theta_i-\theta_j}\sum_{w_{ij}=1}^\infty e^{-(\sigma_i+\sigma_j)w_{ij}}}\,,\quad \text{defining} \left[\begin{array}{l}x_i \equiv e^{-\theta_i} \\ y_i \equiv e^{-\sigma_i}\end{array}\right],\\
+&amp; = \prod_{i&lt;j} \frac{(x_ix_j)^{a_{ij}} (y_iy_j)^{w_{ij}} (1-y_iy_j)}{1-y_iy_j+x_ix_jy_iy_j} = \prod_{i&lt;j} P_{ij}(w_{ij}|\vec{\theta},\vec{\sigma})\,.
+\end{split}
+\tag{2.51}
+\end{equation}\]</span></p>
+<p>To obtain the appropriate values of <span class="math inline">\(\vec{\theta}\)</span> and <span class="math inline">\(\vec{\sigma}\)</span> we can numerically maximize the log-likelihood function,</p>
+<p><span class="math display" id="eq:chap2-hamLoglik">\[\begin{equation}
+\begin{split}
+\mathcal{L}(\vec{\theta},\vec{\sigma}) &amp; = \ln P(W^\ast|\vec{\theta},\vec{\sigma}) = \ln \prod_{i&lt;j} \frac{(x_ix_j)^{a_{ij}} (y_iy_j)^{w_{ij}} (1-y_iy_j)}{1-y_iy_j+x_ix_jy_iy_j} \\
+&amp; = \sum_i \left[ k_i(W^\ast) \ln x_i + s_i(W^\ast) \ln y_i \right] + \sum_{i&lt;j} \ln \left(\frac{1-y_iy_j}{1-y_iy_j+x_ix_jy_iy_j}\right)\,,
+\end{split}
+\tag{2.52}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(x_i \geq 0 \, \forall i\)</span> and <span class="math inline">\(y_i \in [0,1)\)</span>.</p>
+<p>Lastly, to sample networks from this distribution we must divide the process into two parts. First, note that the probability of not having a link, <span class="math inline">\(w_{ij}=0\)</span>, is</p>
+<p><span class="math display" id="eq:chap2-uecmp0">\[\begin{equation}
+P_{ij}(w_{ij}=0|\vec{\theta},\vec{\sigma}) = \frac{1-y_iy_j}{1-y_iy_j+x_ix_jy_iy_j} \equiv 1 - p_{ij}\,.
+\tag{2.53}
+\end{equation}\]</span></p>
+<p>Hence, we can perform a Bernoulli trial with probability</p>
+<p><span class="math display" id="eq:chap2-uecmpij">\[\begin{equation}
+p_{ij} = \frac{x_ix_jy_iy_j}{1-y_iy_j+x_ix_jy_iy_j}
+\tag{2.54}
+\end{equation}\]</span></p>
+<p>to establish a link. Then, if it is successful, note that for <span class="math inline">\(w_{ij}&gt;0\)</span> the probability reads</p>
+<p><span class="math display" id="eq:chap2-uecmwg0">\[\begin{equation}
+P_{ij}(w_{ij}&gt;0|\vec{\theta},\vec{\sigma}) = p_{ij} (y_iy_j)^{w_{ij}-1} (1-y_iy_j)\,,
+\tag{2.55}
+\end{equation}\]</span></p>
+<p>which is the success probability, <span class="math inline">\(p_{ij}\)</span>, times a geometric distribution with parameter <span class="math inline">\(y_iy_j\)</span>. Thus, we can simply extract the weight associated to the node from said distribution. Note that as one trial was already successful, it is necessary to add <span class="math inline">\(1\)</span> to the number extracted from the distribution.</p>
+<p>Iterating this process (Bernoulli trial plus weight from geometric distribution) we can extract unbiased graphs from the ensemble systematically. In this study this will be of outermost importance as there is not an analytical expression to calculate the betweenness of a node in a graph from its adjacency matrix. Thus, to test if these two ingredients (degree and strength) are enough to explain the anomalies of our network, we will have to sample a large amount of graphs from the ensemble, compute the betweenness of their nodes and lastly compare their distribution with the one of the real network.</p>
+</div>
+<div id="subsec:chap2-anomaliesAIR" class="section level3" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> The worldwide air transportation network</h3>
+<p>We will begin our analysis using the same network as in the paper that inspired this work <span class="citation">[<a href="references.html#ref-Guimera2005May" role="doc-biblioref">118</a>]</span>, the worldwide air transportation network. Howbeit, to facilitate the interpretation of the results, we will use countries as nodes, rather than cities. This will dramatically reduce the number of nodes, making the network more manageable. Nonetheless, in section <a href="chap-chap2.html#subsec:chap2-anomaliesOther">2.5.3</a> we will analyze the whole network as it was presented in the original paper.</p>
+<p>The geographical location of the airports, the city and country they belong to and the routes connecting them were obtained from the Open Flights database <span class="citation">[<a href="references.html#ref-openflights" role="doc-biblioref">124</a>]</span>. After aggregation, we end up with a network of 224 nodes (countries) and 2,903 undirected links (unique routes). This data, however, does not include any information about the number of flights, which we need to establish the weight of the routes. Hence, we collected data from an online flight tracking website <span class="citation">[<a href="references.html#ref-flightaware" role="doc-biblioref">125</a>]</span> in a period between May 17, 2018 and May 22, 2018.</p>
+<p>Our first step is to reproduce the results of Guimerà et al. but, for consistency, using the undirected exponential random graphs presented in section <a href="chap-chap2.html#subsec:chap2-undirected">2.4.1</a>. This is an important step for three reasons: first, their data was collected in the period from November 1, 2000 to October 21, 2001, 18 years before ours; second, because to randomize the network they preserve exactly the degree sequence; and third, because we have used countries rather than cities as nodes. The results are shown in figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR">2.5</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-anomaliesAIR"></span>
+<img src="images/Fig_chap2_anomalies_AIR.png" alt="**Analysis of the worldwide air transportation network with countries as nodes.** In panel A we show the betweenness of each country in the network as a function of its degree. The shaded gray area represents where are 95% of the nodes belonging to $10^4$ random graphs sampled from the ensemble. In other words, countries outside that region can be considered abnormal. Labels have been attached only to said countries. In panel B we show the geographical projection of the network, with those countries with betweenness higher than expected in orange and with those countries with lower values than expected in red." width="678" />
+<p class="caption">
+Figure 2.5: <strong>Analysis of the worldwide air transportation network with countries as nodes.</strong> In panel A we show the betweenness of each country in the network as a function of its degree. The shaded gray area represents where are 95% of the nodes belonging to <span class="math inline">\(10^4\)</span> random graphs sampled from the ensemble. In other words, countries outside that region can be considered abnormal. Labels have been attached only to said countries. In panel B we show the geographical projection of the network, with those countries with betweenness higher than expected in orange and with those countries with lower values than expected in red.
+</p>
+</div>
+<p>In spite of all the methodological differences between our work and Guimerà et al. we do find a similar pattern of anomalies. For instance, Christmas Island is one of the countries with highest betweenness even though is the one with the lowest degree. Conversely, Montenegro, with degree 11, has one of the lowest values of betweenness. This clearly contradicts the results obtained for the graphs sampled from the ensemble built preserving, on average, the degree sequence of the network (shaded gray area). Indeed, in random networks the betweenness centrality tends to be proportional to the degree of the node.</p>
+<p>Even more, using countries as nodes instead of cities reveals a clear pattern. We can see that most countries with betweenness below the expectation are European. On the other hand, most nodes laying above the expectation are islands. This can clearly be seen in figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR">2.5</a>B, where we show a representation of the network embedded in space. As we can see, Europe is much more densely connected that the rest of the world, due to having a large population shared in several countries. Thus, there are lot of connections between them that increase their degree but do not make them more central globally. The opposite effect is observed in islands and large countries, which act as bridges connecting either large territories or hardly accessible ones, increasing the number of shortest paths that go through them.</p>
+<p>These observations also agree with our hypothesis. We expect that if weights - number of flights - are included in the network, the centrality of small, fairly disconnected islands will be reduced while the highly active airports in Europe will increase theirs. Thus, we will now add the number of flights between any two routes as weight. Note, however, that the calculation of shortest paths (the key ingredient of the betweenness centrality) tries to minimize the total weight of a path. Hence, a larger weight would make the connection less desirable, which is the opposite of what we want as a larger number of flights makes it easier to use that connection. For this reason, we will initially set the number of flights as weight, then we will randomize the network using the method presented in section <a href="chap-chap2.html#subsec:chap2-anomaliesNull">2.5.1</a> and, lastly, to compute the betweenness we will set the weights to be the inverse of the number of flights, i.e. <span class="math inline">\(w_{ij}&#39;=w_{ij}^{-1}\)</span>. The results are shown in figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR-weight">2.6</a>.</p>
+<p>At first glance, we observe that the number of nodes in the betweenness plot is much smaller than before (figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR-weight">2.6</a>A). The reason is that there are several nodes, both in the real network and in the randomized graphs, that have 0 betweenness. In other terms, there are not any shortest paths going through them. This was somehow expected given that in figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR">2.5</a>A there were several small countries which clearly do not have as many daily flights as the biggest hubs in the world, for instance the islands in Oceania. Nonetheless, now most islands are compatible with the randomized graphs, as well as most European countries.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-anomaliesAIR-weight"></span>
+<img src="images/Fig_chap2_anomalies_AIR_weight.png" alt="**Analysis of the weighted worldwide air transportation network with countries as nodes.** In panel A we show the betweenness of each country in the network as a function of its degree. The shaded gray area represents where are 95% of the nodes belonging to $10^4$ random graphs sampled from the ensemble. Labels have been attached only to countries outside the expectation. In panel B we show the fraction of nodes that can be considered anomalous in the undirected network (left) and in the weighted network (right). The dashed line indicates the 5% threshold." width="678" />
+<p class="caption">
+Figure 2.6: <strong>Analysis of the weighted worldwide air transportation network with countries as nodes.</strong> In panel A we show the betweenness of each country in the network as a function of its degree. The shaded gray area represents where are 95% of the nodes belonging to <span class="math inline">\(10^4\)</span> random graphs sampled from the ensemble. Labels have been attached only to countries outside the expectation. In panel B we show the fraction of nodes that can be considered anomalous in the undirected network (left) and in the weighted network (right). The dashed line indicates the 5% threshold.
+</p>
+</div>
+<p>To facilitate the comparison of both approaches, in figure <a href="chap-chap2.html#fig:chap2-anomaliesAIR-weight">2.6</a>B we show the percentage of nodes that are not compatible with 95% of the randomized graphs. In the case of the undirected network, we find over 40% of nodes out of the area covered by the randomized graphs. Contrariwise, when weights are added to the network, the amount of anomalous nodes goes below the 5% mark. Thus, it is clear that the anomaly that was observed in the undirected case is solved once one considers weights. We will not try to answer why the weights are distributed the way they are, as it is probably a mixture of geographical, economical and political reasons, out of the scope of this analysis. Nevertheless, this result partially answers our initial question. Sometimes anomalies can be a byproduct of using a model that is simpler than it should be. To increase the validity of this statement, in the following section we will repeat the analysis on other types of transportation networks.</p>
+</div>
+<div id="subsec:chap2-anomaliesOther" class="section level3" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Other transportation networks</h3>
+<p>This analysis can be extended to other transportation networks. In particular, we have obtained the inter-city bus transportation networks of Brazil, Great Britain and Spain. Besides, we will now consider the full air transportation network, with cities as nodes, as in the work by Guimerà et al. <span class="citation">[<a href="references.html#ref-Guimera2005May" role="doc-biblioref">118</a>]</span>. The networks are represented in figure <a href="chap-chap2.html#fig:chap2-anomalies-networks">2.7</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-anomalies-networks"></span>
+<img src="images/Fig_chap2_anomalies_networks.png" alt="**Spatial representation of transportation networks.** The four networks under consideration are represented embedded in their corresponding spaces. Nodes are located in the center of their administrative region in the case of bus networks and in the coordinates of the city they belong to in the case of the air transportation network. The size of the nodes is proportional to their degree." width="366" />
+<p class="caption">
+Figure 2.7: <strong>Spatial representation of transportation networks.</strong> The four networks under consideration are represented embedded in their corresponding spaces. Nodes are located in the center of their administrative region in the case of bus networks and in the coordinates of the city they belong to in the case of the air transportation network. The size of the nodes is proportional to their degree.
+</p>
+</div>
+<p>Data from the Brazilian inter-city routes was obtained from the Brazilian National Land Transportation Agency (ANTT) <span class="citation">[<a href="references.html#ref-busBrasil" role="doc-biblioref">126</a>]</span>. The data corresponds to the period between January 2005 and December 2014 with a monthly resolution and includes more than 19,000 unique routes connecting 1,786 cities. The geographical location of the nodes was determined using data from the Brazilian Institute of Geography and Statistics (IBGE) <span class="citation">[<a href="references.html#ref-busBrasil2" role="doc-biblioref">127</a>]</span>.</p>
+<p>Similarly, data from the British inter-city routes was contained in the National Public Transport Data Repository (NPTDR) maintained by the Department of Transport. The data corresponds to the period between October 4, 2010 to October 10, 2010, with an hourly resolution. This dataset was complemented with the National Coach Services Data (NCSD) distributed also by the Department of Transport <span class="citation">[<a href="references.html#ref-busUK" role="doc-biblioref">128</a>]</span>. The total number of nodes is 279 nodes with almost 4,000 unique routes.</p>
+<p>For the case of Spain, however, there is no public repository containing the data in a suitable format to be used. Thus, we had to scrap the data from a website maintained by the Spanish Ministry of Development that offers information of all the bus connections between municipalities in Spain except for the province of Girona <span class="citation">[<a href="references.html#ref-busES" role="doc-biblioref">129</a>]</span>. The data corresponds to the period between January 1, 2017 and December 31, 2017. The total number of nodes is 1,435 with over 20,000 unique routes. As nodes in this network are municipalities instead of cities, we aggregated in all networks their bus stops into their corresponding municipalities.</p>
+<p>Next, we repeat the analysis outlined in section <a href="chap-chap2.html#subsec:chap2-anomaliesAIR">2.5.2</a> on these 4 networks. To sum up, we first build the unweighted version of the networks and randomize them using the formalism of undirected binary graphs presented in section <a href="chap-chap2.html#subsec:chap2-undirected">2.4.1</a>. We then compare the betweenness of the real nodes to their randomized counterparts. If their betweenness is higher than their randomized versions in <span class="math inline">\(97.5\%\)</span> of the samples, or if it is lower than in <span class="math inline">\(2.5\%\)</span> of the samples, we flag them as abnormal nodes. We measure the amount of nodes that can be regarded as abnormal in all networks, and then repeat the whole process with the weighted versions of the networks, using the appropriate null model (section <a href="chap-chap2.html#subsec:chap2-anomaliesNull">2.5.1</a>). The results are depicted in figure <a href="chap-chap2.html#fig:chap2-anomaliesAll">2.8</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-anomaliesAll"></span>
+<img src="images/Fig_chap2_anomalies_all.png" alt="**Fraction of anomalous nodes in transportation networks.** Percentage of anomalous nodes in each network for the unweighted and weighted versions of the networks. The anomaly is verified for all unweighted networks, except for Great Britain. In contrast, in the weighted version the fraction of anomalous nodes is of the order of the false discovery rate, i.e., approximately 5%." width="364" />
+<p class="caption">
+Figure 2.8: <strong>Fraction of anomalous nodes in transportation networks.</strong> Percentage of anomalous nodes in each network for the unweighted and weighted versions of the networks. The anomaly is verified for all unweighted networks, except for Great Britain. In contrast, in the weighted version the fraction of anomalous nodes is of the order of the false discovery rate, i.e., approximately 5%.
+</p>
+</div>
+<p>Several observations are in order. First, we not only find the expected anomalies in the worldwide air transportation network, but also in the Brazilian and Spanish bus networks. In the case of Great Britain we do not observe anomalies, although this network has some special characteristics that might explain this fact. Indeed, as we can see in figure <a href="chap-chap2.html#fig:chap2-anomalies-networks">2.7</a> large cities are situated in the middle, with few small cities in the north and some more in the south. This centralization might explain why we do not see small nodes with large values of betweenness. Besides, municipalities are larger than in other countries and as a result the number of nodes in this network is one order of magnitude below the Spanish and Brazilian networks. This reduces the amount of unique routes and tends to centralize them, preventing routes in isolated areas that would increase the centrality of small nodes (which would actually be even smaller if we had not aggregated them). In any case, regardless of the specific reasons for this observation, it seems that for the particular case of the Great Britain network it is enough to consider only the degree of the nodes to avoid anomalies.</p>
+<p>Nevertheless, in the weighted versions of the networks we can see that systematically the amount of anomalous nodes is reduced in all networks, even in the one from Great Britain (although both the weighted and unweighted amounts are below the 5% line and thus we cannot state that the reduction is significant). This result suggests that the existence of centrality anomalies in transportation networks might be a consequence of neglected, but functionally crucial, information about the system.</p>
+<p>The exponential random graph framework allows us to build very general null models in which only the information we provide is fixed, the rest being maximally random. This is specially important when one wants to analyze if the characteristics of a real network are different from what would be expected from alike graphs. Indeed, if all the assumptions implicit in a null model are not under control, it is possible to find anomalies that might be just a byproduct of the null model itself, rather than coming from the real system.</p>
+<p>In this particular case, we have seen that when one only gathers information about the degree of the nodes in a transportation network, their centrality does not behave as expected. However, by adding a small piece of information - the weight of the links - the network starts to behave as its random counterparts. Hence, this work highlights the fact that when some anomalies are found in a network, care must be taken in order to determine if those anomalies are really important or just a consequence of not using the proper amount of information.</p>
+<p>Even more, we propose that this technique might be useful to determine how much data of a system is needed, or how complex its network model has to be. In the particular case of transportation networks the use of weights is rather straightforward. However, in systems in which the choice might not be so obvious, hunting for anomalies and looking for network characteristics that can explain them, might be the key to determine the most important elements of the system.</p>
+</div>
+</div>
+<div id="sec:chap2-generating" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Generating data-driven contact networks</h2>
+<blockquote>
+<p>What about the children?!<br />
+Won’t somebody please think of the children!?<br />
+Helen Lovejoy</p>
+</blockquote>
+<p>Contact networks are graphs whose nodes represent individuals and their links represent some kind of close interaction between them. This kind of networks are of particular interest in the field of epidemiology, as there are several diseases which can only be transmitted from person to person, such as influenza, tuberculosis or HIV. Thus, the contact patterns of the population can provide the necessary information to implement preventive measures . For instance, by analyzing who are the most central nodes in the network, it is possible to devise efficient vaccination strategies .</p>
+<p>Yet, even for small populations, obtaining the whole contact network of the population is really hard. A prominent example can be found in the case of sexually transmitted diseases. It is clear that in those particular diseases it should be possible, in general, to trace back the whole chain of infections and, ideally, reconstruct the contact network . However, this process is full of biases, such as individuals not being willing to provide detailed information about their sexual partners . In practice, it is only possible to trace back the whole chain of infections for very small epidemic outbreaks .</p>
+<p>Hence, to study large scale epidemics one usually resorts to building synthetic contact networks. In some cases, they can be based on some ad hoc assumptions specific for the disease under study . In others, a small portion of the population is thoroughly investigated and then its characteristics are extended to the whole population . Another possibility is to use aggregated statistics about the population such as household size or age distributions to build them . The framework that we will develop in the following pages will follow the latter.</p>
+<p>One of the key elements defining contact networks is the social structure of the population. It has been observed that individuals have very different mixing patterns depending on their age, and even that they vary greatly from country to country . The usual approach to implement this in epidemic spreading models is to consider that the whole population is in contact with each other (resembling a fully connected graph) and weighting the transmission probability between two individuals according to their respective ages . This, however, completely neglects the network structure of the population.</p>
+<p>In this work we propose a methodology to build contact networks based on the exponential random graph model using socio-demographic data. In particular, we will take into account the demographic structure of the population as well as their mixing patterns. As previously mentioned, these patterns are highly dependent on the age of the individual. Thus, age will be the key ingredient in this model. Besides, we will arrange individuals with similar age in layers, building a multilayer network. As we shall see in section  this will facilitate the study of disease spreading on these networks. However, in this section we will only focus on the methodology used to build said networks.</p>
+<div id="subsec:chap2-generatingTheo" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Theoretical framework</h3>
+<p>Demographic studies usually classify individuals into age groups, also known as age brackets, instead of using their exact value. Hence, mixing patterns are often given in the form of number of contacts between individuals in age group X with individuals in age group Y. For this reason, we will consider that the population is divided into <span class="math inline">\(L\)</span> layers, one for each age group. The number of nodes in each layer will be set according to the demographic structure of the population under study. We will denote by <span class="math inline">\(n_\alpha\)</span> the set of individuals contained in layer <span class="math inline">\(\alpha\)</span> or, equivalently, with age contained in age bracket <span class="math inline">\(\alpha\)</span> (henceforth, individual with age <span class="math inline">\(\alpha\)</span>). Thus, the total number of nodes will be <span class="math inline">\(N = \sum_{\alpha=1}^L |n_\alpha|\)</span>.</p>
+<p>Besides the demographic structure of the population, we will suppose that the only information we have is the number of (undirected) links of individual <span class="math inline">\(i\)</span> in layer <span class="math inline">\(\alpha\)</span> to individuals in layer <span class="math inline">\(\beta\)</span>. As a consequence, the quantity that we want to preserve is the layer-to-layer degree, <span class="math inline">\(k_{i,\alpha}^\beta = \sum_{j\in n_\beta} a_{ij}\)</span> (the procedure to extract this information from real data will be described in section <a href="chap-chap2.html#subsec:chap2-generatingData">2.6.2</a>). An schematic representation of the system is depicted in figure <a href="chap-chap2.html#fig:chap2-generatingScheme">2.9</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-generatingScheme"></span>
+<img src="images/Fig_chap2_generating_scheme.png" alt="Schematic of a multilayer network with age-dependent contacts. Each layer represents one age bracket \([a_\text{lmin},a_\text{lmax})\), so that individuals set in layer \(l\) are between \(a_\text{lmin}\) and \(a_\text{lmax}\) years old. Links can be inside layers, representing contacts with individuals within the same age bracket, and across layers, representing contacts with individuals of different age. For instance, node \(i\) has two links in layer 1, two links to layer 2 and one link in layer 3 so that \(\{k_{i,\alpha}^{\beta}\} = \{k_{i,1}^\beta\} = \{2,2,1\}\)." width="458" />
+<p class="caption">
+Figure 2.9: <strong>Schematic of a multilayer network with age-dependent contacts.</strong> Each layer represents one age bracket <span class="math inline">\([a_\text{lmin},a_\text{lmax})\)</span>, so that individuals set in layer <span class="math inline">\(l\)</span> are between <span class="math inline">\(a_\text{lmin}\)</span> and <span class="math inline">\(a_\text{lmax}\)</span> years old. Links can be inside layers, representing contacts with individuals within the same age bracket, and across layers, representing contacts with individuals of different age. For instance, node <span class="math inline">\(i\)</span> has two links in layer 1, two links to layer 2 and one link in layer 3 so that <span class="math inline">\(\{k_{i,\alpha}^{\beta}\} = \{k_{i,1}^\beta\} = \{2,2,1\}\)</span>.
+</p>
+</div>
+
+<p>Under these assumptions, the Hamiltonian of the graph reads</p>
+<p><span class="math display" id="eq:chap2-generatingHamiltonian">\[\begin{equation}
+H(G,\theta) = \sum_{\alpha=1}^L \sum_{\beta=1}^L \sum_{i\in n_\alpha} \theta_{i,\alpha}^\beta k_{i,\alpha}^\beta\,,
+\tag{2.56}
+\end{equation}\]</span></p>
+<p>which can be rewritten in a more useful way after some algebra,</p>
+<p><span class="math display" id="eq:chap2-generatingHamiltonian2">\[\begin{equation}
+\begin{split}
+H(G,\theta) &amp; = \sum_{\alpha=1}^L \sum_{\beta=1}^L \sum_{i \in n_\alpha} \theta_{i,\alpha}^\beta \sum_{j \in n_\beta} a_{ij} = \sum_{\alpha=1}^L \sum_{i \in n_\alpha} \sum_{j=1}^N \theta_{i,\alpha}^\beta a_{ij} \\
+&amp; = \sum_{i=1}^N \sum_{j=1}^N \theta_{i,\alpha}^\beta a_{ij} = \sum_{i&lt;j} (\theta_{i,\alpha}^\beta + \theta_{j,\beta}^\alpha) a_{ij} \,.
+\end{split}
+\tag{2.57}
+\end{equation}\]</span></p>
+<p>In the derivation of equation <a href="chap-chap2.html#eq:chap2-generatingHamiltonian2">(2.57)</a> we have used the fact that node <span class="math inline">\(i\)</span> only belongs to layer <span class="math inline">\(\alpha\)</span>. This is not the case in general multilayer networks, where one node can be present in more than one layer. However, in this particular case, as an individual can only have one age, it can only belong to one layer. Note that this also implies that this problem can be mapped into the one of building single layer exponential random graphs with fixed community structure and degree sequence <span class="citation">[<a href="references.html#ref-Fronczak2013Sep" role="doc-biblioref">130</a>]</span>.</p>
+<p>Now, the probability of finding any graph <span class="math inline">\(G\)</span> in the ensemble will be</p>
+<p><span class="math display" id="eq:chap2-generatingPG">\[\begin{equation}
+\begin{split}
+P(G|\theta) &amp; = \frac{e^{-\sum_{i&lt;j} (\theta_{i,\alpha}^\beta + \theta_{j,\beta}^\alpha) a_{ij}}}{\sum_G e^{-\sum_{i&lt;j} (\theta_{i,\alpha}^\beta + \theta_{j,\beta}^\alpha) a_{ij}}} = \prod_{i&lt;j} \frac{\left(e^{-\theta_{i,\alpha}^\beta} e^{-\theta_{j,\beta}^\alpha}\right)^{a_{ij}}}{1+e^{-\theta_{i,\alpha}^\beta} e^{-\theta_{j,\beta}^\alpha}} \\
+&amp; = \prod_{i&lt;j} \frac{(x_{i,\alpha}^\beta x_{j,\beta}^\alpha)^{a_{ij}}}{1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha} = \prod_{i&lt;j} p_{ij}^{a_{ij}} (1-p_{ij})^{1-a_{ij}}\,,
+\end{split}
+\tag{2.58}
+\end{equation}\]</span></p>
+<p>where, similarly to previous sections, we have defined the auxiliary variable <span class="math inline">\(x_{i,\alpha}^\beta \equiv e^{-\theta_{i,\alpha}^\beta}\)</span> and the probability of having a link between node <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> as</p>
+<p><span class="math display" id="eq:chap2-generatingpij">\[\begin{equation}
+p_{ij} \equiv \frac{x_{i,\alpha}^\beta x_{j,\beta}^\alpha}{1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha}\,.
+\tag{2.59}
+\end{equation}\]</span></p>
+<p>Note that the shape of equation <a href="chap-chap2.html#eq:chap2-generatingPG">(2.58)</a> is equivalent to the one of undirected binary networks, section <a href="chap-chap2.html#subsec:chap2-undirected">2.4.1</a>. Hence, to sample networks from this ensemble we can simply perform sequential Bernoulli trials on each pair of nodes.</p>
+<p>Lastly, to obtain the value of <span class="math inline">\(x_{i,\alpha}^\beta\)</span> we only need to maximize the log-likelihood which in this case reads</p>
+<p><span class="math display" id="eq:chap2-generatingLL">\[\begin{equation}
+\begin{split}
+\mathcal{L}(\theta) &amp; = \ln \prod_{i&lt;j} p_{ij}^{a_{ij}}(1-p_{ij})^{1-a_{ij}} \\
+&amp; = \sum_{i=1}^N \sum_{j=i+1}^N a_{ij} \ln \frac{x_{i,\alpha}^\beta x_{j,\beta}^\alpha}{1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha}+ (1-a_{ij}) \ln \frac{1}{1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha} \\
+&amp; = \sum_{i=1}^N \sum_{j=i+1}^N a_{ij} \ln (x_{i,\alpha}^\beta x_{j,\beta}^\alpha) - \ln(1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha) \\
+&amp; = \sum_{i=1}^N \sum_{\beta=1}^L k_{i,\alpha}^\beta \ln x_{i,\alpha}^\beta - \sum_{i=1}^N \sum_{j=i+1}^N \ln(1+x_{i,\alpha}^\beta x_{j,\beta}^\alpha) \,.
+\end{split}
+\tag{2.60}
+\end{equation}\]</span></p>
+<p>Thus, the process is analogous to the one we have seen in sections <a href="chap-chap2.html#subsec:chap2-undirected">2.4.1</a>, <a href="chap-chap2.html#subsec:chap2-weighted">2.4.2</a> and <a href="chap-chap2.html#subsec:chap2-anomaliesNull">2.5.1</a>. Indeed, once the constraints have been established, we need to maximize the log-likelihood to obtain the appropriate values of <span class="math inline">\(\theta_{i,\alpha}^\beta\)</span>. Then, we can get the probability of two nodes being connected from equation <a href="chap-chap2.html#eq:chap2-generatingpij">(2.59)</a>. Lastly, we can perform measurements over the whole ensemble using the full <span class="math inline">\(P(G|\theta)\)</span> or sample networks using independent Bernoulli trials on each pair of nodes. In the following section we will describe how we can obtain the values of the constraints, <span class="math inline">\(k_{i,\alpha}^\beta\)</span>, from real data.</p>
+</div>
+<div id="subsec:chap2-generatingData" class="section level3" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Data description</h3>
+<p>The key ingredient of the proposed methodology is the number of links a node <span class="math inline">\(i\)</span> has within its layer, <span class="math inline">\(\alpha\)</span>, and to each of the other layers, <span class="math inline">\(\beta\)</span>, denoted as <span class="math inline">\(k_{i,\alpha}^\beta\)</span>. In order to generate realistic distributions of this quantity, we would need the probability distribution of a node with age <span class="math inline">\(a\)</span> to contact <span class="math inline">\(k\)</span> individuals of age <span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(P(k,a,a&#39;)\)</span>. Fortunately, there are some empirical studies that provide enough information to do so, such as the POLYMOD study <span class="citation">[<a href="references.html#ref-Mossong2008Mar" role="doc-biblioref">131</a>]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:chap2-generatingData"></span>
+<img src="images/Fig_chap2_generating_data.png" alt="Mixing patterns of the Italian population. The population has been divided into two groups: children (individuals aged 18 or less) and adults (individuals aged 19 or more). In A the distribution of the number of contacts between the different groups is shown. The fitted curve corresponds to a negative binomial distribution parameterized with mean \(\mu\) and shape \(\theta\). In B the total number of contacts, regardless of the age of the individual, is shown. As in A, the fitted curve corresponds to a negative binomial distribution. Besides, the matrix on the right represents the probability that an individual in age group \(a\) (rows) contacts with an individual in age group \(a&#39;\) (columns)." width="678" />
+<p class="caption">
+Figure 2.10: <strong>Mixing patterns of the Italian population.</strong> The population has been divided into two groups: children (individuals aged 18 or less) and adults (individuals aged 19 or more). In A the distribution of the number of contacts between the different groups is shown. The fitted curve corresponds to a negative binomial distribution parameterized with mean <span class="math inline">\(\mu\)</span> and shape <span class="math inline">\(\theta\)</span>. In B the total number of contacts, regardless of the age of the individual, is shown. As in A, the fitted curve corresponds to a negative binomial distribution. Besides, the matrix on the right represents the probability that an individual in age group <span class="math inline">\(a\)</span> (rows) contacts with an individual in age group <span class="math inline">\(a&#39;\)</span> (columns).
+</p>
+</div>
+
+<p>In the POLYMOD study volunteers from eight different European countries were asked to provide information about who they contacted during a given period of time. In particular, the information that is relevant for our interests is the age of the participant, <span class="math inline">\(a\)</span>, and the age of the person contacted, <span class="math inline">\(a&#39;\)</span>. Then, aggregating this data, we can obtain the distribution of the number of contacts that an average person of age <span class="math inline">\(a\)</span> has with people of age <span class="math inline">\(a&#39;\)</span>, <span class="math inline">\(P(k,a,a&#39;)\)</span>. In figure <a href="chap-chap2.html#fig:chap2-generatingData">2.10</a>A we show this distribution for the case of Italy, which was one of the most complete surveys of the study.</p>
+<p>To facilitate the visualization of the results, we have chosen to classify individuals, following previous literature <span class="citation">[<a href="references.html#ref-DeLuca2018Dec" role="doc-biblioref">132</a>]</span>, into two age groups: children (aged 18 or less) and adults (aged 19 or more). Then, we have measured the number of contacts each child had with other children (top-left distribution) and with adults (top-right distribution). Similarly, on the bottom row we show the contact distribution of adults with children (bottom-left) and of adults with other adults (bottom-right). All empirical distributions have been fitted to a negative binomial distribution, which is one of the most common methods for analyzing count response surveys<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> <span class="citation">[<a href="references.html#ref-Hilbe2011" role="doc-biblioref">133</a>]</span>.</p>
+<p>However, this data has some drawbacks, such as the problem of reciprocity. In a completely closed population (and with perfect measurement instruments), for each contact that a child reports with an adult we should get a report of and adult contacting a child. But, as in this survey the population was not closed, that is, people participating in the survey could report contacts with people not participating in it, the reciprocity condition is not always satisfied. This is a well known problem in the study of mixing patterns of the population and there are several techniques used to solve it, such as the pairwise correction <span class="citation">[<a href="references.html#ref-Arregui2018Dec" role="doc-biblioref">134</a>]</span>. Thus, we will perform an assumption that will allow us to leverage all the techniques that have already been developed to work with age-contact matrices.</p>
+<p>Indeed, from now on, we will suppose that the probability of having <span class="math inline">\(k\)</span> contacts is independent of the age of both individuals involved in it. That is, <span class="math inline">\(P(k,a,a&#39;) \approx P(k) P(a,a&#39;)\)</span>. Note that with this assumption we have separated the mixing patterns of the population, <span class="math inline">\(P(a,a&#39;)\)</span>, from the main topological characteristic of networks, the degree distribution <span class="math inline">\(P(k)\)</span>. This has two main advantages. First, this will allow us to directly input into the model mixing contact matrices, which are more common in the literature than the whole survey data. Second, we will be able to test the effect of different degree distributions. This situation will be further analyzed in section <a href="chap-chap3.html#sec:chap3-age">3.4</a>.</p>
+<p>In figure <a href="chap-chap2.html#fig:chap2-generatingData">2.10</a>B we show the necessary information to build <span class="math inline">\(P(k,a,a&#39;)\)</span> under this assumption. As we can see, the average number of contacts of any individual in the Italian population is close to 21. Interestingly, this number can vary greatly. For instance, while Italy was the country with the highest number of reported contacts, Germany was the one with the fewest daily contacts, 8. Regarding <span class="math inline">\(P(a,a&#39;)\)</span>, it is important to note that the matrix is not symmetric per se, but this is due to the fact that age groups are not equally sized. Indeed, if we suppose that all groups have the same degree distribution, the reciprocity condition implies that <span class="math inline">\(N_a P(a,a&#39;) = N_{a&#39;} P(a&#39;,a)\)</span>, where <span class="math inline">\(N_a\)</span> represents the number of individuals with age <span class="math inline">\(a\)</span>.</p>
+<p>Summing up, to obtain <span class="math inline">\(k_{i,\alpha}^\beta\)</span> we simply need to sample <span class="math inline">\(k\)</span> from the desired degree distribution for each node <span class="math inline">\(i\)</span> of age <span class="math inline">\(\alpha\)</span>. Then, we can distribute this value across layers using a multinomial distribution with probability parameters <span class="math inline">\(P(\alpha,\beta)\)</span>.</p>
+</div>
+<div id="subsec:chap2-generatingAge" class="section level3" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Age contact networks</h3>
+<div class="figure" style="text-align: center"><span id="fig:chap2-generatingNetwork"></span>
+<img src="images/Fig_chap2_generating_network.png" alt="**Synthetic Italian age contact network.** A) depicts a random network obtained from the ensemble. The size of the nodes is proportional to their degree. The layer on the bottom corresponds to nodes classified as children, while the layer on top corresponds to adults. The difference in group size is due to the demographic structure of the country. B) Comparison of the average degree of each node obtained from averaging $10^4$ networks sampled from the ensemble to the imposed constraint. The 95% confidence interval of the distribution is shown in gray for each node." width="586" />
+<p class="caption">
+Figure 2.11: <strong>Synthetic Italian age contact network.</strong> A) depicts a random network obtained from the ensemble. The size of the nodes is proportional to their degree. The layer on the bottom corresponds to nodes classified as children, while the layer on top corresponds to adults. The difference in group size is due to the demographic structure of the country. B) Comparison of the average degree of each node obtained from averaging <span class="math inline">\(10^4\)</span> networks sampled from the ensemble to the imposed constraint. The 95% confidence interval of the distribution is shown in gray for each node.
+</p>
+</div>
+<p>We will finish this section demonstrating the full process of generating one age contact network, which can be divided in three steps:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Data collection and standardization</strong>: the first step is to obtain demographic structure, mixing patterns and degree distribution of the population under consideration. Standardization in this context refers to deciding the number of age groups in the system and modifying the distributions accordingly.</li>
+</ol>
+<p>As in the previous section, we will focus on Italy in the year 2005, which is when the POLYMOD study took place. Besides, we will consider that there are still only two groups, children and adults. Under these circumstances, according to the demographic structure of the country, <span class="math inline">\(18\%\)</span> of the nodes must be set in the age group of children while the other <span class="math inline">\(82\%\)</span> must belong to the adults group. The <span class="math inline">\(P(a,a&#39;)\)</span> matrix as well as the degree distribution will be the ones shown in figure B.</p>
+<p>Next, we need to decide the number of nodes in our network. In this case, we will set this number equal to <span class="math inline">\(N=10^3\)</span>. Hence, there will be 180 nodes and 819 nodes in layers 1 and 2 respectively. Once this is set, we can extract suitable values of <span class="math inline">\(k_{i,\alpha}^\beta\)</span> for each node <span class="math inline">\(i\)</span> from the <span class="math inline">\(P(k,a,a&#39;)\)</span> distribution as explained in the previous section. These will be the constraints in our model.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Determination of the ensemble</strong>: once the constraints are set, the next step is to maximize the log-likelihood defined in  to obtain the proper values of <span class="math inline">\(x_{i,\alpha}^\beta\)</span>. These can be used to build the ensemble of networks using <a href="chap-chap2.html#eq:chap2-generatingPG">(2.58)</a>.</p></li>
+<li><p><strong>Network sampling</strong>: the last step is to randomly sample as many networks as desired from the ensemble. This can be easily done by performing a Bernoulli trial over each pair of nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> with probability of success given by <span class="math inline">\(p_{ij}\)</span> as defined in equation <a href="chap-chap2.html#eq:chap2-generatingpij">(2.59)</a>.</p></li>
+</ol>
+<p>For this example, we have sampled <span class="math inline">\(10^4\)</span> networks from the ensemble. In figure <a href="chap-chap2.html#fig:chap2-generatingNetwork">2.11</a>A we show one of the sampled networks. As it can be seen, the network is divided in two layers. Nodes in the bottom layer represent children while the ones on top adults. As imposed by the demographic constraints, there are many more nodes in the adults layer than in the children layer. To confirm that the sampled networks successfully preserve the rest of the constraints, in figure <a href="chap-chap2.html#fig:chap2-generatingNetwork">2.11</a>B we plot the average value of <span class="math inline">\(k_{i,\alpha}^\beta\)</span> in the set of <span class="math inline">\(10^4\)</span> networks (<span class="math inline">\(y\)</span> axis) against the value imposed by the data (<span class="math inline">\(x\)</span> axis). Clearly, all nodes are close to the identity line, indicating that the conditions were successfully maintained.</p>
+<p>This example demonstrates that we now have all the tools required to generate realistic contact networks with age related data. In section <a href="chap-chap3.html#sec:chap3-age">3.4</a> we will use this framework to build networks for different countries and periods of time, and we will measure the impact that incorporating this kind of data can have on disease dynamics.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>Count data is usually modeled in physics as a Poisson distribution, whose mean equals its variance. In count data involving humans, however, this is not usually the case. Thus, negative binomial distributions are used instead, as their variance can be larger than the mean. This special characteristic of these distributions is known as overdispersion.<a href="chap-chap2.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sec-chap1-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-chap3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["/assets/docs/Aleta_Thesis.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
