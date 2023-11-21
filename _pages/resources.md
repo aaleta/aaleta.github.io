@@ -12,6 +12,8 @@ nav_order: 4
 
 * [COVID-19 modelling](https://github.com/aaleta/NHB_COVID): code for the baseline scenario from the paper [Modelling the impact of testing, contact tracing and household quarantine on second waves of COVID-19](https://www.nature.com/articles/s41562-020-0931-9) and [Quantifying the importance and location of SARS-CoV-2 transmission events in large metropolitan areas](https://doi.org/10.1073/pnas.2112182119).
 
+* [Economy & COVID-19](https://doi.org/10.5281/zenodo.7946867): code for the epidemic(C)-economic(Python) model used in the paper [The unequal effects of the health-economy tradeoff during the COVID-19 pandemic](https://www.nature.com/articles/s41562-023-01747-x).
+
 * [SIR model on a network with Gillespie algorithm](https://github.com/aaleta/sir_gillespie/): quick and dirty code to perform simulations of the SIR model on a network using Gillespie algorithm. Use at your own risk! 
 
 <div class="resources"><h2 class="category">R</h2></div>
