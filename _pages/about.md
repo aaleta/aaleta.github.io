@@ -8,7 +8,7 @@ profile:
   align: right
   image: profile_pic.jpg
   image_circular: true # crops the image to make it circular
-  address: >
+  more_info: >
     <p>Ramón y Cajal fellow</p>
     <p>University of Zaragoza</p>
     <p>Zaragoza, Spain</p>
