@@ -16,13 +16,18 @@ nav_order: 4
 
 * [SIR model on a network with Gillespie algorithm](https://github.com/aaleta/sir_gillespie/): quick and dirty code to perform simulations of the SIR model on a network using Gillespie algorithm. Use at your own risk! 
 
-<div class="projects"><h2 class="category">R</h2></div>
-
-* [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
 
 <div class="projects"><h2 class="category">Python</h2></div>
 
 * [Hospitalization dynamics](https://github.com/aaleta/COVID_hospitalization): code used in the paper [Unraveling the COVID-19 hospitalization dynamics in Spain using Bayesian inference](https://doi.org/10.1186/s12874-023-01842-7)
+
+## Tools
+
+* [TODO list](https://github.com/aaleta/todo): My own customized version of the [Todo.txt utility](http://todotxt.org/) which allows you to keep track of your todo list directly from the terminal.
+
+<div class="projects"><h2 class="category">R</h2></div>
+
+* [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
 
 ## Data
 
