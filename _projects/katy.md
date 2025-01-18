@@ -3,7 +3,7 @@ layout: page
 title: KATY 
 description:  AI-Empowered Personalised Medicine System to Improve Cancer Treatments 
 img: assets/img/katy.png
-importance: 2
+importance: 3
 category: Current projects
 ---
 

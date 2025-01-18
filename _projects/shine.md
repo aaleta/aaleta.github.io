@@ -3,7 +3,7 @@ layout: page
 title: COVID-SHINE 
 description: Understanding the spatio-temporal social determinants of health to improve ABMs
 img: assets/img/shine.png
-importance: 3
+importance: 4
 category: Current projects
 ---
 

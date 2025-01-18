@@ -1,7 +1,7 @@
 ---
 layout: page
 title: HIDDEN-NETS
-Leveraging higher-order interactions and data-driven approaches to tackle complex networked systems
+description: Leveraging higher-order interactions and data-driven approaches to tackle complex networked systems
 img: assets/img/hidden-nets.png
 importance: 1
 category: Current projects
