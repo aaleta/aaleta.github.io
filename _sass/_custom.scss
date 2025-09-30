@@ -31,3 +31,8 @@
 .publications ol.bibliography li .abbr abbr {
 	background-color: transparent;
 }
+
+// Reduce spacing between year headers and publication entries
+.publications h2.bibliography {
+  margin-bottom: 0.5rem;
+}
