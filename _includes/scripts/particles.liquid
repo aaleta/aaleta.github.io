@@ -1,4 +1,8 @@
 <script src="{{ '/assets/js/particles.min.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/js/particles-content-exclusion.js' | relative_url }}" type="text/javascript"></script>
 <script>
-    particlesJS.load('particles-js', '{{ '/assets/json/particles-config.json' | relative_url }}', function() {});
+    particlesJS.load('particles-js', '{{ '/assets/json/particles-config.json' | relative_url }}', function() {
+        // Initialize content area exclusion after particles are loaded
+        addContentAreaExclusion();
+    });
 </script>

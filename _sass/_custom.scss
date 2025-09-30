@@ -6,6 +6,13 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+:root {
+  --global-text-color: #{$black-color-light};
+  --global-text-color-light: #{$grey-color};
+  --global-theme-color: #{$blue-color-dark};
+  --global-hover-color: #{$blue-color-dark};
+}
+
 #particles-js {
     position: fixed;
     width: 100%;
