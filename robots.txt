@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://aaleta.github.io//sitemap.xml
+Sitemap: https://aaleta.github.io/sitemap.xml
