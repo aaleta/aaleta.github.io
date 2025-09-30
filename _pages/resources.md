@@ -6,6 +6,17 @@ description: Some codes and notes that may be useful to others.
 nav: true
 nav_order: 4
 ---
+## Tools
+
+* [TODO list](https://github.com/aaleta/todo): My own customized version of the [Todo.txt utility](http://todotxt.org/) which allows you to keep track of your todo list directly from the terminal.
+
+* [Reminders Bot](https://github.com/aaleta/bot_tutorial): A simple Telegram bot that sends you reminders at scheduled times. I use it to remind my students about deadlines.
+
+* [Memes Bot](https://github.com/aaleta/bot_computacional): A Telegram bot that sends random memes about Computational Physics.
+
+## Data
+
+* [Hospital networks](https://github.com/aaleta/hospital_networks): networks used in the paper [Assessing the risk of spatial spreading of diseases in hospitals](https://doi.org/10.3389/fphy.2022.882314)
 
 ## Coding
 <div class="projects"><h2 class="category">C</h2></div>
@@ -21,25 +32,9 @@ nav_order: 4
 
 * [Hospitalization dynamics](https://github.com/aaleta/COVID_hospitalization): code used in the paper [Unraveling the COVID-19 hospitalization dynamics in Spain using Bayesian inference](https://doi.org/10.1186/s12874-023-01842-7)
 
-## Tools
+* [Transfer Entropy & Epidemics](https://github.com/aaleta/cmi_covid): code used in the paper [Informational approach to uncover the age group interactions in epidemic spreading from macro analysis](https://doi.org/10.1103/PhysRevE.110.064321)
 
-* [TODO list](https://github.com/aaleta/todo): My own customized version of the [Todo.txt utility](http://todotxt.org/) which allows you to keep track of your todo list directly from the terminal.
 
 <div class="projects"><h2 class="category">R</h2></div>
 
 * [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
-
-## Data
-
-* [Hospital networks](https://github.com/aaleta/hospital_networks): networks used in the paper [Assessing the risk of spatial spreading of diseases in hospitals](https://doi.org/10.3389/fphy.2022.882314)
-
-## Lecture notes
-
-* **[In Spanish]** [Los malditos punteros](/assets/pdf/Punteros.pdf): apuntes del curso de Física Computacional 2018/2019 de la Universidad de Zaragoza sobre el funcionamiento de los punteros en C.
-
-## Thesis
-
-* [Here](/thesis/index.html) you can find my Thesis in bookdown format:
-	* If you are interested in the link between physics and networks, check out Chapters 1 and 2.
-	* In Chapter 3 I gave a brief overview of the history of epidemic modeling. It might be useful to introduce new students to this world.
-	* The last chapter contains my boldest works, Pokémon and Forocoches!

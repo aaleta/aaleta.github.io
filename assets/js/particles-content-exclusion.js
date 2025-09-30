@@ -7,10 +7,10 @@ function addContentAreaExclusion() {
       
       // Define the content area boundaries (in percentages)
       const contentArea = {
-        left: 0.2,   // 20% from left
-        right: 0.8,  // 80% from left (so 20% from right)
-        top: 0.15,   // 15% from top
-        bottom: 0.85 // 85% from top (so 15% from bottom)
+        left: 0.25,   // 25% from left
+        right: 0.75,  // 75% from left (so 25% from right)
+        top: 0.10,   // 10% from top
+        bottom: 0.90 // 90% from top (so 10% from bottom)
       };
       
       // Store original particle update function
@@ -69,7 +69,7 @@ function addContentAreaExclusion() {
         }
       };
     }
-  }, 1000); // Wait 1 second for particles to initialize
+  }, 100); // Wait 100 milliseconds for particles to initialize
 }
 
 // Call the function when the page loads
