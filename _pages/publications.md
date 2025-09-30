@@ -9,7 +9,7 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
-{% bibliography -f {{ site.scholar.bibliography }} %}
+{% bibliography -f {{ site.scholar.bibliography }} --template bib_no_thumbnails %}
 
 </div>
 
@@ -17,6 +17,6 @@ nav_order: 1
 
 <div class="publications">
 
-{% bibliography -f {{ site.scholar.bibliography_reports }} %}
+{% bibliography -f {{ site.scholar.bibliography_reports }} --template bib_no_thumbnails %}
 
 </div>
