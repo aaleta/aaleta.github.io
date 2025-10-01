@@ -2,7 +2,7 @@
 layout: page
 title: Scientific Projects
 permalink: /projects/
-description: The main scientific projects in which I am (or was!) involved in some way or another
+description: The main scientific projects in which I am (or was) involved in some way or another
 nav: true
 nav_order: 3
 display_categories: [Current projects, Past projects]

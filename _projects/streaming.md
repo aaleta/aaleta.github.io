@@ -1,6 +1,6 @@
 ---
 layout: page
-title: STREAMING-GRAPH
+title: STREAMING-AI
 description: Text processing for real-time generation of graphics for livestreaming events using AI
 img: assets/img/twitch.png
 importance: 1
