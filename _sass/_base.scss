@@ -168,18 +168,53 @@ ul.task-list input[type="checkbox"] {
 
 .card {
   background-color: var(--global-card-bg-color);
+  height: 100%; /* Ensure all cards have the same height */
+  display: flex;
+  flex-direction: column;
 
-  .card-img {
+  .card-img,
+  .card-img-top {
     width: 100%;
-    padding-top: 1.25rem;
+    height: 200px; /* Fixed height for all images */
+    object-fit: contain; /* Maintain aspect ratio with white space if needed */
+    object-position: center;
+    background-color: var(--global-bg-color); /* White background for letterboxing */
+    padding: 0.5rem; /* Small padding around the image */
+    box-sizing: border-box;
   }
 
   .card-title {
     color: var(--global-text-color);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    height: 1.6rem; /* Fixed height for one line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    line-clamp: 3; /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+    flex-grow: 1; /* Take up remaining space */
   }
 
   .card-body {
-    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Take up remaining space */
+  }
+
+  /* For project cards specifically */
+  &.project-card {
+    min-height: 350px; /* Minimum height for project cards */
   }
 }
 
@@ -629,13 +664,24 @@ footer.sticky-bottom {
   }
 
   .card {
+    height: 100%; /* Ensure all project cards have the same height */
+    
     img {
       width: 100%;
+      height: 200px; /* Fixed height for project images */
+      object-fit: contain; /* Maintain aspect ratio with white space if needed */
+      object-position: center;
+      background-color: var(--global-bg-color);
     }
   }
 
   .col {
     padding-bottom: 1rem;
+    display: flex; /* Make columns flex containers */
+    
+    .card {
+      flex: 1; /* Allow cards to fill the column height */
+    }
   }
 
   .grid-sizer,
@@ -690,9 +736,6 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
-
-      .preview {
-      }
 
       .abbr {
         margin-bottom: 0.5rem;

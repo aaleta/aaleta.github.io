@@ -12,7 +12,7 @@ nav_order: 4
 
 * [Reminders Bot](https://github.com/aaleta/bot_tutorial): A simple Telegram bot that sends you reminders at scheduled times. I use it to remind my students about deadlines.
 
-* [Memes Bot](https://github.com/aaleta/bot_computacional): A Telegram bot that sends random memes about Computational Physics.
+* [Memes Bot](https://github.com/aaleta/bot_computacional): A Telegram bot that sends random memes (images) that I use in our Computational Physics class.
 
 ## Data
 

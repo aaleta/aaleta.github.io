@@ -51,3 +51,44 @@ body {
 .publications h2.bibliography {
   margin-bottom: -2rem;
 }
+
+// Additional card uniformity styles
+.card-deck .card,
+.row .card {
+  height: 100%;
+  min-height: 350px;
+}
+
+// Ensure featured posts cards are also uniform
+.featured-posts .card {
+  height: 100%;
+  min-height: 300px;
+}
+
+// Blog post cards uniformity
+.post-list .card {
+  height: 100%;
+  min-height: 280px;
+}
+
+// Ensure card images in any context follow the uniform sizing
+.card img:not(.profile img) {
+  height: 200px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background-color: var(--global-bg-color) !important;
+  padding: 0.5rem !important;
+  box-sizing: border-box !important;
+}
+
+// For masonry layouts, ensure consistent widths
+.projects.masonry .grid-item {
+  width: 100%;
+  max-width: 300px;
+}
+
+// Repository cards uniformity
+.repositories .card {
+  height: 100%;
+  min-height: 200px;
+}

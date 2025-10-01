@@ -3,7 +3,7 @@ layout: page
 title: AccelNet-MultiNet
 description: Expanding the international community of multilayer network science
 img: assets/img/accelnet.png
-importance: 2
+importance: 4
 category: Current projects
 ---
 
