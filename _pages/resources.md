@@ -4,7 +4,7 @@ permalink: /resources/
 title: Resources
 description: Some codes and notes that may be useful to others.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 ## Tools
 
@@ -38,3 +38,10 @@ nav_order: 4
 <div class="projects"><h2 class="category">R</h2></div>
 
 * [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
+
+## Thesis
+
+* [Here](/thesis/index.html) you can find my Thesis in bookdown format:
+	* If you are interested in the link between physics and networks, check out Chapters 1 and 2.
+	* In Chapter 3 I gave a brief overview of the history of epidemic modeling. It might be useful to introduce new students to this world.
+	* The last chapter contains my boldest works, Pokémon and Forocoches!

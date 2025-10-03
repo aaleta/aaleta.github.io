@@ -1,16 +1,24 @@
-## Teaching
+---
+layout: page
+title: Teaching
+permalink: /teaching/
+description: Teaching activities and course materials
+nav: true
+nav_order: 4
+dropdown: true
+children:
+  - title: Computational Physics
+    permalink: /teaching/computational-physics/
+  - title: Academic Advising
+    permalink: /teaching/academic-advising/
+---
 
-* [cptools_installer](https://github.com/aaleta/cptools_installer): A tool for installing the necessary packages for the Computational Physics course.
+In the Degree in Physics at the University of Zaragoza, I teach the courses:
 
-* [computational_physics](https://github.com/aaleta/computational_physics): Course materials and resources for the Computational Physics course.
+- **Ordinary Differential Equations**: a second-year course that introduces students to the numerical methods for solving ordinary differential equations, with applications in physics. For a nice introduction to the topic, I recommend the book [*Differential equations with boundary-value problems*](https://www.cengage.com/c/differential-equations-with-boundary-value-problems-10e-zill/9780357760451/) by  Dennis G. Zill.
 
-## Lecture notes
+ **Computational Physics**: a second-year course that covers various computational techniques and methods used in physics, including numerical integration, Monte Carlo methods, and simulations. You can find more information and resources [here](/teaching/computational-physics/).
+ 
+I also coordinate the summer course *Introduction to Data Science* in Jaca (Spain) since 2023. Due to budget constraints, it is not offered every year. You can find more information about this and other summer courses [here](https://cursosextraordinarios.unizar.es/) (in Spanish).
 
-* **[In Spanish]** [Los malditos punteros](/assets/pdf/Punteros.pdf): apuntes del curso de Física Computacional 2018/2019 de la Universidad de Zaragoza sobre el funcionamiento de los punteros en C.
-
-## Thesis
-
-* [Here](/thesis/index.html) you can find my Thesis in bookdown format:
-	* If you are interested in the link between physics and networks, check out Chapters 1 and 2.
-	* In Chapter 3 I gave a brief overview of the history of epidemic modeling. It might be useful to introduce new students to this world.
-	* The last chapter contains my boldest works, Pokémon and Forocoches!
+Additionally, I provide academic advising to both undergraduate and graduate students. You can find more information about this [here](/teaching/academic-advising/).
