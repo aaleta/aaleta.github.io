@@ -8,9 +8,25 @@ toc:
   sidebar: left
 ---
 
-Welcome to the Computational Physics course page. This page contains resources, materials, and information organized into three main sections that you can navigate using the sidebar.
+In this course we teach various computational techniques and their applications in solving physical problems using the C programming language. In 2024, we introduced a new way of teaching the practical part of the course, using complex and (hopefully) interesting/funny problems that require the application of multiple techniques learned throughout the course. To facilitate this, we provide automated tests to help students verify the correctness of their implementations. In this page you can find links to these assignments and some visualizations created by the students.
 
-## Section 1: Course Overview
+## 2023/2024 Projects
+
+# Project 1: Harmonic Oscillator
+
+**Description:** Simulate the motion of an harmonic oscillator using numerical integration methods.
+**Techniques Used:** Euler method and Verlet integration.
+**Link to Code:** [GitHub Repository](https://github.com/aaleta/2024_1_oscilador)
+
+Since this was the first assignment ever and we weren't sure if students would be able to work with GitHub and Visual Studio Code, we kept it simple. The goal was to implement two numerical integration methods (Euler and Verlet) to simulate the motion of a harmonic oscillator and compare their accuracy. Later on, in the exam, we asked them to add small modifications to their code, such as a slighlty different potential.
+
+![Position of the Harmonic Oscillator](/assets/img/2024/position.gif)
+
+## 2024/2025 Projects
+
+## Other Resources
+
+* **[In Spanish]** [Los malditos punteros](/assets/pdf/Punteros.pdf): notes from the 2018/2019 Computational Physics course at the University of Zaragoza on the functioning of pointers in C.
 
 ### Course Description
 
