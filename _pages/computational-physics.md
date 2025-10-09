@@ -8,19 +8,25 @@ toc:
   sidebar: left
 ---
 
-In this course we teach various computational techniques and their applications in solving physical problems using the C programming language. In 2024, we introduced a new way of teaching the practical part of the course, using complex and (hopefully) interesting/funny problems that require the application of multiple techniques learned throughout the course. To facilitate this, we provide automated tests to help students verify the correctness of their implementations. In this page you can find links to these assignments and some visualizations created by the students.
+In this course we teach various computational techniques and their applications in solving physical problems using the C programming language. 
 
-## 2023/2024 Projects
+In 2024, we introduced a new way of teaching the practical part of the course, using complex and (hopefully) interesting/funny problems that require the application of multiple techniques learned throughout the course, including tools such as GitHub. To facilitate this, we provide automated tests to help students verify the correctness of their implementations through GitHub Classroom. In this page you can find links to these assignments and some visualizations created by the students.
 
-# Project 1: Harmonic Oscillator
+# 2023/2024 Projects
+
+## Project 1: Harmonic Oscillator
 
 **Description:** Simulate the motion of an harmonic oscillator using numerical integration methods.
+
 **Techniques Used:** Euler method and Verlet integration.
+
 **Link to Code:** [GitHub Repository](https://github.com/aaleta/2024_1_oscilador)
 
 Since this was the first assignment ever and we weren't sure if students would be able to work with GitHub and Visual Studio Code, we kept it simple. The goal was to implement two numerical integration methods (Euler and Verlet) to simulate the motion of a harmonic oscillator and compare their accuracy. Later on, in the exam, we asked them to add small modifications to their code, such as a slighlty different potential.
 
-![Position of the Harmonic Oscillator](/assets/img/2024/position.gif)
+<p align="center">
+  <img src="/assets/img/2024/position.gif" alt="Position of the Harmonic Oscillator" style="max-width: 100%; width: auto; height: auto;">
+</p>
 
 ## 2024/2025 Projects
 
