@@ -28,37 +28,47 @@ Since this was the first assignment ever and we weren't sure if students would b
   <img src="/assets/img/2024/position.gif" alt="Position of the Harmonic Oscillator" style="max-width: 100%; width: auto; height: auto;">
 </p>
 
-## 2024/2025 Projects
+## Project 2: Brownian Motion
 
-## Other Resources
+**Description:** Simulate the Brownian motion of a student who may have a hangover in a 2D grid, avoiding obstacles and trying to get to class on time.
+
+**Techniques Used:** Random number generation, Monte Carlo methods, and collision detection.
+
+**Link to Code:** [GitHub Repository](https://github.com/aaleta/2024_2_brownian)
+
+For this second project, we wanted to introduce random number generation and Monte Carlo methods. The task was to simulate a student moving in a 2D grid, where they could randomly move in different directions, but had to avoid obstacles (like buildings) and try to reach their class on time. This project required students to implement collision detection and use random numbers to determine the student's movement.
+
+<figure style="text-align: center;">
+  <video autoplay loop muted playsinline style="max-width: 100%; height: auto; width: 600px;">
+    <source src="/assets/video/brownian_2024.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><em>Completely wasted students trying to get to class</em></figcaption>
+</figure>
+
+<figure style="text-align: center;">
+  <video autoplay loop muted playsinline style="max-width: 100%; height: auto; width: 600px;">
+    <source src="/assets/video/metropolis_2024.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><em>A drunk student always knows how to find their way (using Metropolis algorithm)</em></figcaption>
+</figure>
+
+---
+
+# 2024/2025 Projects
+
+## Project 1
+
+## Project 2
+
+---
+
+# Other Resources
 
 * **[In Spanish]** [Los malditos punteros](/assets/pdf/Punteros.pdf): notes from the 2018/2019 Computational Physics course at the University of Zaragoza on the functioning of pointers in C.
 
 ### Course Description
-
-This section provides an overview of the Computational Physics course, including objectives, prerequisites, and learning outcomes.
-
-**Course Objectives:**
-- Understand fundamental computational methods in physics
-- Develop programming skills for scientific computing
-- Apply numerical techniques to solve physical problems
-- Learn to analyze and visualize scientific data
-
-**Prerequisites:**
-- Basic physics knowledge (mechanics, electromagnetism)
-- Programming fundamentals (preferably Python)
-- Mathematical background (calculus, linear algebra)
-
-### Schedule and Logistics
-
-**Meeting Times:** [Add your schedule here]
-
-**Office Hours:** [Add your office hours here]
-
-**Grading:**
-- Homework assignments: 40%
-- Midterm project: 30%
-- Final project: 30%
 
 ---
 
@@ -76,17 +86,7 @@ Here you'll find lecture notes, slides, and supplementary materials for each top
 5. Statistical Mechanics Simulations
 6. Quantum Mechanics Applications
 
-### Textbooks and References
 
-**Recommended Textbooks:**
-- *Computational Physics* by Nicholas Giordano and Hisao Nakanishi
-- *Numerical Recipes* by Press, Teukolsky, Vetterling, and Flannery
-- *A Survey of Computational Physics* by Landau, Páez, and Bordeianu
-
-**Online Resources:**
-- Course repository: [Add GitHub link]
-- Python documentation
-- Scientific computing libraries (NumPy, SciPy, Matplotlib)
 
 ### Code Examples
 
