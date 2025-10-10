@@ -32,7 +32,7 @@ Since this was the first assignment ever and we weren't sure if students would b
 
 ## Project 2: Brownian Motion
 
-**Description:** Simulate the Brownian motion of a student who may have a hangover in a 2D grid, avoiding obstacles and trying to get to class on time.
+**Description:** Simulate the Brownian motion of a student who may have drunk a bit more than they should in a 2D grid, avoiding obstacles and trying to get to class on time.
 
 **Techniques Used:** Random number generation, Monte Carlo methods, and collision detection.
 
@@ -53,7 +53,7 @@ For this second project, we wanted to introduce random number generation and Mon
     <source src="/assets/video/metropolis_2024.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
-  <figcaption><em>But good students always know how to find their way, even if drunk (using Metropolis algorithm)</em></figcaption>
+  <figcaption><em>But good students always know how to find their way, even if drunk (hint: Metropolis algorithm)</em></figcaption>
 </figure>
 
 ---
