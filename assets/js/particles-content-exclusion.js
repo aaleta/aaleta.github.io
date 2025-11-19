@@ -7,10 +7,10 @@ function addContentAreaExclusion() {
       
       // Define the content area boundaries (in percentages)
       const contentArea = {
-        left: 0.25,   // 25% from left
-        right: 0.75,  // 75% from left (so 25% from right)
-        top: 0.10,   // 10% from top
-        bottom: 0.90 // 90% from top (so 10% from bottom)
+        left: 0.10,   // 10% from left (wider content area)
+        right: 0.90,  // 90% from left (so 10% from right)
+        top: 0.10,    // 10% from top
+        bottom: 0.90  // 90% from top (so 10% from bottom)
       };
       
       // Store original particle update function

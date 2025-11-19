@@ -34,6 +34,7 @@ nav_order: 5
 
 * [Transfer Entropy & Epidemics](https://github.com/aaleta/cmi_covid): code used in the paper [Informational approach to uncover the age group interactions in epidemic spreading from macro analysis](https://doi.org/10.1103/PhysRevE.110.064321)
 
+* [Worm co-propagation with Gillespie algorithm](https://github.com/aaleta/whiteworms): code to simulate the co-propagation of two worms in a network using Gillespie algorithm, used in the paper [Dynamics of defensive and malicious worm co-propagation across networked systems](https://doi.org/10.1016/j.chaos.2025.117589)
 
 <div class="projects"><h2 class="category">R</h2></div>
 
