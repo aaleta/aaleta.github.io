@@ -7,8 +7,8 @@ function addContentAreaExclusion() {
       
       // Define the content area boundaries (in percentages)
       const contentArea = {
-        left: 0.10,   // 10% from left (wider content area)
-        right: 0.90,  // 90% from left (so 10% from right)
+        left: 0.15,   // 15% from left (wider content area)
+        right: 0.85,  // 85% from left (so 15% from right)
         top: 0.10,    // 10% from top
         bottom: 0.90  // 90% from top (so 10% from bottom)
       };
