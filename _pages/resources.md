@@ -40,9 +40,14 @@ nav_order: 5
 
 * [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
 
-## Thesis
+## Bachelor's Degree Final Project in Computer Engineering
+
+* [Astro Putt](https://github.com/aaleta/astro_putt): A Virtual Reality Golf Videogame set in space. Developed using Unity and C#.
+
+## Thesis in Physics
 
 * [Here](/thesis/index.html) you can find my Thesis in bookdown format:
 	* If you are interested in the link between physics and networks, check out Chapters 1 and 2.
 	* In Chapter 3 I gave a brief overview of the history of epidemic modeling. It might be useful to introduce new students to this world.
 	* The last chapter contains my boldest works, Pokémon and Forocoches!
+
