@@ -1,0 +1,25 @@
+# Primary navigation — the centered pill nav.
+# `id` matches each page's `nav_id` front-matter key (used to mark the active item).
+# Optional `children:` adds a dropdown panel beneath the item (Teaching).
+- id: about
+  label: About
+  url: /
+- id: publications
+  label: Publications
+  url: /publications/
+- id: projects
+  label: Projects
+  url: /projects/
+- id: teaching
+  label: Teaching
+  url: /teaching/
+  children:
+    - label: Computational Physics
+      url: /teaching/
+      sub: A second-year C course, taught through stories.
+    - label: Academic Advising
+      url: /teaching/academic-advising/
+      sub: Third-year advisor for the Physics B.Sc.
+- id: resources
+  label: Resources
+  url: /resources/

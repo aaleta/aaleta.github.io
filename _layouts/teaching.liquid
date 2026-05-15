@@ -1,0 +1,157 @@
+---
+layout: default
+---
+{%- comment %}
+  Teaching → Computational Physics page.
+  All content lives in _data/teaching.yml; this layout only renders.
+  Structure: page header (extended w/ 4-col meta strip) → descending year
+  blocks of project cards → "Other resources" list at the bottom.
+{% endcomment -%}
+
+{%- assign t = site.data.teaching -%}
+
+{%- capture meta_strip -%}
+<div class="teach-meta meta-row">
+  {%- for m in t.meta -%}
+    <div class="meta">
+      <div class="meta__label">{{ m.label }}</div>
+      <div class="meta__value">{{ m.value }}</div>
+    </div>
+  {%- endfor -%}
+</div>
+{%- if t.github_page and t.github_page.url -%}
+  <a class="gh-cta" href="{{ t.github_page.url }}" rel="noopener noreferrer">
+    <span class="gh-cta__logo">{%- include icon_github.liquid -%}</span>
+    <span class="gh-cta__text">
+      <span class="gh-cta__label">{{ t.github_page.label }}</span>
+      {%- if t.github_page.sub -%}<span class="gh-cta__sub">{{ t.github_page.sub }}</span>{%- endif -%}
+    </span>
+    <span class="gh-cta__arrow" aria-hidden="true">↗</span>
+  </a>
+{%- endif -%}
+{%- endcapture -%}
+
+{% include page_header.liquid
+   net="teaching"
+   pad_lg=true
+   teach=true
+   eyebrow=t.eyebrow
+   title=t.title
+   lead=t.lead
+   extra=meta_strip %}
+
+{%- for year in t.years -%}
+  <section class="section section--pad-lg section--flush year-block">
+    <div class="wrap">
+      <header class="year-block__head">
+        <span class="kicker kicker--accent eyebrow--wide">ACADEMIC YEAR</span>
+        <h2 class="year-block__h2">{{ year.label }}</h2>
+      </header>
+
+      {%- for p in year.projects -%}
+        <article class="proj-card">
+          <aside class="proj-card__meta">
+            <div class="kicker">PROJECT {{ p.n }}</div>
+            <div class="kicker kicker--accent">{{ year.label }}</div>
+          </aside>
+
+          <div class="proj-card__body">
+            <h3 class="proj-card__title">{{ p.title }}</h3>
+
+            {%- if p.blurb -%}
+              <div class="proj-card__blurb prose">{{ p.blurb | markdownify }}</div>
+            {%- endif -%}
+
+            {%- if p.techniques and p.techniques.size > 0 -%}
+              <ul class="proj-card__chips">
+                {%- for tech in p.techniques -%}
+                  <li class="chip chip--bordered">{{ tech }}</li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            {%- if p.repo -%}
+              <p class="proj-card__repo">
+                <a class="link-arrow link-arrow--ink"
+                   href="https://github.com/{{ p.repo }}"
+                   rel="noopener noreferrer">→&nbsp;github.com/{{ p.repo }}</a>
+              </p>
+            {%- endif -%}
+
+            {%- for row in p.media_rows -%}
+              {%- if row.intro -%}
+                <div class="proj-card__intro prose">{{ row.intro | markdownify }}</div>
+              {%- endif -%}
+
+              {%- if row.items and row.items.size > 0 -%}
+                {%- assign cols = row.items.size -%}
+                {%- if cols > 2 -%}{%- assign cols = 2 -%}{%- endif -%}
+                <div class="media-grid media-grid--{{ cols }}">
+                  {%- for m in row.items -%}
+                    {%- assign item_class = "media-item" -%}
+                    {%- if m.square -%}{%- assign item_class = item_class | append: " media-item--square" -%}{%- endif -%}
+                    <figure class="{{ item_class }}"
+                            {% unless m.square %}style="--media-h: {{ m.h | default: 200 }}px;"{% endunless %}>
+                      {%- if m.type == 'video' -%}
+                        <video class="media-item__el"
+                               autoplay loop muted playsinline preload="metadata"
+                               {% if m.controls %}controls{% endif %}
+                               aria-label="{{ m.alt | default: '' | escape }}">
+                          <source src="{{ m.src | relative_url }}" type="video/webm">
+                        </video>
+                      {%- else -%}
+                        <img class="media-item__el"
+                             src="{{ m.src | relative_url }}"
+                             alt="{{ m.alt | default: '' | escape }}"
+                             loading="lazy">
+                      {%- endif -%}
+                    </figure>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+
+              {%- if row.caption -%}
+                <p class="proj-card__caption">{{ row.caption | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endfor -%}
+
+{%- if t.other_resources -%}
+  <section class="section section--pad-lg other-resources">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="section-head__kicker">{{ t.other_resources.kicker }}</p>
+        <h2 class="section-head__title">{{ t.other_resources.title }}</h2>
+      </header>
+      <ul class="resource-list">
+        {%- for item in t.other_resources.items -%}
+          <li class="resource-row">
+            <span class="resource-row__tag kicker">{{ item.tag }}</span>
+            <div class="resource-row__main">
+              <a class="resource-row__title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {%- if item.sub -%}<p class="resource-row__sub">{{ item.sub }}</p>{%- endif -%}
+            </div>
+            <a class="resource-row__action link-arrow"
+               href="{{ item.url | relative_url }}"
+               {% unless item.url contains '://' %}{% endunless %}>{{ item.action }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+{%- endif -%}
+
+{%- if t.advising -%}
+  <section class="section section--pad-lg section--tight advising-note">
+    <div class="wrap">
+      <p>{{ t.advising.intro }}
+        <a class="link-accent" href="{{ t.advising.url | relative_url }}">{{ t.advising.link_label }}&nbsp;→</a>
+      </p>
+    </div>
+  </section>
+{%- endif -%}

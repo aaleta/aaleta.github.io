@@ -1,35 +1,12 @@
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      &copy; Copyright {{ site.time | date: '%Y' }}
-      {{ site.first_name }}
-      {{ site.middle_name }}
-      {{ site.last_name }}. {{ site.footer_text }}
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-      {% endif %}
-    </div>
-  </footer>
-{% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include scripts/newsletter.liquid %}
-    {% endif %}
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="footer__copy">© {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }} & Claude · {{ site.affiliation_short }}</span>
+    <a class="footer__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </div>
+</footer>
 
-    <div class="container">
-      &copy; Copyright {{ site.time | date: '%Y' }}
-      {{ site.first_name }}
-      {{ site.middle_name }}
-      {{ site.last_name }}. {{ site.footer_text }}
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-      {% endif %}
-    </div>
-  </footer>
-{% endif %}
+{%- comment %} Floating dark/light toggle — bottom-right of the viewport. {% endcomment -%}
+<button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+  <span class="theme-toggle__glyph" aria-hidden="true">&#9790;</span>
+  <span class="theme-toggle__text">Dark</span>
+</button>

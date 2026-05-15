@@ -1,12 +1,16 @@
 ---
-layout: page
 title: STREAMING-AI
-description: Text processing for real-time generation of graphics for livestreaming events using AI
+description: Text processing for real-time graphics generation on livestreaming events using AI.
+code: STREAMING-AI
+years: 2025–present
+role: IP
+funder: Rollout Entertainment
+more_url: https://www.rollout.es/
 img: assets/img/twitch.png
 importance: 1
 category: Current projects
 ---
 
-I am currently collaborating with the company Rollout Entertainment to develop techniques for obtaining real-time data from e-sports broadcasts, analyze them and create graphic overlays that can be used to enrich the broadcast in real-time.
-
-[More information...](https://www.rollout.es/)
+I collaborate with Rollout Entertainment on techniques for obtaining
+real-time data from e-sports broadcasts, analysing that data on the fly, and
+generating graphic overlays that enrich the broadcast in real time.

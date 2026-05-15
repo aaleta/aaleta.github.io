@@ -1,0 +1,139 @@
+# Teaching → Computational Physics page content.
+# Course meta + per-year project cards (Phase 7).
+# Editing here flows through _layouts/teaching.liquid.
+
+# ── Page header ─────────────────────────────────────────────────────────
+eyebrow: TEACHING / COMPUTATIONAL PHYSICS
+title: Computational Physics, taught through stories.
+lead: >-
+  A first-year course in C that we redesigned in 2024 around long, slightly
+  absurd problems that force students to think. Submissions and tests go
+  through GitHub Classroom.
+
+# ── GitHub project-page link (appears near the top of the page) ────────
+# Placeholder URL — replace once the GH organisation page is published.
+github_page:
+  url: https://github.com/aaleta/computational-physics
+  label: All projects on GitHub
+  sub: A landing page with every assignment, exam, and student showcase.
+
+# ── Meta strip (4 columns below the lead) ───────────────────────────────
+meta:
+  - { label: LANGUAGE,    value: "C" }
+  - { label: YEARS,       value: "2024 — present" }
+  - { label: FORMAT,      value: "Lectures + GitHub Classroom" }
+  - { label: INSTITUTION, value: "U. Zaragoza · Physics B.Sc." }
+
+# ── Academic years (rendered in the order listed; descending) ───────────
+years:
+  - label: "2024 / 2025"
+    projects:
+      - n: 1
+        title: "Solar System"
+        blurb: >-
+          Simulate a small solar system with multiple planets orbiting a star —
+          Verlet integration, gravitational forces, and a little data
+          visualisation on the side. Integrating a system of coupled ODEs is
+          always a bit tricky, and many students struggled in interesting
+          ways.
+        techniques:
+          - Verlet integration
+          - Gravitational forces
+          - Data visualisation
+        repo: aaleta/2025_1_solar_system
+        media_rows:
+          - items:
+              - { src: /assets/img/2025/particle_detection.gif, alt: "Particle-detection looking simulation",   square: true }
+              - { src: /assets/img/2025/quasar.gif,             alt: "Quasar-like trajectories",                square: true }
+              - { src: /assets/img/2025/repulsion.gif,          alt: "Wrong sign — planets repelling",          square: true }
+              - { src: /assets/img/2025/helix.gif,              alt: "Helix — beautiful by accident",           square: true }
+            caption: "So many wrong things happening — quasar simulator, wrong sign, a helix that ended up rather beautiful."
+          - intro: >-
+              Then, in the exam, we asked them to add small modifications so
+              they could divert an asteroid heading for Earth (Armageddon
+              style). Let's just say we need to find better pilots for our
+              future space missions.
+            items:
+              - { src: /assets/img/2025/missile.gif,           alt: "Missile veering off",            square: true }
+              - { src: /assets/img/2025/missile_2.gif,         alt: "Missile, take two",              square: true }
+              - { src: /assets/img/2025/wrong_aim.gif,         alt: "Wrong aim",                      square: true }
+              - { src: /assets/img/2025/mod_1A_mal_verlet.gif, alt: "Verlet integration gone wrong",  square: true }
+            caption: "Asteroid-diversion attempts from the exam."
+      - n: 2
+        title: "Rumba"
+        blurb: >-
+          A small 2D videogame, written in C against the
+          [SDL3 library](https://github.com/libsdl-org/SDL), where a robot
+          vacuum (a *Rumba*) tries to clean the first floor of the Faculty of
+          Science. Random walk, collision detection, and just enough
+          videogame physics that students could see their code in action.
+        techniques:
+          - Random walk
+          - Monte Carlo
+          - Collision detection
+          - Videogame physics (SDL3)
+        repo: aaleta/2025_2_rumba
+        media_rows:
+          - items:
+              - { src: /assets/video/rumba_2025.webm, type: video, h: 480, controls: true }
+            caption: "Once the battery went below a certain threshold, the Rumba had to return to its charging dock to recharge and resume cleaning."
+          - intro: >-
+              In the exam we asked one short question, and let them use any
+              resources they wanted (internet, ChatGPT, books, classmates):
+              **\"What Rumba should we buy? Justify your answer.\"** Let's
+              just say they weren't ready for such a difficult question.
+
+  - label: "2023 / 2024"
+    projects:
+      - n: 1
+        title: "Harmonic Oscillator"
+        blurb: >-
+          The first assignment of the redesigned course — implement Euler
+          and Verlet integration to simulate a harmonic oscillator, and
+          compare their accuracy. In the exam, students were asked to add
+          small modifications to their code, such as a slightly different
+          potential.
+        techniques:
+          - Euler method
+          - Verlet integration
+        repo: aaleta/2024_1_oscilador
+        media_rows:
+          - items:
+              - { src: /assets/img/2024/position.gif, alt: "Position of the harmonic oscillator over time", h: 320 }
+            caption: "Position of the harmonic oscillator over time."
+      - n: 2
+        title: "Brownian Motion"
+        blurb: >-
+          Simulate a student who may have had a few too many drinks moving
+          across a 2D grid, dodging buildings, and trying to make it to
+          class on time. Random number generation, Monte Carlo, and a bit of
+          collision detection.
+        techniques:
+          - Random number generation
+          - Monte Carlo
+          - Collision detection
+        repo: aaleta/2024_2_brownian
+        media_rows:
+          - items:
+              - { src: /assets/video/brownian_2024.webm,   type: video, h: 320, controls: true }
+            caption: "Completely wasted students trying to get to class."
+          - items:
+              - { src: /assets/video/metropolis_2024.webm, type: video, h: 320, controls: true }
+            caption: "But good students always know how to find their way, even if drunk (hint: Metropolis algorithm)."
+
+# ── Other resources (single section at the bottom of the page) ──────────
+other_resources:
+  kicker: "§ — Notes"
+  title: "Other resources."
+  items:
+    - tag: "ES · 2018/19"
+      title: "Los malditos punteros"
+      sub: "Notes on how pointers actually work in C — from the 2018/19 cohort at the University of Zaragoza."
+      url: /assets/pdf/Punteros.pdf
+      action: "PDF ↗"
+
+# ── Advising footnote (links to /teaching/academic-advising/) ───────────
+advising:
+  intro: "I am also the 3rd-year academic advisor for the Physics B.Sc."
+  link_label: "See the advising page"
+  url: /teaching/academic-advising/

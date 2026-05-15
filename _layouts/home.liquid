@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- comment %}
+  Home / About page — Direction A.
+  Sections:
+    1. Hero (two-column): name + subtitle + description + social row | research map + profile
+    2. § 01 — Selected publications (jekyll-scholar query @*[selected=true])
+  Content sources (front matter on _pages/about.md):
+    page.subtitle      → hero subtitle line (HTML allowed)
+    page.content       → markdownified hero description (BIFI link, etc.)
+{% endcomment -%}
+
+{%- capture pub_total -%}{% bibliography_count -f papers %}{%- endcapture -%}
+{%- assign pub_total = pub_total | strip -%}
+
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__text">
+      <h1 class="hero__name">Alberto Aleta</h1>
+      <p class="hero__subtitle">{{ page.subtitle }}</p>
+      <div class="hero__lead prose">
+        {{ content }}
+      </div>
+      {% include social_row.liquid %}
+    </div>
+
+    <div class="hero__map" aria-hidden="false">
+      <div class="research-map">
+        {% include research_map.liquid %}
+        <div class="research-map__me">
+          <span class="research-map__me-tab">ME</span>
+          <img class="research-map__photo"
+               src="{{ '/assets/img/prof_pic.jpg' | relative_url }}"
+               alt="Portrait of Alberto Aleta"
+               width="160" height="160" loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush selected-pubs">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-head__kicker">§ 01 — Selected publications</p>
+      <h2 class="section-head__title">A few works I&rsquo;m fond of.</h2>
+    </header>
+
+    <div class="selected-pubs__list">
+      {% bibliography -f papers --group_by none --query @*[selected=true]* --template bib_selected %}
+    </div>
+
+    <p class="selected-pubs__more">
+      <a class="link-arrow link-arrow--ink" href="{{ '/publications/' | relative_url }}">
+        →&nbsp;{{ pub_total }} publications in total · see Publications
+      </a>
+    </p>
+  </div>
+</section>

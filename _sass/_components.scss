@@ -1,0 +1,155 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Shared components — section headers, chips, badges, meta pairs, link styles
+// ─────────────────────────────────────────────────────────────────────────
+
+// ── Section header: mono "§ 0N — Kicker" + h2 ───────────────────────────
+.section-head {
+  margin: 0 0 var(--s-9);
+}
+.section-head__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--s-1);
+}
+.section-head__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tr-h2);
+  margin: 0;
+}
+// Inline variant: count appended to the heading row (Projects: "§ 01 — Research code · 4").
+.section-head--inline {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-7);
+
+  .section-head__kicker { margin: 0; letter-spacing: 0.18em; }
+  .section-head__count {
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.10em;
+    color: var(--muted);
+  }
+}
+
+// ── Chips / pills ───────────────────────────────────────────────────────
+// Filled mono pill on a panel background — paper topic tags, project stack pills.
+.chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);          // 10px
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--panel);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+}
+// Outlined mono chip with a 3px radius — teaching technique chips.
+.chip--bordered {
+  font-size: var(--fs-mono);             // 11px
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-badge);
+  padding: 3px 8px;
+}
+
+// ── SELECTED / FEATURED label ───────────────────────────────────────────
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);          // 9px
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: var(--r-badge);
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+
+// ── Meta label / value pair (hero sidebar, teaching header strip) ───────
+.meta { display: flex; flex-direction: column; gap: 2px; }
+.meta__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);          // 10px
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.meta__value {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);             // 13px
+  color: var(--ink);
+}
+// Horizontal row of meta pairs.
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-7);
+}
+
+// ── Mono eyebrow used as a free-standing label (e.g. "PROJECT 2 / 2024/25")
+.kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kicker--accent { color: var(--accent); }
+
+// ── Link treatments ─────────────────────────────────────────────────────
+// Inline link with an accent underline; text colour stays as the surrounding ink.
+.link-accent {
+  color: inherit;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: border-color var(--t-fast), color var(--t-fast);
+
+  &:hover { border-bottom-width: 2px; }
+}
+// Thin neutral underline (social row, footer-style links); thickens to accent on hover.
+.link-underline {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-20);
+  padding-bottom: 1px;
+  transition: border-color var(--t-fast), color var(--t-fast);
+
+  &:hover { border-bottom: 2px solid var(--accent); }
+}
+// Mono accent link with just a trailing arrow, no underline (DOI ↗, YEAR ↗, → repo).
+.link-arrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  transition: opacity var(--t-fast);
+
+  &:hover { opacity: 0.72; }
+}
+.link-arrow--ink { color: var(--ink); }
+
+// ── Prose (markdown-rendered body content) ──────────────────────────────
+.prose {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: border-color var(--t-fast);
+    &:hover { border-bottom-width: 2px; }
+  }
+  em, i { font-style: italic; }
+}

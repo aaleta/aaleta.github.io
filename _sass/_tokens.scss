@@ -1,0 +1,111 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Design tokens — "Manuscript" (Direction A)
+// Source: design_handoff_aaleta_website/README.md  (README wins over the JSX)
+// ─────────────────────────────────────────────────────────────────────────
+
+:root {
+  // ── Colour — light ───────────────────────────────────────────────────
+  --bg:     #ffffff;   // page background (white — per user override of the README warm off-white)
+  --ink:    #1c1a17;   // primary text
+  --muted:  #807872;   // secondary text, captions
+  --rule:   #e4e0d6;   // hairline borders, dividers
+  --panel:  #f3f1eb;   // chip / tag backgrounds
+  --card:   #fafaf8;   // card backgrounds
+  --accent: #a23a2a;   // oxblood
+
+  // Translucent inks (for thin underlines, hover washes) — fall back where
+  // color-mix() is unsupported by using these precomputed-ish rgba values.
+  --ink-06: rgb(28 26 23 / 0.06);
+  --ink-12: rgb(28 26 23 / 0.12);
+  --ink-20: rgb(28 26 23 / 0.20);
+
+  // ── Type ─────────────────────────────────────────────────────────────
+  --font-sans: "Public Sans", "Helvetica Neue", Helvetica, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  // Fluid display sizes (max = the design's artboard rem value)
+  --fs-hero:      clamp(2.5rem, 5.4vw + 1rem, 4.25rem);   // 40 → 68
+  --fs-page-h1:   clamp(2.125rem, 4vw + 1rem, 3.5rem);    // 34 → 56
+  --fs-teach-h1:  clamp(2.125rem, 4.4vw + 1rem, 3.75rem); // 34 → 60
+  --fs-h2:        clamp(1.625rem, 1.4vw + 1.1rem, 2.125rem); // 26 → 34
+  --fs-year-h2:   clamp(1.875rem, 2.6vw + 1rem, 2.75rem); // 30 → 44
+
+  // Fixed sizes
+  --fs-card-title:        1.375rem;   // 22  — project card title
+  --fs-teach-card-title:  1.625rem;   // 26  — teaching project card title
+  --fs-paper-title:       1.125rem;   // 18  — paper row title
+  --fs-lead:              1.0625rem;  // 17  — page-header lead
+  --fs-lead-lg:           1.125rem;   // 18  — hero description
+  --fs-body:              0.9375rem;  // 15  — body
+  --fs-body-sm:           0.875rem;   // 14  — compact body
+  --fs-meta:              0.8125rem;  // 13  — author lines, venue
+  --fs-mono:              0.6875rem;  // 11  — mono kicker / meta
+  --fs-mono-sm:           0.625rem;   // 10  — small mono pill text
+  --fs-mono-xs:           0.5625rem;  // 9   — SELECTED / FEATURED labels
+  --fs-subtitle:          1.375rem;   // 22  — hero subtitle
+
+  // Line-heights & tracking used on the big stuff
+  --lh-tight:    1.02;
+  --lh-h1:       1.04;
+  --lh-h2:       1.1;
+  --lh-paper:    1.32;
+  --lh-body:     1.6;
+  --tr-hero:    -0.038em;
+  --tr-h1:      -0.035em;
+  --tr-h2:      -0.028em;
+  --tr-card:    -0.022em;
+  --tr-teach:   -0.018em;
+  --tr-paper:   -0.012em;
+  --tr-mono:     0.12em;   // default mono tracking; eyebrows use 0.10–0.18em
+
+  // ── Spacing scale (8px base): 8 12 16 18 22 24 28 32 36 40 48 56 64 ──
+  --s-1: 0.5rem;   --s-2: 0.75rem;  --s-3: 1rem;    --s-3b: 1.125rem;
+  --s-4: 1.375rem; --s-5: 1.5rem;   --s-6: 1.75rem; --s-7: 2rem;
+  --s-8: 2.25rem;  --s-9: 2.5rem;   --s-10: 3rem;   --s-11: 3.5rem;  --s-12: 4rem;
+
+  // Page horizontal padding (sections) & content max-width
+  --pad-x:   clamp(1rem, 4vw, 3rem);   // 16 → 48
+  --pad-x-lg: clamp(1rem, 4.4vw, 3.5rem); // 16 → 56 (long pages)
+  --wrap:    73.75rem;                  // 1180px content max-width
+  --nav-h:   4.375rem;                  // ≈70px — sticky offset for year headers
+
+  // ── Radii ────────────────────────────────────────────────────────────
+  --r-card:  0.8125rem;  // 13px
+  --r-pill:  999px;
+  --r-badge: 3px;
+
+  // ── Motion ───────────────────────────────────────────────────────────
+  --t-fast: 150ms ease;
+
+  color-scheme: light;
+}
+
+// ── Colour — dark ───────────────────────────────────────────────────────
+[data-theme="dark"] {
+  --bg:     #15130f;
+  --ink:    #ede8df;
+  --muted:  #8a8278;
+  --rule:   #2e2a23;
+  --panel:  #1f1c17;
+  --card:   #1a1813;
+  --accent: #c45a47;   // oxblood, lifted for contrast
+
+  --ink-06: rgb(237 232 223 / 0.07);
+  --ink-12: rgb(237 232 223 / 0.12);
+  --ink-20: rgb(237 232 223 / 0.20);
+
+  color-scheme: dark;
+}
+
+// To swap the accent later, change the two --accent values above. Other
+// curated pairs (light / dark):
+//   forest  #3a6b3a / #5a9a5a
+//   indigo  #3a4a8b / #6a7ac0
+//   ochre   #a8842a / #d0a84a
+
+// ── SCSS-only values (can't be CSS custom props) ────────────────────────
+// Breakpoints used in media queries.
+$bp-mobile:  720px;   // pill nav → hamburger; many single-column collapses
+$bp-narrow:  800px;   // project grid → 1 column
+$bp-hero:    860px;   // hero two-column → single column
+$bp-tablet:  640px;   // teaching card meta stack; small tweaks

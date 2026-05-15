@@ -1,0 +1,23 @@
+{%- comment %}
+  Shared page-header pattern (Publications / Projects / Teaching / Resources).
+  Params:
+    eyebrow  — mono kicker text (HTML allowed), e.g. "PUBLICATIONS · 43 ENTRIES · 2016 — 2025"
+    title    — page H1 (HTML allowed)
+    lead     — lead paragraph (HTML allowed); omit for no lead
+    net      — network-bg name: publications | projects | teaching | resources
+    pad_lg   — true → wider side padding (long pages)
+    teach    — true → taller header + larger/lighter H1 (the Teaching page)
+    extra    — extra HTML appended inside .page-header__inner (e.g. a meta strip)
+{% endcomment -%}
+{%- assign hdr_class = "page-header" -%}
+{%- if include.pad_lg -%}{%- assign hdr_class = hdr_class | append: " page-header--pad-lg" -%}{%- endif -%}
+{%- if include.teach -%}{%- assign hdr_class = hdr_class | append: " page-header--teach" -%}{%- endif -%}
+<section class="{{ hdr_class }}">
+  {%- if include.net -%}{% include network_bg.liquid name=include.net %}{%- endif -%}
+  <div class="page-header__inner">
+    {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
+    <h1 class="page-title{% if include.teach %} page-title--teach{% endif %}">{{ include.title }}</h1>
+    {%- if include.lead -%}<p class="page-lead">{{ include.lead }}</p>{%- endif -%}
+    {{- include.extra -}}
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+{%- comment %}
+  Projects page — Direction A.
+  Two § sections (Current / Past), each a uniform 2-column grid of project
+  cards driven by the `_projects/` collection. Each card shows: thumbnail,
+  mono code+years, title, blurb, funder+role pills, hairline footer with
+  "more information ↗". No featured cards, no stars.
+{% endcomment -%}
+
+{%- assign current = site.projects | where: "category", "Current projects" | sort: "importance" -%}
+{%- assign past    = site.projects | where: "category", "Past projects"    | sort: "importance" -%}
+
+{%- capture eyebrow_html -%}
+PROJECTS · {{ site.projects.size }} ENTRIES · CURRENT / PAST
+{%- endcapture -%}
+
+{%- capture lead_html -%}
+A snapshot of the research projects I'm part of (or have been part of).
+{%- endcapture -%}
+
+{% include page_header.liquid
+   net="projects"
+   eyebrow=eyebrow_html
+   title="Research I&rsquo;m part of."
+   lead=lead_html %}
+
+{% assign sections = "Current,Past" | split: "," %}
+
+<section class="section projects projects--current">
+  <div class="wrap">
+    <header class="section-head section-head--inline">
+      <span class="section-head__kicker">§ 01 — Current projects</span>
+      <span class="section-head__count">· {{ current.size }}</span>
+    </header>
+
+    <ul class="grant-grid">
+      {%- for p in current -%}
+        {% include _grant_card.liquid p=p %}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--flush projects projects--past">
+  <div class="wrap">
+    <header class="section-head section-head--inline">
+      <span class="section-head__kicker">§ 02 — Past projects</span>
+      <span class="section-head__count">· {{ past.size }}</span>
+    </header>
+
+    <ul class="grant-grid">
+      {%- for p in past -%}
+        {% include _grant_card.liquid p=p %}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

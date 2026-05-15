@@ -1,0 +1,165 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Publications — year-grouped paper rows + technical reports
+// jekyll-scholar emits:  <h2 class="bibliography">{year}</h2>
+//                        <ol class="bibliography"><li>{bib.liquid render}</li>…</ol>
+// We style those wrappers + the .paper grid emitted by _layouts/bib.liquid.
+// ─────────────────────────────────────────────────────────────────────────
+
+.pubs {
+  // Slightly tighter top: the page-header already ends in a hairline.
+  padding-block: var(--s-7) var(--s-11);
+
+  .wrap > h2.bibliography:first-child {
+    margin-top: 0;          // no extra top space on the first year group
+  }
+}
+
+// ── Year sub-header (jekyll-scholar emits h2.bibliography) ──────────────
+h2.bibliography {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 1;
+
+  margin: var(--s-9) 0 0;
+  padding: var(--s-3) 0 var(--s-2);
+
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
+
+  font-family: var(--font-sans);
+  font-size: clamp(1.625rem, 1.6vw + 1rem, 2.125rem);  // 26 → 34
+  font-weight: 600;
+  letter-spacing: var(--tr-h2);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+// ── Year group <ol> ─────────────────────────────────────────────────────
+ol.bibliography {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    margin: 0;
+    border-bottom: 1px solid var(--rule);
+    transition: background-color var(--t-fast);
+
+    &:hover { background: var(--panel); }
+  }
+}
+
+// ── Paper row (.paper) ──────────────────────────────────────────────────
+// Grid: [52 №] [1fr title+authors] [200 venue] [90 DOI]
+.paper {
+  display: grid;
+  grid-template-columns: 52px 1fr 200px 90px;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding: var(--s-4) var(--s-2);
+
+  &__num {
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  &__main {
+    min-width: 0;            // allow long titles to wrap inside the grid cell
+  }
+
+  &__title {
+    font-family: var(--font-sans);
+    font-size: var(--fs-paper-title);    // 18
+    font-weight: 500;
+    line-height: var(--lh-paper);
+    letter-spacing: var(--tr-paper);
+    margin: 0 0 var(--s-1);
+    color: var(--ink);
+
+    a {
+      color: inherit;
+      transition: color var(--t-fast);
+      &:hover { color: var(--accent); }
+    }
+
+    .badge { margin-left: 0.5em; vertical-align: 0.18em; }
+  }
+
+  &__authors {
+    font-size: var(--fs-meta);           // 13
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+
+    em { font-style: italic; color: var(--ink); }   // self-author highlight
+  }
+
+  &__chips {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-1) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  &__note {
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    color: var(--muted);
+    margin: var(--s-1) 0 0;
+  }
+
+  &__venue {
+    font-size: var(--fs-meta);           // 13, italic via <em>
+    color: var(--ink);
+    opacity: 0.85;
+    em { font-style: italic; }
+  }
+
+  &__doi {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+// ── Reports section ─────────────────────────────────────────────────────
+.pubs--reports {
+  border-top: 1px solid var(--rule);
+  padding-block: var(--s-10) var(--s-11);
+}
+
+.reports-head {
+  margin-bottom: var(--s-7);
+
+  .eyebrow { margin-bottom: var(--s-1); }
+}
+
+// In the reports list we don't want a sticky/large year header (--group_by none
+// already suppresses h2.bibliography emission), and only one row is expected.
+.pubs__reports-list ol.bibliography > li:last-child { border-bottom: 0; }
+
+// ── Responsive: stack the row on narrow screens ─────────────────────────
+@media (max-width: $bp-mobile) {
+  h2.bibliography {
+    position: static;        // sticky offset gets tricky under the hamburger nav
+    font-size: 1.75rem;
+  }
+
+  .paper {
+    grid-template-columns: 44px 1fr;
+    grid-template-areas:
+      "num   main"
+      ".     venue"
+      ".     doi";
+    row-gap: var(--s-2);
+
+    &__num   { grid-area: num; }
+    &__main  { grid-area: main; }
+    &__venue { grid-area: venue; }
+    &__doi   { grid-area: doi; text-align: left; }
+  }
+}

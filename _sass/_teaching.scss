@@ -1,0 +1,236 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Teaching → Computational Physics
+// Page header meta strip + descending year blocks of project cards + other
+// resources list. All copy lives in _data/teaching.yml.
+// ─────────────────────────────────────────────────────────────────────────
+
+// ── Header meta strip (4 columns under the lead) ────────────────────────
+.teach-meta {
+  margin-top: var(--s-9);
+  gap: var(--s-9);
+
+  .meta__label { letter-spacing: 0.12em; }
+  .meta__value { margin-top: 4px; font-size: var(--fs-body); }
+}
+
+// ── GitHub project-page CTA (in the page header `extra` slot) ───────────
+.gh-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-7);
+  padding: var(--s-3) var(--s-4);
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+  border-radius: var(--r-card);
+  transition: transform var(--t-fast),
+              background-color var(--t-fast),
+              color var(--t-fast);
+
+  &:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+    transform: translateY(-1px);
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: currentColor;
+  }
+
+  &__text {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.2;
+  }
+
+  &__label {
+    font-family: var(--font-sans);
+    font-size: var(--fs-meta);          // 13
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  &__sub {
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono-sm);       // 10
+    letter-spacing: 0.06em;
+    color: color-mix(in srgb, currentColor 65%, transparent);
+  }
+
+  &__arrow {
+    margin-left: var(--s-1);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    opacity: 0.85;
+  }
+}
+
+// ── Year block ──────────────────────────────────────────────────────────
+.year-block {
+  padding-block: var(--s-9) 0;            // year blocks butt up; final spacing comes from the last project card
+  border-bottom: 0;
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-3b);                     // 18px
+    padding-bottom: var(--s-3);
+    margin-bottom: var(--s-1);
+
+    .kicker--accent { letter-spacing: 0.18em; }
+  }
+
+  &__h2 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-year-h2);         // clamp(30,…,44)
+    font-weight: 500;
+    line-height: var(--lh-h2);
+    letter-spacing: var(--tr-h2);
+    color: var(--ink);
+    margin: 0;
+  }
+}
+
+// ── Project card ────────────────────────────────────────────────────────
+.proj-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--s-10);                       // 48px
+  padding: var(--s-11) 0;
+  border-top: 1px solid var(--rule);
+
+  &__meta {
+    .kicker         { margin: 0; }
+    .kicker--accent { margin-top: 6px; }
+  }
+
+  &__body { min-width: 0; }
+
+  &__title {
+    font-family: var(--font-sans);
+    font-size: var(--fs-teach-card-title); // 26
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: var(--tr-teach);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  &__blurb {
+    margin-top: var(--s-2);
+    max-width: 62rem;                     // ~992px — text reaches further right
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.88;
+
+    p { margin: 0; }
+    p + p { margin-top: var(--s-2); }
+  }
+
+  &__chips {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__repo {
+    margin: var(--s-3) 0 0;
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: 0.06em;
+  }
+
+  &__intro {
+    margin: var(--s-7) 0 var(--s-3);
+    max-width: 62rem;
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.88;
+    p { margin: 0; }
+  }
+
+  &__caption {
+    margin: var(--s-3) 0 0;
+    font-size: var(--fs-meta);            // 13
+    font-style: italic;
+    color: var(--muted);
+  }
+}
+
+// ── Media grid ──────────────────────────────────────────────────────────
+.media-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: var(--s-7);
+
+  &--1 { grid-template-columns: 1fr; }
+  &--2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+.media-item {
+  margin: 0;
+  border-radius: var(--r-badge);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--media-h, 200px);
+
+  &--square {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__el {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;           // preserve the full frame; the cell breathes around it
+    display: block;
+  }
+}
+
+// ── Other resources (the row-grid styles live in _resources.scss) ───────
+.other-resources {
+  padding-block: var(--s-11) var(--s-12);
+  border-top: 1px solid var(--rule);
+}
+
+// ── Advising footnote ───────────────────────────────────────────────────
+.advising-note {
+  border-top: 0;
+  font-size: var(--fs-body);
+  color: var(--muted);
+}
+
+// ── Responsive ──────────────────────────────────────────────────────────
+@media (max-width: $bp-tablet) {
+  .teach-meta {
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  .proj-card {
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+    padding-block: var(--s-9);
+
+    &__meta {
+      display: flex;
+      gap: var(--s-3b);
+      align-items: baseline;
+    }
+  }
+  .media-grid--2 { grid-template-columns: 1fr; }
+}

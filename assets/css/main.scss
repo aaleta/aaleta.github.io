@@ -1,26 +1,24 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Front matter (the two `---` lines) tells Jekyll to process this SCSS file.
 ---
 @charset "utf-8";
 
-// Dimensions
-$max-content-width: {{ site.max_width }};
+// ── Foundations ─────────────────────────────────────────────────────────
+@import "tokens";
+@import "base";
+@import "layout";
+@import "utilities";
 
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "cv",
-  "tabs",
-  "typograms",
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular",
-  "tabler-icons/tabler-icons.scss",
-  "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss",
-  "custom"
-;
+// ── Chrome (Phase 3) ────────────────────────────────────────────────────
+@import "nav";
+@import "footer";
+
+// ── Components (Phase 4) ────────────────────────────────────────────────
+@import "components";
+
+// ── Pages (Phases 5–9) ──────────────────────────────────────────────────
+@import "publications";
+@import "home";
+@import "teaching";
+@import "projects";
+@import "resources";

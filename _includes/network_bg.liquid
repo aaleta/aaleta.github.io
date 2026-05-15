@@ -1,0 +1,15 @@
+{%- comment %}
+  Inline a baked network-background SVG behind a page header.
+  Usage:  {% include network_bg.liquid name="publications" %}
+  Valid names: publications | projects | teaching | resources.
+  The SVG uses currentColor with a baked-in low opacity; .page-header__bg sets
+  the colour (var(--ink)) so it tracks the light/dark theme.
+{% endcomment -%}
+<div class="page-header__bg" aria-hidden="true">
+{%- case include.name -%}
+{%- when "projects" -%}{% include net/projects.svg %}
+{%- when "teaching" -%}{% include net/teaching.svg %}
+{%- when "resources" -%}{% include net/resources.svg %}
+{%- else -%}{% include net/publications.svg %}
+{%- endcase -%}
+</div>

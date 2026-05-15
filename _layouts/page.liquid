@@ -1,31 +1,26 @@
 ---
 layout: default
 ---
-{% if page._styles %}
-  <!-- Page/Post style -->
-  <style type="text/css">
-    {{ page._styles }}
-  </style>
-{% endif %}
+{%- comment %}
+  Generic page layout — used by Resources and Academic Advising, plus any
+  future short pages. Reads page-header content from front matter:
+    page.eyebrow      — mono kicker text (HTML allowed)
+    page.title_h1     — h1 (HTML allowed); falls back to page.title
+    page.lead         — lead paragraph (HTML allowed); optional
+    page.net          — network-bg name (publications | projects | teaching | resources); optional
+  Renders {{ content }} inside a centred section beneath the header.
+{% endcomment -%}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
+{%- assign h1_text = page.title_h1 | default: page.title -%}
 
-  <article>
+{% include page_header.liquid
+   net=page.net
+   eyebrow=page.eyebrow
+   title=h1_text
+   lead=page.lead %}
+
+<section class="section section--pad-lg page-body">
+  <div class="wrap">
     {{ content }}
-  </article>
-
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <div class="publications">
-      {% bibliography --cited_in_order %}
-    </div>
-  {% endif %}
-
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
-</div>
+  </div>
+</section>
