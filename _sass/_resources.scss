@@ -1,0 +1,141 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Resources — shared row-grid components used by:
+//   · /resources/                        (data-driven sections)
+//   · /teaching/ → "Other resources"     (single row at the page bottom)
+//   · /teaching/academic-advising/       (future)
+// Row anatomy: [120 mono tag] [1fr title + sub] [100 mono action ↗]
+// ─────────────────────────────────────────────────────────────────────────
+
+// ── Resources page sections ─────────────────────────────────────────────
+// Sit inside .page-body (which already pads top/bottom), so the per-section
+// vertical rhythm is kept modest to avoid doubled spacing.
+.resources-section {
+  padding-block: var(--s-7) var(--s-9);
+
+  &:first-of-type { padding-top: 0; }
+  &--rule         { border-bottom: 1px solid var(--rule); }
+
+  &__intro {
+    margin: calc(-1 * var(--s-3)) 0 var(--s-5);
+    max-width: 45rem;                // ≈ 720px
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.82;
+  }
+}
+
+// ── Row grid (shared) ───────────────────────────────────────────────────
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  gap: var(--s-5);
+  align-items: baseline;
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+  transition: background-color var(--t-fast);
+
+  &:hover { background: var(--panel); }
+
+  &__tag {
+    margin: 0;
+    letter-spacing: 0.10em;
+    font-size: var(--fs-mono);
+    color: var(--muted);
+  }
+
+  &__main { min-width: 0; }
+
+  &__title {
+    font-family: var(--font-sans);
+    font-size: var(--fs-lead);          // 17
+    font-weight: 500;
+    color: var(--ink);
+    transition: color var(--t-fast);
+
+    &:hover { color: var(--accent); }
+  }
+
+  &__sub {
+    margin: 4px 0 0;
+    font-size: var(--fs-body-sm);       // 14
+    color: var(--muted);
+    line-height: 1.55;
+
+    a {
+      color: inherit;
+      border-bottom: 1px solid var(--ink-20);
+      transition: border-color var(--t-fast), color var(--t-fast);
+      &:hover { color: var(--accent); border-color: var(--accent); }
+    }
+    em, i { font-style: italic; }
+  }
+
+  &__action {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+// Markdown body inside a generic .page-body (Academic Advising etc.)
+// Wrap is full-width (matching the rest of the site at 1180px). Prose-style
+// elements that appear as direct children are then narrowed to ~720px for
+// comfortable reading.
+.page-body {
+  padding-block: var(--s-9) var(--s-12);
+
+  > .wrap {
+    font-size: var(--fs-lead);          // 17
+    line-height: var(--lh-body);
+
+    > h2 {
+      font-family: var(--font-sans);
+      font-size: var(--fs-h2);
+      font-weight: 600;
+      line-height: var(--lh-h2);
+      letter-spacing: var(--tr-h2);
+      margin: var(--s-9) 0 var(--s-3);
+      max-width: 45rem;
+    }
+    > h2:first-child { margin-top: 0; }
+
+    > p, > ul, > ol {
+      margin: 0 0 var(--s-3);
+      max-width: 45rem;                 // ≈ 720px text column
+    }
+
+    > p a, > ul a, > ol a, > h2 a {
+      color: inherit;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: border-color var(--t-fast);
+      &:hover { border-bottom-width: 2px; }
+    }
+
+    > ul { padding-left: 1.25em; }
+    > ul li { margin: 0.35em 0; }
+  }
+}
+
+// ── Responsive ──────────────────────────────────────────────────────────
+@media (max-width: $bp-tablet) {
+  .resource-row {
+    grid-template-columns: 1fr 80px;
+    grid-template-areas:
+      "tag    action"
+      "main   main";
+    row-gap: var(--s-1);
+
+    &__tag    { grid-area: tag; }
+    &__main   { grid-area: main; }
+    &__action { grid-area: action; }
+  }
+}

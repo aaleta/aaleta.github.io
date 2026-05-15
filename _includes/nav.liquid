@@ -1,0 +1,43 @@
+{%- comment %} Centered pill nav — no logo, no email, no theme toggle (that floats). {% endcomment -%}
+<header class="nav">
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation">
+    <span class="nav__bars" aria-hidden="true"></span>
+  </button>
+  <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+    {%- for item in site.data.nav -%}
+      {%- assign active = false -%}
+      {%- if item.id == page.nav_id -%}{%- assign active = true -%}{%- endif -%}
+      {%- if item.children -%}
+        <span class="nav__item nav__item--has-children">
+          <a href="{{ item.url | relative_url }}"
+             class="nav__link nav__link--has-children{% if active %} is-active{% endif %}"
+             {% if active %}aria-current="page"{% endif %}
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{ item.label }}<span class="nav__caret" aria-hidden="true">▾</span>
+          </a>
+          <ul class="nav__sub" role="menu" aria-label="{{ item.label }} sub-pages">
+            {%- for child in item.children -%}
+              {%- assign child_url = child.url | relative_url -%}
+              {%- assign current_url = page.url | relative_url -%}
+              {%- assign child_active = false -%}
+              {%- if child_url == current_url -%}{%- assign child_active = true -%}{%- endif -%}
+              <li role="none">
+                <a class="nav__sublink{% if child_active %} is-active{% endif %}"
+                   role="menuitem"
+                   href="{{ child_url }}">
+                  <span class="nav__sublink-label">{{ child.label }}</span>
+                  {%- if child.sub -%}<span class="nav__sublink-sub">{{ child.sub }}</span>{%- endif -%}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </span>
+      {%- else -%}
+        <a href="{{ item.url | relative_url }}"
+           class="nav__link{% if active %} is-active{% endif %}"
+           {% if active %}aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+</header>

@@ -1,0 +1,42 @@
+---
+---
+{%- comment %}
+  jekyll-scholar template — emits one row in the home page's
+  "Selected publications" list. Grid:
+    [60 mono №] [1fr title + authors] [220 venue italic] [60 YEAR ↗ accent]
+  Each row links to entry.url.
+{% endcomment -%}
+{%- assign abbr_num = entry.abbr | default: "" | replace: ".", "" | strip -%}
+<article id="sel-{{ entry.key }}" class="sel-paper">
+  <div class="sel-paper__num">{%- if abbr_num != "" -%}<span>№&nbsp;{{ abbr_num }}</span>{%- endif -%}</div>
+
+  <div class="sel-paper__main">
+    <h3 class="sel-paper__title">
+      {%- if entry.url -%}
+        <a href="{{ entry.url }}" rel="noopener noreferrer">{{ entry.title }}</a>
+      {%- else -%}
+        {{ entry.title }}
+      {%- endif -%}
+    </h3>
+    <p class="sel-paper__authors">
+      {%- for a in entry.author_array -%}
+        {%- if a.last == "Aleta" and a.first contains "A" -%}
+          <em>{{ a.first }} {{ a.last }}</em>
+        {%- else -%}
+          {{ a.first }} {{ a.last }}
+        {%- endif -%}
+        {%- unless forloop.last %}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+  </div>
+
+  <div class="sel-paper__venue">{%- if entry.journal -%}<em>{{ entry.journal | strip }}</em>{%- endif -%}</div>
+
+  <div class="sel-paper__year">
+    {%- if entry.url -%}
+      <a class="link-arrow" href="{{ entry.url }}" rel="noopener noreferrer">{{ entry.year }}&nbsp;↗</a>
+    {%- else -%}
+      <span class="link-arrow">{{ entry.year }}</span>
+    {%- endif -%}
+  </div>
+</article>

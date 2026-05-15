@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{%- comment %}
+  Publications page layout — Direction A.
+  Header pattern (eyebrow + h1 + lead + network bg) → year-grouped paper rows
+  rendered via jekyll-scholar (group_by: year, descending — see _config.yml).
+  Technical reports follow as a flush sub-section.
+  No stats strip, no filter chips, no preview thumbnails.
+{% endcomment -%}
+
+{%- capture pub_count -%}{% bibliography_count -f papers %}{%- endcapture -%}
+{%- assign pub_count = pub_count | strip -%}
+
+{%- capture eyebrow_html -%}
+PUBLICATIONS · {{ pub_count }} ENTRIES · 2016 — 2026
+{%- endcapture -%}
+
+{%- capture lead_html -%}
+Over a decade of multidisciplinary work modelling data-rich complex systems: from network
+science and epidemics to human mobility, nutrition, the science of science and more.
+{%- endcapture -%}
+
+{% include page_header.liquid
+   net="publications"
+   eyebrow=eyebrow_html
+   title="Peer-reviewed work."
+   lead=lead_html %}
+
+<section class="section section--flush pubs">
+  <div class="wrap">
+    {% bibliography -f papers %}
+  </div>
+</section>
+
+<section class="section section--tight pubs pubs--reports">
+  <div class="wrap">
+    <header class="reports-head">
+      <p class="eyebrow eyebrow--accent">§ — Notes</p>
+      <h2 class="section-head__title">Technical reports.</h2>
+    </header>
+    <div class="pubs__reports-list">
+      {% bibliography -f reports --group_by none %}
+    </div>
+  </div>
+</section>

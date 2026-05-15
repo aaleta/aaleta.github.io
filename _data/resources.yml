@@ -1,0 +1,131 @@
+# Resources page content — drives _layouts/resources.liquid.
+# Sections are rendered top-to-bottom in this order; each section is a list
+# of rows, where every row is rendered as `[tag mono] [title + sub] [action mono]`.
+# `url` is the link target for the whole row.
+
+sections:
+  - id: tools
+    kicker: "§ 01 — Tools"
+    title: "Tools."
+    intro: >-
+      Small utilities I've built for my own workflow that happen to be
+      useful to other people too.
+    items:
+      - tag: "TERMINAL"
+        title: "TODO list"
+        sub: >-
+          A customised version of the
+          <a href="http://todotxt.org/" rel="noopener noreferrer">Todo.txt</a>
+          utility — keep your to-do list directly from the terminal.
+        url: https://github.com/aaleta/todo
+        action: "GITHUB ↗"
+      - tag: "TELEGRAM"
+        title: "Reminders Bot"
+        sub: >-
+          A small Telegram bot that sends scheduled reminders. I use it to
+          nudge my students about deadlines.
+        url: https://github.com/aaleta/bot_tutorial
+        action: "GITHUB ↗"
+      - tag: "TELEGRAM"
+        title: "Memes Bot"
+        sub: >-
+          A Telegram bot that drops random memes I keep handy for the
+          Computational Physics class.
+        url: https://github.com/aaleta/bot_computacional
+        action: "GITHUB ↗"
+
+  - id: data
+    kicker: "§ 02 — Data"
+    title: "Data."
+    items:
+      - tag: "NETWORKS"
+        title: "Hospital networks"
+        sub: >-
+          Network data used in
+          <em>Assessing the risk of spatial spreading of diseases in
+          hospitals</em> (Front. Phys., 2022).
+        url: https://github.com/aaleta/hospital_networks
+        action: "GITHUB ↗"
+
+  - id: code
+    kicker: "§ 03 — Code"
+    title: "Research code."
+    intro: >-
+      Mostly research code released alongside papers, grouped by language.
+      Use at your own risk — much of it was written under deadline.
+    items:
+      - tag: "C"
+        title: "COVID-19 modelling"
+        sub: >-
+          Baseline scenario from
+          <em>Modelling the impact of testing, contact tracing and household
+          quarantine on second waves of COVID-19</em> (Nat. Hum. Behav., 2020)
+          and the PNAS 2022 follow-up.
+        url: https://github.com/aaleta/NHB_COVID
+        action: "GITHUB ↗"
+      - tag: "C · Python"
+        title: "Economy &amp; COVID-19"
+        sub: >-
+          Code for the epidemic (C) + economic (Python) model from
+          <em>The unequal effects of the health–economy trade-off during the
+          COVID-19 pandemic</em> (Nat. Hum. Behav., 2023).
+        url: https://doi.org/10.5281/zenodo.7946867
+        action: "ZENODO ↗"
+      - tag: "C"
+        title: "SIR on a network — Gillespie"
+        sub: >-
+          Quick-and-dirty SIR simulations on a network using the Gillespie
+          algorithm.
+        url: https://github.com/aaleta/sir_gillespie/
+        action: "GITHUB ↗"
+      - tag: "Python"
+        title: "Hospitalisation dynamics"
+        sub: >-
+          Code from
+          <em>Unraveling the COVID-19 hospitalisation dynamics in Spain using
+          Bayesian inference</em> (BMC Med. Res. Methodol., 2023).
+        url: https://github.com/aaleta/COVID_hospitalization
+        action: "GITHUB ↗"
+      - tag: "Python"
+        title: "Transfer entropy &amp; epidemics"
+        sub: >-
+          Code from
+          <em>Informational approach to uncover the age-group interactions in
+          epidemic spreading from macro analysis</em> (Phys. Rev. E, 2024).
+        url: https://github.com/aaleta/cmi_covid
+        action: "GITHUB ↗"
+      - tag: "Python"
+        title: "Worm co-propagation — Gillespie"
+        sub: >-
+          Co-propagation of two worms in a network via Gillespie, used in
+          <em>Dynamics of defensive and malicious worm co-propagation across
+          networked systems</em> (Chaos Soliton. Fract., 2025).
+        url: https://github.com/aaleta/whiteworms
+        action: "GITHUB ↗"
+      - tag: "R"
+        title: "Thesis ggplot2 scripts"
+        sub: >-
+          The R scripts that produced the plots in my Ph.D. thesis. Examples
+          included — feel free to crib.
+        url: https://github.com/aaleta/thesis_plots
+        action: "GITHUB ↗"
+
+  - id: other
+    kicker: "§ 04 — Other"
+    title: "Other things."
+    items:
+      - tag: "UNITY · C#"
+        title: "Astro Putt"
+        sub: >-
+          My B.Sc. final project — a VR golf videogame set in space, built in
+          Unity and C#.
+        url: https://github.com/aaleta/astro_putt
+        action: "GITHUB ↗"
+      - tag: "BOOKDOWN"
+        title: "Networks, Epidemics, and Collective Behavior"
+        sub: >-
+          My Ph.D. thesis in bookdown — Chapters&nbsp;1–2 on the link between
+          physics and networks, Chapter&nbsp;3 a brief history of epidemic
+          modelling, the last chapter on Pokémon and Forocoches.
+        url: /thesis/
+        action: "BOOKDOWN ↗"

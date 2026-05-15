@@ -1,0 +1,37 @@
+---
+layout: page
+---
+{%- comment %}
+  Resources layout — iterates _data/resources.yml and emits one row grid per
+  section. Each section has a § kicker, an h2 title, an optional intro
+  paragraph, and a .resource-list of .resource-row items.
+{% endcomment -%}
+
+{%- for s in site.data.resources.sections -%}
+  <section class="resources-section{% unless forloop.last %} resources-section--rule{% endunless %}" id="{{ s.id }}">
+    <header class="section-head">
+      <p class="section-head__kicker">{{ s.kicker }}</p>
+      <h2 class="section-head__title">{{ s.title }}</h2>
+    </header>
+
+    {%- if s.intro -%}
+      <p class="resources-section__intro">{{ s.intro }}</p>
+    {%- endif -%}
+
+    <ul class="resource-list">
+      {%- for item in s.items -%}
+        <li class="resource-row">
+          <span class="resource-row__tag kicker">{{ item.tag }}</span>
+          <div class="resource-row__main">
+            <a class="resource-row__title"
+               href="{{ item.url | relative_url }}"
+               {% unless item.url contains "://" or item.url contains "mailto:" %}{% endunless %}>{{ item.title }}</a>
+            {%- if item.sub -%}<p class="resource-row__sub">{{ item.sub }}</p>{%- endif -%}
+          </div>
+          <a class="resource-row__action link-arrow"
+             href="{{ item.url | relative_url }}">{{ item.action }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+{%- endfor -%}

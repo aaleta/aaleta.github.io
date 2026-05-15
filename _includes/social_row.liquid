@@ -1,0 +1,17 @@
+{%- comment %}
+  Home social row — mono "GOOGLE SCHOLAR ↗ / ORCID ↗ / …" links, sourced from
+  _data/socials.yml. Email is a plain mailto: link (no obfuscation, per plan).
+{% endcomment -%}
+<ul class="social-row" aria-label="Profiles and contact">
+  {%- for s in site.data.socials -%}
+    <li>
+      <a class="social-row__link"
+         href="{{ s.url }}"
+         {%- if s.id != "email" %} rel="noopener noreferrer"{% endif -%}
+      >
+        <span class="social-row__label">{{ s.label | upcase }}</span>
+        <span class="social-row__arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

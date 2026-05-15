@@ -1,53 +1,13 @@
 ---
-layout: page
+layout: resources
 permalink: /resources/
+nav_id: resources
 title: Resources
-description: Some codes and notes that may be useful to others.
-nav: true
-nav_order: 5
+description: Code, data, and notes — small things I've built or written that may be useful to others.
+title_h1: Code, data, and notes.
+eyebrow: RESOURCES
+lead: >-
+  A loose collection of things I've built or written that might be useful to other people — small tools,
+  research code released alongside papers, a couple of datasets, and a few notes.
+net: resources
 ---
-## Tools
-
-* [TODO list](https://github.com/aaleta/todo): My own customized version of the [Todo.txt utility](http://todotxt.org/) which allows you to keep track of your todo list directly from the terminal.
-
-* [Reminders Bot](https://github.com/aaleta/bot_tutorial): A simple Telegram bot that sends you reminders at scheduled times. I use it to remind my students about deadlines.
-
-* [Memes Bot](https://github.com/aaleta/bot_computacional): A Telegram bot that sends random memes (images) that I use in our Computational Physics class.
-
-## Data
-
-* [Hospital networks](https://github.com/aaleta/hospital_networks): networks used in the paper [Assessing the risk of spatial spreading of diseases in hospitals](https://doi.org/10.3389/fphy.2022.882314)
-
-## Coding
-<div class="projects"><h2 class="category">C</h2></div>
-
-* [COVID-19 modelling](https://github.com/aaleta/NHB_COVID): code for the baseline scenario from the paper [Modelling the impact of testing, contact tracing and household quarantine on second waves of COVID-19](https://www.nature.com/articles/s41562-020-0931-9) and [Quantifying the importance and location of SARS-CoV-2 transmission events in large metropolitan areas](https://doi.org/10.1073/pnas.2112182119).
-
-* [Economy & COVID-19](https://doi.org/10.5281/zenodo.7946867): code for the epidemic(C)-economic(Python) model used in the paper [The unequal effects of the health-economy tradeoff during the COVID-19 pandemic](https://www.nature.com/articles/s41562-023-01747-x).
-
-* [SIR model on a network with Gillespie algorithm](https://github.com/aaleta/sir_gillespie/): quick and dirty code to perform simulations of the SIR model on a network using Gillespie algorithm. Use at your own risk! 
-
-
-<div class="projects"><h2 class="category">Python</h2></div>
-
-* [Hospitalization dynamics](https://github.com/aaleta/COVID_hospitalization): code used in the paper [Unraveling the COVID-19 hospitalization dynamics in Spain using Bayesian inference](https://doi.org/10.1186/s12874-023-01842-7)
-
-* [Transfer Entropy & Epidemics](https://github.com/aaleta/cmi_covid): code used in the paper [Informational approach to uncover the age group interactions in epidemic spreading from macro analysis](https://doi.org/10.1103/PhysRevE.110.064321)
-
-* [Worm co-propagation with Gillespie algorithm](https://github.com/aaleta/whiteworms): code to simulate the co-propagation of two worms in a network using Gillespie algorithm, used in the paper [Dynamics of defensive and malicious worm co-propagation across networked systems](https://doi.org/10.1016/j.chaos.2025.117589)
-
-<div class="projects"><h2 class="category">R</h2></div>
-
-* [ggplot2 scripts](https://github.com/aaleta/thesis_plots): R scripts used to make the plots of my Thesis. Check out the examples!
-
-## Bachelor's Degree Final Project in Computer Engineering
-
-* [Astro Putt](https://github.com/aaleta/astro_putt): A Virtual Reality Golf Videogame set in space. Developed using Unity and C#.
-
-## Thesis in Physics
-
-* [Here](/thesis/index.html) you can find my Thesis in bookdown format:
-	* If you are interested in the link between physics and networks, check out Chapters 1 and 2.
-	* In Chapter 3 I gave a brief overview of the history of epidemic modeling. It might be useful to introduce new students to this world.
-	* The last chapter contains my boldest works, Pokémon and Forocoches!
-

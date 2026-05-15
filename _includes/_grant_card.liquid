@@ -1,0 +1,54 @@
+{%- comment %}
+  Grant card — uniform card used by _layouts/projects.liquid (the research
+  grants page). Distinct from the teaching project card (.proj-card) which
+  has a different anatomy.
+  Expects: `p` (a _projects/ collection item) with front-matter fields
+    code · years · title · description · funder · role · more_url · img · category.
+{% endcomment -%}
+{%- assign p = include.p -%}
+{%- assign img_src = "" -%}
+{%- if p.img and p.img != "" -%}
+  {%- assign img_src = p.img | prepend: "/" | replace: "//", "/" -%}
+{%- endif -%}
+
+<li class="grant-card">
+  {%- if img_src != "" -%}
+    <div class="grant-card__banner">
+      <img src="{{ img_src | relative_url }}" alt="" loading="lazy">
+    </div>
+  {%- endif -%}
+
+  <div class="grant-card__inner">
+    <p class="grant-card__id">
+      {%- if p.code -%}<span class="grant-card__code">{{ p.code }}</span>{%- endif -%}
+      {%- if p.code and p.years %} <span class="grant-card__dot" aria-hidden="true">·</span> {% endif -%}
+      {%- if p.years -%}<span class="grant-card__years">{{ p.years }}</span>{%- endif -%}
+    </p>
+
+    <h3 class="grant-card__title">{{ p.title }}</h3>
+
+    {%- if p.description and p.description != "" -%}
+      <p class="grant-card__blurb">{{ p.description }}</p>
+    {%- endif -%}
+
+    {%- if p.funder or p.role -%}
+      <ul class="grant-card__pills">
+        {%- if p.funder and p.funder != "" -%}
+          <li class="chip grant-card__pill grant-card__pill--funder">{{ p.funder }}</li>
+        {%- endif -%}
+        {%- if p.role and p.role != "" -%}
+          <li class="chip grant-card__pill grant-card__pill--role">{{ p.role }}</li>
+        {%- endif -%}
+      </ul>
+    {%- endif -%}
+
+    <footer class="grant-card__foot">
+      {%- if p.more_url and p.more_url != "" -%}
+        <a class="link-arrow link-arrow--ink grant-card__more"
+           href="{{ p.more_url }}" rel="noopener noreferrer">
+          →&nbsp;more information
+        </a>
+      {%- endif -%}
+    </footer>
+  </div>
+</li>

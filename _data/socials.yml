@@ -1,0 +1,17 @@
+# Home social row — exactly the 5 links from the design.
+# No X. Email is a plain mailto: (no obfuscation) per the plan.
+- id: scholar
+  label: Google Scholar
+  url: https://scholar.google.com/citations?user=LqCYvSQAAAAJ
+- id: orcid
+  label: ORCID
+  url: https://orcid.org/0000-0002-1192-8707
+- id: github
+  label: GitHub
+  url: https://github.com/aaleta
+- id: linkedin
+  label: LinkedIn
+  url: https://linkedin.com/in/alberto-aleta
+- id: email
+  label: Email
+  url: mailto:aaleta@unizar.es

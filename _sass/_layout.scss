@@ -1,53 +1,91 @@
-/******************************************************************************
- * Content
- ******************************************************************************/
+// ─────────────────────────────────────────────────────────────────────────
+// Layout — page skeleton, sections, the shared page-header pattern
+// ─────────────────────────────────────────────────────────────────────────
 
 body {
-  padding-bottom: 70px;
-  color: var(--global-text-color);
-  background-color: var(--global-bg-color);
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    scroll-margin-top: 66px;
-  }
+  min-height: 100vh;
+  // sections stack; footer follows content (no sticky footer in this design)
 }
 
-body.fixed-top-nav {
-  // Add some padding for the nav-bar.
-  padding-top: 56px;
+#content { display: block; }
+
+// Content column: full-bleed sections, centred content inside.
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
 }
 
-body.sticky-bottom-footer {
-  // Remove padding below footer.
-  padding-bottom: 0;
+// A generic section: hairline-separated, generous vertical rhythm.
+// Specific sections (hero, page header, year blocks, …) override padding.
+.section {
+  padding: var(--s-12) var(--pad-x);
+  border-bottom: 1px solid var(--rule);
+
+  &--tight   { padding-block: var(--s-9); }
+  &--flush   { border-bottom: 0; }
+  &--pad-lg  { padding-inline: var(--pad-x-lg); }
 }
 
-.container {
-  max-width: $max-content-width;
+// ── Shared page-header pattern (Publications / Projects / Teaching / Resources)
+// <section class="page-header"> {network bg} <div class="page-header__inner">…</div> </section>
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: var(--s-7) var(--pad-x) var(--s-9);
+  border-bottom: 1px solid var(--rule);
+
+  &--pad-lg { padding-inline: var(--pad-x-lg); }
+  &--teach  { padding-block: var(--s-11) var(--s-12); } // taller header on Teaching
+}
+.page-header__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  color: var(--ink);   // the inlined SVG paints with currentColor
+
+  svg { display: block; width: 100%; height: 100%; }
+}
+.page-header__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--wrap);
+  margin-inline: auto;
 }
 
-// Profile
-.profile {
-  img {
-    width: 100%;
-  }
+// Mono eyebrow (kicker) above page titles — also reused as section kickers.
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 var(--s-3);
 }
+.eyebrow--accent { color: var(--accent); }
+.eyebrow--wide   { letter-spacing: 0.18em; }
 
-// TODO: redefine content layout.
+// Page title + lead used inside .page-header__inner.
+.page-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-page-h1);
+  font-weight: 600;
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tr-h1);
+  max-width: 56.25rem; // 900px
+  margin: 0;
 
-/******************************************************************************
- * Publications
- ******************************************************************************/
-
-// TODO: redefine publications layout.
-
-/*****************************************************************************
-* Projects
-*****************************************************************************/
-
-// TODO: redefine projects layout.
+  // Teaching: bigger, lighter (60px / 500 in the design).
+  &--teach { font-size: var(--fs-teach-h1); font-weight: 500; }
+}
+.page-lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  opacity: 0.8;
+  max-width: 45rem; // 720px
+  margin: var(--s-3b) 0 0;
+}
