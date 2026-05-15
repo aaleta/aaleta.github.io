@@ -116,6 +116,27 @@
     fill: currentColor;
   }
 
+  // Topic nodes: opt back into pointer events (the SVG itself is none) so
+  // they can be grabbed and dragged. The transparent hit circle widens the
+  // target. The animation loop translates each <g> per frame.
+  &__node {
+    cursor: grab;
+    touch-action: none;
+
+    &.is-dragging { cursor: grabbing; }
+
+    text {
+      cursor: inherit;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+  }
+
+  &__node-hit {
+    fill: transparent;
+    pointer-events: all;
+  }
+
   &__me {
     position: relative;
     z-index: 2;
