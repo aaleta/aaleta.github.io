@@ -26,6 +26,56 @@ meta:
 
 # ── Academic years (rendered in the order listed; descending) ───────────
 years:
+  - label: "2025 / 2026"
+    projects:
+      - n: 1
+        title: "Stochastic Parrots"
+        blurb: >-
+          Implement [Llama 2](https://github.com/karpathy/llama2.c) inference
+          in C from scratch and then run a small LLM on a regular laptop.
+          A nice excuse to look under the hood of the systems everyone keeps
+          talking about, and to see firsthand why a 1 GB parrot says the
+          things it says.
+        techniques:
+          - Matrix multiplication
+          - Quantization
+          - Sampling and temperature
+        repo: aaleta/2026_1_stochastic_parrots
+        media_rows:
+          - items:
+              - { src: /assets/video/stories110_2026.webm,  type: video, h: 160, controls: true, alt: "TinyStories 110M generating a children's story" }
+              - { src: /assets/video/tinyLlama_2026.webm,   type: video, h: 160, controls: true, alt: "TinyLlama generating text" }
+            caption: "TinyStories 110M (left) and TinyLlama (right), generating text token by token on a laptop CPU. The students quickly discovered the parrots have *opinions* about whether they will pass the exam."
+          - intro: >-
+              In the exam we asked them to ask the LLM whether they would pass the exam.
+              Apparently they hadn't even tried once before the exam, 
+              and the parrots were not optimistic about their chances.
+      - n: 2
+        title: "Doomscrolling"
+        blurb: >-
+          A student wanders the first floor of the Faculty of Science the week before
+          exams, trying to ambush professors with last-minute questions.
+          Unfortunately they are also a victim of *doomscrolling*: their eyes
+          stay glued to TikTok, so they move in a [correlated random
+          walk](https://en.wikipedia.org/wiki/Random_walk). 
+          Stress builds up as time passes; finding a professor resets it,
+          running out of time triggers a panicked flight from the building.
+        techniques:
+          - Correlated random walk
+          - von Mises distribution
+          - Collision detection
+          - Videogame physics (SDL3)
+        repo: aaleta/2026_2_doomscrolling
+        media_rows:
+          - intro: >-
+              In the exam, celebrating the anniversay of the [2025 Iberian Peninsula blackout](https://en.wikipedia.org/wiki/2025_Iberian_Peninsula_blackout),
+              we switched off the lights: the student could now only see what falls inside the cone lit up by their
+              phone screen, and has to find the professors essentially in the dark.
+            items:
+              - { src: /assets/video/normal_doomscrolling_2026.webm,   type: video, h: 320, controls: true, alt: "Doomscrolling student wandering the first floor under normal conditions" }
+              - { src: /assets/video/blackout_doomscrolling_2026.webm, type: video, h: 320, controls: true, alt: "Same simulation during a blackout — only the area lit by the phone screen is visible" }
+            caption: "The assignment (left) and the exam blackout extension (right). Stress and battery tick down; finding a professor buys back some calm."
+
   - label: "2024 / 2025"
     projects:
       - n: 1
