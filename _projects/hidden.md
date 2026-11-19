@@ -7,7 +7,7 @@ role: Co-IP
 funder: MICIU/AEI
 more_url: ""
 img: assets/img/hidden-nets.png
-importance: 2
+importance: 3
 category: Current projects
 ---
 

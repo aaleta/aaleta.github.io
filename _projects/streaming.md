@@ -7,7 +7,7 @@ role: IP
 funder: Rollout Entertainment
 more_url: https://www.rollout.es/
 img: assets/img/twitch.png
-importance: 1
+importance: 2
 category: Current projects
 ---
 

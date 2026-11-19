@@ -7,7 +7,7 @@ role: Member
 funder: EU H2020
 more_url: https://katy-project.eu/
 img: assets/img/katy.png
-importance: 2
+importance: 3
 category: Past projects
 ---
 

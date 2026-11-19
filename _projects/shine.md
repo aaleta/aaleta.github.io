@@ -7,7 +7,7 @@ role: External member
 funder: La Caixa Foundation
 more_url: https://ifisc.uib-csic.es/en/research/projects/covid-shine/
 img: assets/img/shine.png
-importance: 3
+importance: 4
 category: Past projects
 ---
 

@@ -10,9 +10,8 @@
 # These are inlined by _includes/network_bg.liquid; they use `currentColor`
 # (the wrapper sets the colour) with a baked-in low opacity.
 #
-# Ports the prototype's `mulberry32` PRNG and `NetworkBg` algorithm from
-# design_handoff_aaleta_website/scenes/shared.jsx (nodes scattered at random,
-# each connected to its two nearest neighbours).
+# Uses a `mulberry32` PRNG (ported from the original JS design prototype):
+# nodes scattered at random, each connected to its two nearest neighbours.
 
 require "fileutils"
 

@@ -6,3 +6,4 @@ _site/
 vendor/
 *.gem
 .DS_Store
+CLAUDE.md

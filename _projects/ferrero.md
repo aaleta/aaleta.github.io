@@ -7,7 +7,7 @@ role: Technical lead
 funder: Ferrero
 more_url: https://sustainablenutrition-sb.com/
 img: assets/img/ferrero.png
-importance: 1
+importance: 2
 category: Past projects
 ---
 

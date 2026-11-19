@@ -1,5 +1,5 @@
 # Teaching → Computational Physics page content.
-# Course meta + per-year project cards (Phase 7).
+# Course meta + per-year project cards.
 # Editing here flows through _layouts/teaching.liquid.
 
 # ── Page header ─────────────────────────────────────────────────────────
@@ -11,7 +11,6 @@ lead: >-
   through GitHub Classroom.
 
 # ── GitHub project-page link (appears near the top of the page) ────────
-# Placeholder URL — replace once the GH organisation page is published.
 github_page:
   url: https://github.com/aaleta/computational-physics
   label: All projects on GitHub

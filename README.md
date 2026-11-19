@@ -1,13 +1,13 @@
-# aaleta.github.io — source (Manuscript redesign)
+# aaleta.github.io
 
-Static personal site built with **Jekyll** + **jekyll-scholar**, deployed to GitHub
-Pages via GitHub Actions. This is the rebuilt site that replaces the old al-folio
-template (design: `design_handoff_aaleta_website/`, plan: `../IMPLEMENTATION_PLAN.md`).
+Source of [aaleta.github.io](https://aaleta.github.io), a personal academic site
+built with **Jekyll** and **jekyll-scholar**. GitHub Actions builds it and
+deploys it to GitHub Pages.
 
 ## Local development
 
-Requires Ruby (with the `ruby-dev` headers — `jekyll` pulls in a couple of native
-gems) and Bundler.
+You need Ruby 3.2.3 (see `.ruby-version`; the `ruby-dev` headers are required
+for a couple of native gems) and Bundler.
 
 ```bash
 bundle install
@@ -17,24 +17,28 @@ bundle exec jekyll build   # → _site/
 
 ## Deployment
 
-Push to `main`. `.github/workflows/deploy.yml` builds the site and publishes it via
-`actions/deploy-pages`. In the repo settings, set **Pages → Build and deployment →
-Source** to **GitHub Actions** (one-time).
+Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds the
+site and publishes it with `actions/deploy-pages`. Under the repo settings,
+**Pages → Source** must be set to **GitHub Actions**.
 
 ## Content sources
 
 | What | Where |
 |---|---|
-| Publications | `_bibliography/papers.bib` (BibTeX, single source of truth) |
+| Publications | `_bibliography/papers.bib` (BibTeX, the single source of truth) |
 | Technical reports | `_bibliography/reports.bib` |
-| Research projects/grants | `_projects/*.md` |
-| Teaching (Computational Physics) | `_data/teaching.yml` + `_pages/computational-physics.md` |
-| Pages (About, Resources, …) | `_pages/*.md` |
-| Social links | `_data/socials.yml` |
+| Research projects/grants | `_projects/*.md` (front matter only, rendered as cards on `/projects/`) |
+| Project thumbnails | `assets/img/*.png` |
+| Teaching (Computational Physics) | `_data/teaching.yml` (media in `assets/video/`, `assets/img/<year>/`) |
+| Academic advising | `_pages/academic-advising.md` |
+| Resources page | `_data/resources.yml` |
+| About / home | `_pages/about.md` + `_layouts/home.liquid` |
+| Navigation, social links | `_data/nav.yml`, `_data/socials.yml` |
+| PhD thesis (static bookdown export) | `thesis/` (served as-is at `/thesis/`) |
 
-Design tokens live in `_sass/_tokens.scss`. Accent is **oxblood**, hardcoded; the
-other curated accents are commented in that file.
+Design tokens live in `_sass/_tokens.scss`. The accent colour is oxblood and is
+hardcoded there, with a light value and a dark-mode value.
 
-## Status
-
-Built incrementally per `../IMPLEMENTATION_PLAN.md` (§11 phases). Phase 1 = scaffold.
+`bin/gen-network-bg.rb` regenerates the decorative network SVGs that sit behind
+the page headers (`_includes/net/*.svg`). You only need to run it if you want
+new backgrounds.

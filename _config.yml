@@ -28,7 +28,8 @@ include:
 
 exclude:
   - README.md
-  - HANDOFF.md
+  - CLAUDE.md
+  - bin
   - Gemfile
   - Gemfile.lock
   - vendor
@@ -46,8 +47,7 @@ sass:
 # ── Collections ────────────────────────────────────────────────────────────
 collections:
   projects:
-    output: true
-    permalink: /projects/:name/
+    output: false   # data-only: rendered as cards on /projects/, no per-project pages
 
 # ── Plugins ────────────────────────────────────────────────────────────────
 plugins:
