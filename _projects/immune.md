@@ -2,7 +2,7 @@
 title: IMMUNE
 description: Modelling the impact of human behaviour on the spread of infectious diseases.
 code: IMMUNE
-years: 2019–present
+years: 2019–2026
 role: Collaborator
 funder: EU H2020
 more_url: https://cordis.europa.eu/project/id/101003183

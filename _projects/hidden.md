@@ -2,7 +2,7 @@
 title: HIDDEN-NETS
 description: Higher-order interactions and data-driven approaches to complex networked systems.
 code: HIDDEN-NETS
-years: 2024–present
+years: 2024–2027
 role: Co-IP
 funder: MICIU/AEI
 more_url: ""

@@ -2,7 +2,7 @@
 title: STREAMING-AI
 description: Text processing for real-time graphics generation on livestreaming events using AI.
 code: STREAMING-AI
-years: 2025–present
+years: 2025–2026
 role: IP
 funder: Rollout Entertainment
 more_url: https://www.rollout.es/
