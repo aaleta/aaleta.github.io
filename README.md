@@ -6,7 +6,7 @@ deploys it to GitHub Pages.
 
 ## Local development
 
-You need Ruby 3.2.3 (see `.ruby-version`; the `ruby-dev` headers are required
+You need Ruby 3.2.x (CI uses the latest 3.2 patch; the `ruby-dev` headers are required
 for a couple of native gems) and Bundler.
 
 ```bash
